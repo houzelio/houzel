@@ -31,5 +31,6 @@ module Houzel
    
     # Custom directories with classes and modules you want to be autoloadable.
     config.autoload_once_paths += %W{#{config.root}/lib}
+    config.assets.initialize_on_precompile = true
   end
 end
