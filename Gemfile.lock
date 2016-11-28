@@ -127,6 +127,11 @@ GEM
     turbolinks (5.2.0)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
+    twitter-bootstrap-rails (3.2.2)
+      actionpack (>= 3.1)
+      execjs (>= 2.2.2, >= 2.2)
+      less-rails (>= 2.5.0)
+      railties (>= 3.1)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uglifier (2.7.1)
@@ -145,6 +150,7 @@ DEPENDENCIES
   sdoc
   therubyracer
   turbolinks
+  twitter-bootstrap-rails (= 3.2.2)
   uglifier (= 2.7.1)
 
 BUNDLED WITH

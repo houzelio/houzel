@@ -24,6 +24,9 @@ gem 'therubyracer', platforms: :ruby
 # Less rails
 gem 'less-rails'
 
+# Twitter bootstrap
+gem 'twitter-bootstrap-rails', '3.2.2'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
