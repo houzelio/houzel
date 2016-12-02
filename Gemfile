@@ -24,6 +24,9 @@ gem 'less-rails'
 # Twitter bootstrap
 gem 'twitter-bootstrap-rails', '3.2.2'
 
+# Defines all Rails named routes as javascript helpers
+gem 'js-routes', '1.3.2'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

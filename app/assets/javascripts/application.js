@@ -11,5 +11,6 @@
 // about supported directives.
 //
 //= require jquery
+//= require js-routes
 //= require jquery_ujs
 //= require_tree .
