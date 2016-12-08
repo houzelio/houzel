@@ -5,6 +5,7 @@ gem 'rails', '4.2.3'
 
 #Templating
 gem 'rabl', '0.13.1'
+gem 'oj', '2.18.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '2.7.1'
