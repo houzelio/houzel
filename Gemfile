@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 
+#Templating
+gem 'rabl', '0.13.1'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '2.7.1'
 
