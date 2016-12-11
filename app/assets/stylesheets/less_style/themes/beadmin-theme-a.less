@@ -1,0 +1,231 @@
+
+@import '../bootstrap/variables';
+@import '../bootstrap/mixins/gradients';
+@import '../app/media-queries';
+
+
+// 
+// Variables to change general look 
+// 
+
+// LAYOUT
+
+@content-bg:                    #f5f7fa;
+
+// NAVBAR TOP
+
+@nav-top-bg:                    @brand-info;
+@nav-top-bg-start:              @nav-top-bg;
+@nav-top-bg-end:                #30c8ca;
+@nav-header-bg:                 transparent;
+
+@nav-top-item-mobile:           @nav-top-bg;
+@nav-top-item-mobile-active:    darken(@nav-top-item-mobile, 20%);
+
+@nav-top-item-desktop:          #fff;
+@nav-top-item-desktop-active:   darken(@nav-top-item-desktop, 20%);
+
+// SIDEBAR
+
+@sidebar-bg:                      #fff;
+@sidebar-border-color:            greyscale(darken(@sidebar-bg, 20%));
+
+@sidebar-item-color:              #919293;
+@sidebar-item-color-active:       @brand-info;
+@sidebar-item-bg-active:          darken(@sidebar-bg, 1%);
+
+@sidebar-icon-color:              inherits;
+@sidebar-icon-color-active:       @nav-top-bg;
+
+@sidebar-bullet-color:            rgba(0,0,0,.25);
+@sidebar-bullet-color-active:     @sidebar-icon-color-active;
+
+@sidebar-heading-color:           @sidebar-item-color;
+@sidebar-label-color:             @sidebar-item-color;
+
+// OFFSIDEBAR
+
+@offsidebar-bg:           @sidebar-bg;    // reuse the main sidebar background
+@offsidebar-border-color: greyscale(darken(@offsidebar-bg, 20%));
+@offsidebar-color:        @text-color;
+
+
+/* ========================================================================
+   Component: layout
+ ========================================================================== */
+
+body,
+.wrapper > section {
+    background-color: @content-bg;
+  }
+
+/* ========================================================================
+   Component: top-navbar
+ ========================================================================== */
+
+// Navbar Mobile General styles
+// ------------------------------
+
+.navbar-top {
+  background-color: #fff;
+  .navbar-header {
+    background-color: @nav-header-bg;
+    #gradient.horizontal(@nav-top-bg-start, @nav-top-bg-end);
+    @media @tablet {
+      background-image: none;
+    }
+  }
+  
+  .navbar-nav > li > a,
+  .navbar-nav > .open > a {
+    color: @nav-top-item-mobile;
+    &:hover, &:focus {
+      color: @nav-top-item-mobile-active;
+    }
+  }
+
+  // Navbar link active style
+  .navbar-nav > .active > a,
+  .navbar-nav > .open   > a {
+    &, &:hover, &:focus {
+      background-color: transparent;
+    }
+  }
+
+  // the button to toggle search
+  .navbar-nav > li > [data-toggle='navbar-search'] {
+    color: @nav-top-item-desktop;
+  }
+  
+  .nav-wrapper {
+    background-color: @nav-top-bg;
+    #gradient.horizontal(@nav-top-bg-start, @nav-top-bg-end);
+  }
+}
+
+// Navbar Desktop styles
+// ------------------------------
+
+@media @tablet {
+
+  // Navbar top styles
+  .navbar-top {
+    background-color: @nav-top-bg;
+    #gradient.horizontal(@nav-top-bg-start, @nav-top-bg-end);
+
+    .navbar-nav > .open > a {
+      &, &:hover, &:focus {
+        box-shadow: 0 -3px 0 rgba(255,255,255,.5) inset;
+      }
+    }
+
+    .navbar-nav > li > a,
+    .navbar-nav > .open > a {
+      color: @nav-top-item-desktop;
+      &:hover, &:focus {
+        color: @nav-top-item-mobile-active;
+      }
+    }
+
+  } // .navbar-top
+
+}
+
+/* ========================================================================
+   Component: sidebar
+ ========================================================================== */
+
+.sidebar {
+  background-color: @sidebar-bg; 
+  border-right-color: @sidebar-border-color;
+
+  .nav-heading {
+    color: @sidebar-heading-color;
+  }
+  
+  .nav-labels {
+    > .nav-labels-item {
+      > a {
+        color: @sidebar-label-color;
+      }
+    }
+  }
+
+  // Items
+  .nav {
+
+    > li {
+
+      > a,
+      > .nav-item {
+        color: @sidebar-item-color;
+        &:focus {
+          color: @sidebar-item-color-active;
+        }
+        // Item icon
+        > em {
+          color: @sidebar-icon-color;
+        }
+      }
+
+      // Active item state
+      &.active,
+      &:hover {
+        &,
+        > a,
+        > a > .item-text,
+        .nav {
+          background-color: @sidebar-item-bg-active;
+          color: @sidebar-item-color-active;
+        }
+        > a > em {
+          color: @sidebar-icon-color-active;
+        }
+      }
+      &.active{
+        border-left-color: @sidebar-icon-color-active;
+      }
+    }
+
+
+    // Sub Levels
+    .nav {
+      background-color: @sidebar-bg;
+      > li  {
+        > a,
+        > .nav-item {
+          &:focus, &:hover {
+            color: @sidebar-item-color-active;
+          }
+
+          // build a little circle to use as item indicator
+          &:after {
+            border-color: @sidebar-bullet-color;
+          }
+        }
+
+        &.active {
+          > a,
+          > .nav-item {
+            color: @sidebar-item-color-active;
+            &:after {
+              border-color: @sidebar-bullet-color-active;
+              background-color: @sidebar-bullet-color-active;
+            }
+          }
+        }
+      } // li
+    } // .nav
+
+  }
+}
+
+/* ========================================================================
+   Component: offsidebar
+ ========================================================================== */
+
+.offsidebar {
+  border-left: 1px solid @offsidebar-border-color;
+  background-color: @offsidebar-bg;
+  color: @offsidebar-color;
+}

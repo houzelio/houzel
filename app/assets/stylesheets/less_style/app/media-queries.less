@@ -1,0 +1,17 @@
+// ========================================================================
+//   Component: media-queries.less
+// ========================================================================== 
+
+// Taken from bootstrap variables
+// to match all components media queries
+
+@mq-desktop-lg:                           @screen-lg-min; // Usually 1200px
+@mq-desktop:                              @screen-desktop;    // Usually 992px
+@mq-tablet:                               @screen-sm-min;     // Usually 768px
+@mq-mobile:                               @screen-phone;      // Usually 480px
+
+@desktop-lg:                              ~"only screen and (min-width: @{mq-desktop-lg})";
+@desktop:                                 ~"only screen and (min-width: @{mq-desktop})";
+@tablet:                                  ~"only screen and (min-width: @{mq-tablet})";
+@mobile:                                  ~"only screen and (min-width: @{mq-mobile})";
+
