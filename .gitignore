@@ -23,3 +23,7 @@ config/database.yml
 *.swpinux
 *.out
 *.swp
+
+#Ignore precompiled assets
+public/assets
+vendor/assets/components
