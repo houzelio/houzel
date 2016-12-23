@@ -3,7 +3,10 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 
-#Templating
+# Database
+gem 'pg', '0.19.0'
+
+# Templating
 gem 'rabl', '0.13.1'
 gem 'oj', '2.18.0'
 
