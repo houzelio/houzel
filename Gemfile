@@ -5,6 +5,7 @@ gem 'rails', '4.2.3'
 
 # Database
 gem 'pg', '0.19.0'
+gem 'sequel-rails', '0.9.13'
 
 # Templating
 gem 'rabl', '0.13.1'
