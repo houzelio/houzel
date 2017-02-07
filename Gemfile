@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 
+# Sprockets rails
+gem 'sprockets-rails', '3.1.1'
+
 # Database
 gem 'pg', '0.19.0'
 gem 'sequel-rails', '0.9.13'
