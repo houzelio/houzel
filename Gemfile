@@ -14,6 +14,9 @@ gem 'sequel-rails', '0.9.13'
 gem 'rabl', '0.13.1'
 gem 'oj', '2.18.0'
 
+# Configuration
+gem 'configurate', '0.3.1'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '2.7.1'
 
