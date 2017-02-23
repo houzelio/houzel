@@ -17,7 +17,6 @@
 
 # Configuration files
 config/database.yml
-config/defaults.yml
 
 # Ignore temporary files of every sort
 *~
