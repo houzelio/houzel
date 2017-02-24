@@ -1,0 +1,14 @@
+{
+  "name": "houzel",
+  "description": "",
+  "main": "",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ]
+}
