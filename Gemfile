@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.3'
+gem 'rails', '4.2.8'
 
 # Sprockets rails
 gem 'sprockets-rails', '3.1.1'
