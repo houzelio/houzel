@@ -17,6 +17,7 @@
 
 # Configuration files
 config/database.yml
+config/houzel.yml
 
 # Ignore temporary files of every sort
 *~

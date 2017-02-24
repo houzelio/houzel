@@ -15,6 +15,18 @@ AppConfig ||= Configurate::Settings.create do
   add_provider Configurate::Provider::Dynamic
   add_provider Configurate::Provider::Env
 
+  unless rails_env = "development" || rails_env = "test" || File.exist?(File.join(config_dir, "houzel.yml"))
+    warn "FATAL: houzel.yml not found. Copy over houzel.yml.example"
+    warn "and use it as your model."
+    exit!
+  end
+
+  add_provider Configurate::Provider::YAML,
+               File.join(config_dir, "houzel.yml"),
+               namespace: rails_env, required: false
+  add_provider Configurate::Provider::YAML,
+               File.join(config_dir, "houzel.yml"),
+               namespace: "configuration", required: false
   add_provider Configurate::Provider::YAML,
                File.join(config_dir, "defaults.yml"),
                namespace: rails_env
