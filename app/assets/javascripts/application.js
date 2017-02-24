@@ -14,5 +14,5 @@
 //= require js-routes
 //= require jquery-ujs
 //= require backbone
-//= require twitter/bootstrap
+//= require bootstrap
 //= require_tree .
