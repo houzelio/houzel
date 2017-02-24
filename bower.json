@@ -10,5 +10,8 @@
     "vendor/assets/components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "backbone": "1.3.3"
+  }
 }
