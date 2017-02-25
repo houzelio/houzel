@@ -5,7 +5,9 @@
 defaults:
   version:
     number: "1.0.0" # Do not touch unless doing a release, do not backport the version number that's in master
-  host: 
+  host:
+  server:
+    environment: "development"
   environment:
     url: "http://localhost:3000/"
     certificate_authorities:
