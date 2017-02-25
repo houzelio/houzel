@@ -32,9 +32,6 @@ gem 'therubyracer', platforms: :ruby
 # Less rails
 gem 'less-rails'
 
-# Twitter bootstrap
-gem 'twitter-bootstrap-rails', '3.2.2'
-
 # Defines all Rails named routes as javascript helpers
 gem 'js-routes', '1.3.2'
 

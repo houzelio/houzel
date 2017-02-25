@@ -176,11 +176,6 @@ GEM
       ref
     thor (0.20.3)
     thread_safe (0.3.6)
-    twitter-bootstrap-rails (3.2.2)
-      actionpack (>= 3.1)
-      execjs (>= 2.2.2, >= 2.2)
-      less-rails (>= 2.5.0)
-      railties (>= 3.1)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uglifier (2.7.1)
@@ -211,7 +206,6 @@ DEPENDENCIES
   sequel-rails (= 0.9.13)
   sprockets-rails (= 3.1.1)
   therubyracer
-  twitter-bootstrap-rails (= 3.2.2)
   uglifier (= 2.7.1)
 
 BUNDLED WITH
