@@ -35,6 +35,9 @@ gem 'therubyracer', platforms: :ruby
 # Less rails
 gem 'less-rails'
 
+# GUID generation
+gem 'uuid', '2.3.7'
+
 # Defines all Rails named routes as javascript helpers
 gem 'js-routes', '1.3.2'
 
