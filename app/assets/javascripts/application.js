@@ -13,6 +13,7 @@
 //= require jquery
 //= require js-routes
 //= require jquery-ujs
+//= require underscore
 //= require backbone
 //= require bootstrap
 //= require_tree .
