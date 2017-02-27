@@ -15,5 +15,8 @@
 //= require jquery-ujs
 //= require underscore
 //= require backbone
+//= require backbone.marionette
+//= require backbone.babysitter
+//= require backbone.wreqr
 //= require bootstrap
 //= require_tree .
