@@ -17,6 +17,9 @@ gem 'oj', '2.18.0'
 # AppServer 
 gem 'puma', '3.7.1'
 
+# Responder
+gem 'responders', '2.3.0'
+
 # Configuration
 gem 'configurate', '0.3.1'
 
