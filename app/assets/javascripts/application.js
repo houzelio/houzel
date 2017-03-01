@@ -18,5 +18,7 @@
 //= require backbone.marionette
 //= require backbone.babysitter
 //= require backbone.wreqr
+//= require backbone.paginator
+//= require backgrid
 //= require bootstrap
 //= require_tree .

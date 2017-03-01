@@ -19,6 +19,8 @@
     "backbone.marionette": "2.4.7",
     "backbone.babysitter": "0.1.12",
     "backbone.wreqr": "1.4.0",
+    "backgrid": "0.3.8" ,
+    "backbone.paginator": "2.0.5",
     "bootstrap": "3.3.7"
   },
   "resolutions": {
