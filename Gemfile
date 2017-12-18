@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
 
+#Webpack rails
+gem 'webpacker', '3.2.0'
+
 # Sprockets rails
 gem 'sprockets-rails', '3.1.1'
 

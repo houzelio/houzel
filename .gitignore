@@ -21,6 +21,13 @@ config/houzel.yml
 *.out
 *.swp
 
-#Ignore precompiled assets
+# .DS_Store
 public/assets
 vendor/assets/components
+/public/packs
+/public/packs-test
+node_modules
+
+# Only apps should have lockfiles
+package-lock.json
+yarn.lock
