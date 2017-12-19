@@ -7,6 +7,11 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
+/* Stylesheet */
+import 'bootstrap';
+import '../stylesheets/application.less'
+
+/* Application */
 export {default as Houzel} from '../javascripts/backbone/app.js.coffee';
 
 document.addEventListener("DOMContentLoaded", function() {
