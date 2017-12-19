@@ -1,0 +1,79 @@
+.user-block {
+  display: none; // for use with toggle
+  position: relative;
+  padding: 25px 30px 0;
+  cursor: pointer;
+  .clearfix;
+  
+  // toggle visible when parent has class
+  .aside-user & {
+    display: block;
+  }
+
+  > .user-block-picture {
+    position: relative;
+    float: left;
+    width: 60px;
+    margin-right: 15px;
+    // border-radius: 4px;
+    // border: 2px solid #e1e2e3;
+    > img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .user-block-info {
+    float: left;
+    padding-top: 15px;
+    .user-block-name,
+    .user-block-role {
+      display: block;
+
+    }
+
+    .user-block-name {
+      color: #7D848F;
+    }
+    .user-block-role {
+      font-size: 12px;
+      color: #aaa;
+    }
+  }
+}
+
+.user-block-status {
+  position: relative;
+  > .circle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: 2px solid #fff;
+  }
+}
+
+
+@media @tablet {
+  .aside-collapsed {
+
+    .user-block {
+      padding: 30px 0 0;
+      margin: 0;
+      text-align: center;
+
+      > .user-block-picture {
+        float: none;
+        margin: 0  auto;
+        width: 50px;
+        > .user-block-status {
+          display: block;
+        }
+      }
+      .user-block-role,
+      .user-block-status,
+      .user-block-name {
+        display: none;
+      }
+    }
+  }
+}
