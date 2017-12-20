@@ -16,6 +16,7 @@ gem 'sequel-rails', '0.9.13'
 # Templating
 gem 'rabl', '0.13.1'
 gem 'oj', '2.18.0'
+gem 'gon', '6.1.0'
 
 # AppServer 
 gem 'puma', '3.7.1'
