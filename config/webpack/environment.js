@@ -1,15 +1,23 @@
 const { environment } = require('@rails/webpacker')
 const houzelConfig = require('./houzel')
 const webpack = require('webpack')
-const coffee = require('./loaders/coffee')
 const file = require('./loaders/file')
 const eco = require('./loaders/eco')
+
+const babelLoader = environment.loaders.get('babel')
+
+// Extensions
+environment.config.set('resolve.extensions', ['.coffee', '.js.coffee'])
 
 // Merge houzel config
 environment.config.merge(houzelConfig)
 
 // Loaders
-environment.loaders.append('coffee', coffee)
+environment.loaders.insert('coffee', {
+  test: /\.coffee(\.erb)?$/,
+  use:  babelLoader.use.concat(['coffee-loader'])
+})
+
 environment.loaders.append('file', file)
 environment.loaders.append('eco', eco)
 
