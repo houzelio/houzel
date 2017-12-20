@@ -9,13 +9,15 @@
 
 /* Stylesheet */
 import 'bootstrap';
-import '../stylesheets/application.less'
+import '../stylesheets/modules.css'
+import '../stylesheets/application.less';
 
 /* Application */
-export {default as Houzel} from '../javascripts/backbone/app.js.coffee';
+import App from '../javascripts/backbone/app';
 
 document.addEventListener("DOMContentLoaded", function() {
-  window.Houzel = (_.assign({}, Packs.application).Houzel); 
+  const app = new App();
+  app.start({});
 });
 
 
