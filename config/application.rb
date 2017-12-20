@@ -31,5 +31,9 @@ module Houzel
    
     # Custom directories with classes and modules you want to be autoloadable.
     config.autoload_once_paths += %W{#{config.root}/lib}
+
+    config.sequel.after_connect = proc do
+      Sequel::Model.db.extension :pagination
+    end
   end
 end
