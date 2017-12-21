@@ -1,10 +1,8 @@
-@Houzel = do (Backbone, Marionette) ->
 
-  App = new Marionette.Application
+App = class extends Marionette.Application
 
-  App.on "start", ->
     if Backbone.history
       Backbone.history.start
         pushState: true
 
-  App
+export default App
