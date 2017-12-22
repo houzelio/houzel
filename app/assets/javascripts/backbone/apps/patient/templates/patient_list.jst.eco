@@ -1,0 +1,8 @@
+<div class="panel panel-transparent">
+  <div class="panel-body">
+    <div id="backGrid" class="table-responsive backgrid-container">
+    </div>
+    <div id="backPaginator" class="col-md-12 text-center">
+    </div>
+  </div>
+</div>
