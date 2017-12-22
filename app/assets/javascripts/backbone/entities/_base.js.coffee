@@ -1,4 +1,13 @@
 PageableCollection = require("backbone.paginator");
+import Radio from 'backbone.radio'
+
+channel = Radio.channel('Object')
+
+channel.reply "when:fetched", (object, callback) ->
+  xhrs = _.chain([object]).flatten().pluck("_fetch").value()
+
+  $.when(xhrs...).done ->
+    callback()
 
 export default class extends PageableCollection
   state:
