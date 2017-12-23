@@ -9,7 +9,7 @@
 
 /* Stylesheet */
 import 'bootstrap';
-//import '../stylesheets/modules.css';
+import '../stylesheets/modules.css';
 import '../stylesheets/application.less';
 
 /* Application */
