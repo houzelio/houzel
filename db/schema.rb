@@ -1,5 +1,12 @@
 Sequel.migration do
   change do
+    create_table(:calendar) do
+      primary_key :id
+      column :description, "character varying(255)"
+      column :start_date, "timestamp without time zone", :null=>false
+      column :end_date, "timestamp without time zone", :null=>false
+    end
+
     create_table(:patient) do
       primary_key :id
       column :name, "character varying(255)", :null=>false

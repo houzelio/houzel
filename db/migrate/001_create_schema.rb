@@ -3,7 +3,7 @@ Sequel.migration do
 
     create_table :person do
       primary_key :id
-      column :guid,           String,     :null=>false      
+      column :guid,           String,     :null=>false
       column :closed_account, FalseClass, :default=>false
       column :start_at,       DateTime
       column :created_at,     DateTime,   :null=>false
@@ -28,6 +28,13 @@ Sequel.migration do
       column :observation, String
       column :created_at,  DateTime, :null=>false
       column :updated_at,  DateTime, :null=>false
+    end
+
+    create_table :calendar do
+      primary_key :id
+      column :description, String, :size=>255
+      column :start_date, DateTime, :null=>false
+      column :end_date, DateTime, :null=>false
     end
   end
 end
