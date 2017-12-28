@@ -420,9 +420,21 @@ Based on Rails routes of Houzel::Application
     };
     namespace(root, "Routes");
     root.Routes = {
+// calendar => /calendar/:id(.:format)
+  // function(id, options)
+  calendar_path: Utils.route(["id"], ["format"], [2,[7,"/",false],[2,[6,"calendar",false],[2,[7,"/",false],[2,[3,"id",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
+// calendar_index => /calendar(.:format)
+  // function(options)
+  calendar_index_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"calendar",false],[1,[2,[8,".",false],[3,"format",false]],false]]], {}),
+// edit_calendar => /calendar/:id/edit(.:format)
+  // function(id, options)
+  edit_calendar_path: Utils.route(["id"], ["format"], [2,[7,"/",false],[2,[6,"calendar",false],[2,[7,"/",false],[2,[3,"id",false],[2,[7,"/",false],[2,[6,"edit",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]]]], {}),
 // edit_patient => /patient/:id/edit(.:format)
   // function(id, options)
   edit_patient_path: Utils.route(["id"], ["format"], [2,[7,"/",false],[2,[6,"patient",false],[2,[7,"/",false],[2,[3,"id",false],[2,[7,"/",false],[2,[6,"edit",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]]]], {}),
+// new_calendar => /calendar/new(.:format)
+  // function(options)
+  new_calendar_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"calendar",false],[2,[7,"/",false],[2,[6,"new",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
 // new_patient => /patient/new(.:format)
   // function(options)
   new_patient_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"patient",false],[2,[7,"/",false],[2,[6,"new",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
