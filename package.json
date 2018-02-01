@@ -12,6 +12,7 @@
     "coffeescript": "2.1.0",
     "eco": "^1.1.0-rc-3",
     "jquery": "^3.3.1",
+    "js-yaml": "^3.12.1",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "node-polyglot": "2.2.2",
