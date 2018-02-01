@@ -24,12 +24,6 @@ gem 'responders', '2.3.0'
 # Configuration
 gem 'configurate', '0.3.1'
 
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '2.7.1'
-
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '4.1.0'
-
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
@@ -38,6 +32,12 @@ gem 'uuid', '2.3.7'
 
 # Defines all Rails named routes as javascript helpers
 gem 'js-routes', '1.3.2'
+
+# Headers
+gem 'secure_headers', '6.0.0'
+
+# Localization
+gem 'http_accept_language', '2.1.0'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
