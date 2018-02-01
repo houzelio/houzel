@@ -6,9 +6,6 @@ gem 'rails', '4.2.8'
 #Webpack rails
 gem 'webpacker', '3.2.0'
 
-# Sprockets rails
-gem 'sprockets-rails', '3.1.1'
-
 # Database
 gem 'pg', '0.19.0'
 gem 'sequel-rails', '0.9.13'
@@ -35,12 +32,6 @@ gem 'coffee-rails', '4.1.0'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
-
-# Less rails
-gem 'less-rails'
 
 # GUID generation
 gem 'uuid', '2.3.7'
