@@ -1,10 +1,6 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-  output: {
-    library: ['Packs', '[name]'],
-    libraryTarget: 'var'
-  },
   module: {
     rules: [
       {
