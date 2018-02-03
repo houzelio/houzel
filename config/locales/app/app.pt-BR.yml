@@ -1,0 +1,19 @@
+pt-BR:
+  app:
+    general:
+      patient:
+      title: "Paciente"
+      label:
+        sex: "Sexo"
+        location: "Localização/Cidade"
+        zip_code: "CEP"
+        address: "Endereço"
+        blood_type: "Tipo sanguíneo"
+        profession: "Profissão"
+        parent: "Responsável"
+      sex:
+        male: "Masculino"
+        female: "Feminino"
+      message:
+        delete: "Tem certeza que deseja deletar o paciente %{name}?"
+        empty_text: "Nenhum paciente encontrado."

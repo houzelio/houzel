@@ -1,0 +1,19 @@
+en:
+  app:
+    general:
+      patient:
+      title: "Patient"
+      label:
+        sex: "Sex"
+        location: "Location/City"
+        zip_code: "Zip code"
+        address: "Address"
+        blood_type: "Blood type"
+        profession: "Profession"
+        parent: "Parent"
+      sex:
+        male: "Male"
+        female: "Female"
+      message:
+        deleete: "Are you sure you want to delete the patient %{name}?"
+        empty_text: "No patients found."
