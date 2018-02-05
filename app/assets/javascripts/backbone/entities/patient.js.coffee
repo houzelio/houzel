@@ -1,4 +1,4 @@
-import Routes from '../helpers/routes_helper'
+import Routes from '../helpers/routes'
 import PageableCollection from './_base'
 
 class Patient extends Backbone.Model

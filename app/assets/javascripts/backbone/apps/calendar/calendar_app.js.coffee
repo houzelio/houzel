@@ -1,5 +1,5 @@
 import Controller from './calendar_controller'
-import Routes from '../../helpers/routes_helper'
+import Routes from '../../helpers/routes'
 import Radio from 'backbone.radio'
 
 channel = Radio.channel('App')

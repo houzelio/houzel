@@ -1,4 +1,4 @@
-import Routes from '../helpers/routes_helper'
+import Routes from '../helpers/routes'
 
 class Calendar extends Backbone.Model
   urlRoot: -> Routes.calendar_index_path()
