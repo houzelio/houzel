@@ -16,8 +16,22 @@ import '../stylesheets/application.less';
 import App from '../javascripts/backbone/app';
 
 document.addEventListener("DOMContentLoaded", function() {
+  load_locale_strings();
+
   const app = new App();
   app.start({});
 });
 
+function load_locale_strings() {
+  global.polyglot = new (require('node-polyglot'));
+  const locale = gon.locale;
 
+  import(`${process.env.LOCALE_PATH}/app.${locale}.yml`)
+  .then(strings => {
+    polyglot.extend(strings.json[locale].app);
+    polyglot.locale(locale);
+  })
+  .catch(_error => {
+    throw new Error('Locale file not found.');
+  });
+}

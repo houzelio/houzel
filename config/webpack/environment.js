@@ -1,6 +1,7 @@
 const { environment } = require('@rails/webpacker')
 const houzelConfig = require('./houzel')
 const webpack = require('webpack')
+const path = require('path');
 const file = require('./loaders/file')
 const eco = require('./loaders/eco')
 const yaml2js = require('./loaders/yaml2js')
@@ -33,6 +34,13 @@ environment.plugins.append(
     jquery: 'jquery',
     Backbone: 'backbone',
     Marionette: 'backbone.marionette'
+  })
+)
+
+environment.plugins.append(
+  'Environment',
+  new webpack.EnvironmentPlugin({
+    LOCALE_PATH: path.resolve(__dirname, '../locales/app')
   })
 )
 
