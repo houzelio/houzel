@@ -1,7 +1,7 @@
-import * as Calendar from '../../entities/calendar'
-import Layout from '../../layouts/layout-view'
-import FormView from './calendar_form_view'
 import Radio from 'backbone.radio'
+import Layout from '../../layouts/layout-view'
+import FormView from './calendar-form-view'
+import * as Calendar from '../../entities/calendar'
 
 channel = Radio.channel('Object')
 

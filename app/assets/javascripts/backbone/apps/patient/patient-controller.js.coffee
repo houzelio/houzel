@@ -1,7 +1,7 @@
-import * as Patient from '../../entities/patient'
-import Layout from '../../layouts/layout-view'
-import ListView from './patient_list_view'
 import Radio from 'backbone.radio'
+import Layout from '../../layouts/layout-view'
+import ListView from './patient-list-view'
+import * as Patient from '../../entities/patient'
 
 channel = Radio.channel('Object')
 
