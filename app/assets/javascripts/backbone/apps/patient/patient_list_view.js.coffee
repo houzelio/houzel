@@ -1,4 +1,4 @@
-import LayoutBehavior from '../../behaviors/layout_behavior'
+import LayoutBehavior from '../../behaviors/layout'
 template = require('./templates/patient_list.jst.eco')
 
 export default class extends Marionette.ItemView

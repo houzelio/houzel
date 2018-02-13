@@ -1,5 +1,5 @@
 import * as Calendar from '../../entities/calendar'
-import Layout from '../../layouts/layout'
+import Layout from '../../layouts/layout-view'
 import FormView from './calendar_form_view'
 import Radio from 'backbone.radio'
 

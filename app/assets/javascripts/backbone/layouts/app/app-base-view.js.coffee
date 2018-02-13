@@ -1,4 +1,4 @@
-template = require('../templates/layout_app_view.jst.eco')
+template = require('../templates/app-base.jst.eco')
 
 export default class extends Marionette.LayoutView
   template: template

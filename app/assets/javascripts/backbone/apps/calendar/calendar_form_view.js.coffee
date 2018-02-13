@@ -1,4 +1,4 @@
-import LayoutBehavior from '../../behaviors/layout_behavior'
+import LayoutBehavior from '../../behaviors/layout'
 template = require('./templates/calendar_form.jst.eco')
 
 export default class extends Marionette.LayoutView
