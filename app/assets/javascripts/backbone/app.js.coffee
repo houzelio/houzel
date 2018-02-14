@@ -1,16 +1,14 @@
-import CalendarRouter from './apps/calendar/calendar_app'
-import PatientRouter from './apps/patient/patient_app'
-import loadInitializer from './config/application'
+import { initConfig } from './config/index'
+import { initApps } from './apps/index'
 
 App = class extends Marionette.Application
   initialize: (options) ->
-    loadInitializer 'setup', channel: 'Object'
-
-    new CalendarRouter
-    new PatientRouter
+    initApps()
 
     if Backbone.history
       Backbone.history.start
         pushState: true
+
+initConfig()
 
 export default App
