@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.1.1",
     "@rails/webpacker": "3.2",
     "backbone": "ssh://git@bitbucket.org:marksbre/backbone-houzel.git",
     "backbone.marionette": "2.4.7",
@@ -16,10 +17,12 @@
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "node-polyglot": "2.2.2",
+    "pug": "^2.0.3",
     "underscore": "1.8.3"
   },
   "devDependencies": {
     "file-loader": "^3.0.1",
+    "pug-loader": "^2.4.0",
     "webpack-dev-server": "2.11.2"
   }
 }
