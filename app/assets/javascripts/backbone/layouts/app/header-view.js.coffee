@@ -1,5 +1,5 @@
 import { isBreakpoint } from '../../helpers/responsive'
-import template from '../templates/app-header.pug'
+import template from './templates/header.pug'
 
 export default class extends Marionette.LayoutView
   template: template

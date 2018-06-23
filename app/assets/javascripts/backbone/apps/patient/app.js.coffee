@@ -1,5 +1,5 @@
 import Radio from 'backbone.radio'
-import Controller from './patient-controller'
+import Controller from './controller'
 
 channel = Radio.channel('App')
 

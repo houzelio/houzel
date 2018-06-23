@@ -1,5 +1,5 @@
 import LayoutBehavior from '../../behaviors/layout'
-template = require('./templates/calendar-form.jst.eco')
+template = require('./templates/form.jst.eco')
 
 export default class extends Marionette.LayoutView
   template: template

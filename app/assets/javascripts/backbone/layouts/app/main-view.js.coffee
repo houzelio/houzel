@@ -1,5 +1,5 @@
-import HeaderView from './app-header-view'
-import template from '../templates/app-base.pug'
+import HeaderView from './header-view'
+import template from './templates/main.pug'
 
 export default class extends Marionette.LayoutView
   template: template

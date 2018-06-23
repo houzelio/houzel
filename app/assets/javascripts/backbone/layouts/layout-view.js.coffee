@@ -1,4 +1,4 @@
-import AppLayout from './app/app-base-view'
+import AppLayout from './app/main-view'
 
 Layout = {}
 
