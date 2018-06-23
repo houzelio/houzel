@@ -1,5 +1,5 @@
 pt-BR:
-  app:
+  javascripts:
     general:
       patient:
       title: "Paciente"
@@ -17,3 +17,6 @@ pt-BR:
       message:
         delete: "Tem certeza que deseja deletar o paciente %{name}?"
         empty_text: "Nenhum paciente encontrado."
+    layout:
+      side-bar:
+        patient: "Pacientes"

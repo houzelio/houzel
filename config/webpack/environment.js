@@ -42,7 +42,7 @@ environment.plugins.append(
 environment.plugins.append(
   'Environment',
   new webpack.EnvironmentPlugin({
-    LOCALE_PATH: path.resolve(__dirname, '../locales/app')
+    LOCALE_PATH: path.resolve(__dirname, '../locales/javascript')
   })
 )
 

@@ -1,5 +1,5 @@
 en:
-  app:
+  javascripts:
     general:
       patient:
       title: "Patient"
@@ -17,3 +17,6 @@ en:
       message:
         deleete: "Are you sure you want to delete the patient %{name}?"
         empty_text: "No patients found."
+    layout:
+      side-bar:
+        patient: "Patients"

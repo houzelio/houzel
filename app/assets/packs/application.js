@@ -26,9 +26,9 @@ function load_locale_strings() {
   global.polyglot = new (require('node-polyglot'));
   const locale = gon.locale;
 
-  import(`${process.env.LOCALE_PATH}/app.${locale}.yml`)
+  import(`${process.env.LOCALE_PATH}/${locale}.yml`)
   .then(strings => {
-    polyglot.extend(strings.json[locale].app);
+    polyglot.extend(strings.json[locale].javascripts);
     polyglot.locale(locale);
   })
   .catch(_error => {
