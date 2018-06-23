@@ -1,3 +1,4 @@
+import HeaderView from './app-header-view'
 import template from '../templates/app-base.pug'
 
 export default class extends Marionette.LayoutView
@@ -6,3 +7,7 @@ export default class extends Marionette.LayoutView
 
   regions:
     mainRegion: "#main-region"
+    headerRegion: "#header-region"
+
+  onRender: ->
+    @headerRegion.show new HeaderView
