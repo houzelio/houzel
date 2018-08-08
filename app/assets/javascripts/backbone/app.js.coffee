@@ -5,7 +5,7 @@ App = class extends Marionette.Application
   initialize: (options) ->
     initApps()
 
-    if Backbone.history
+  onStart: (app, options) ->
       Backbone.history.start
         pushState: true
 
