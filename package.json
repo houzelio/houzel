@@ -3,7 +3,7 @@
     "@fortawesome/fontawesome-free": "^5.1.1",
     "@rails/webpacker": "3.2",
     "backbone": "ssh://git@bitbucket.org:marksbre/backbone-houzel.git",
-    "backbone.marionette": "2.4.7",
+    "backbone.marionette": "4.0.0",
     "backbone.paginator": "2.0.6",
     "backbone.radio": "^2.0.0",
     "backgrid": "0.3.8",
@@ -16,6 +16,7 @@
     "js-yaml": "^3.12.1",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
+    "marionette.approuter": "1.0.1",
     "node-polyglot": "2.2.2",
     "pug": "^2.0.3",
     "underscore": "1.8.3"

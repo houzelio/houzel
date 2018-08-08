@@ -1,7 +1,7 @@
 import HeaderView from './header-view'
 import template from './templates/main.pug'
 
-export default class extends Marionette.LayoutView
+export default class extends Marionette.View
   template: template
   el: 'body'
 
@@ -10,4 +10,4 @@ export default class extends Marionette.LayoutView
     headerRegion: "#header-region"
 
   onRender: ->
-    @headerRegion.show new HeaderView
+    @showChildView('headerRegion', new HeaderView)
