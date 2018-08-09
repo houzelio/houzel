@@ -1,0 +1,40 @@
+//
+// sidebar
+// --------------------------------------------------
+.sidebar {
+  overflow-y: visible;
+}
+
+//
+// navbar-top brand-logo
+// --------------------------------------------------
+.navbar-top {
+  .brand-logo {
+    padding: 12px 0 12px 25px !important;
+
+    > img {
+      opacity: 0.9;
+    }
+  }
+  .brand-logo-collapsed {
+    padding: 8px 15px !important;
+  }
+}
+
+//
+// wrapper
+// --------------------------------------------------
+&.wrapper > section {
+  z-index: auto;
+  background-color: #ffffff;
+}
+
+&.wrapper > .aside {
+  z-index: auto;
+}
+
+@media (min-width: 768px) {
+  &.wrapper > .aside {
+    z-index: 1040;
+  }
+}
