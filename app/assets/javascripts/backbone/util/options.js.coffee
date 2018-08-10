@@ -11,10 +11,11 @@ mergeData = (toObj, fromObj) ->
   toVal = fromVal = undefined
 
   keys = if hasSymbol then Reflect.ownKeys(fromObj)
-  else Object.keys(fromObj)
+  else _.keys(fromObj)
 
+  l = keys.length
   i = 0
-  while i < keys.length
+  while i < l
     key = keys[i]
 
     toVal = toObj[key]
