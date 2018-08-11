@@ -1,8 +1,5 @@
-import { mergeOverStrat} from '../util/options'
-import {
-  getPrototypeOf,
-  setPrototypeOf
-} from '../util/props'
+import { mergeOverStrat } from './utils/strats'
+import { getPrototypeOf } from './utils/props'
 
 mixinBuiltIn = (klass) ->
   proto = getPrototypeOf(klass)
