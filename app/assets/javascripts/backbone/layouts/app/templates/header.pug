@@ -1,11 +1,11 @@
 - var xs = isBreakpoint('xs')
 
-div.nav-wrapper
-  ul.nav.navbar-nav
-    li      
-      a(class=xs ? 'visible-xs' : 'hidden-xs' href='javascript:void(0);' 
-      data-toggle-state=xs ? 'aside-toggled' : 'aside-collapsed')
 div.navbar-header
   a.navbar-brand
 
+div.nav-wrapper
+  ul.nav.navbar-nav
+    li
+      a(class=xs ? 'visible-xs' : 'hidden-xs' href='javascript:void(0);'
+      data-toggle-state=xs ? 'aside-toggled' : 'aside-collapsed')
         em.fas.fa-bars

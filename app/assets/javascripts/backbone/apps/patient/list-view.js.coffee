@@ -1,6 +1,7 @@
 import LayoutBehavior from '../../behaviors/layout'
 template = require('./templates/list.jst.eco')
 
+export default class extends Marionette.View
   template: template
   tagName: "div"
   className: "content-wrapper"
@@ -11,4 +12,3 @@ template = require('./templates/list.jst.eco')
     Layout:
       behaviorClass: LayoutBehavior
       view: 'application'
-export default class extends Marionette.View
