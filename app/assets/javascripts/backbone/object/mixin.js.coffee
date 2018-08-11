@@ -1,28 +1,22 @@
-import { mergeOptions} from '../util/options'
+import { mergeOverStrat} from '../util/options'
 import {
   getPrototypeOf,
   setPrototypeOf
 } from '../util/props'
 
-parseMixin = (klass) ->
+mixinBuiltIn = (klass) ->
   proto = getPrototypeOf(klass)
-  mixins = _.pick(proto, 'mixins')
-
-  proto = mergeOptions(proto, mixins)
-  setPrototypeOf(klass, proto)
+  mergeOverStrat(proto, proto, _.keys)
 
   klass
 
 initMixin = (Backbone, Marionette) ->
-  components = [Backbone.Model, Backbone.Collection, Backbone.Router,
-    Backbone.View, Marionette.ItemView]
+  components = [Backbone.View]
 
   _.each(components, (klass) ->
-    klass.prototype = mergeOptions(klass.prototype, preinitialize: ->
-      if @mixins
-        parseMixin(@)
+    klass.prototype.preinitialize = ->
+        mixinBuiltIn(@)
     )
-  )
 
   return
 

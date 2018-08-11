@@ -51,24 +51,22 @@ strats.created = mergeDataOrFn
 defaultStrat = (parentVal, childVal) ->
   if childVal == undefined then parentVal else childVal
 
-export mergeOptions = (parent, child) ->
-  if _.isFunction(child)
-    child = child.options
+export mergeOverStrat = (parent, child, keysFunc) ->
+  if !keysFunc then keysFunc = _.allKeys
 
   if child.mixins
     for mixin in child.mixins
-      parent = mergeOptions(parent, mixin)
+      parent = mergeOverStrat(parent, mixin, keysFunc)
 
-  options = {}
   mergeField = (key) ->
     strat = strats[key] || defaultStrat
-    options[key] = strat(parent[key], child[key])
+    parent[key] = strat(parent[key], child[key])
 
-  for key of parent
-    mergeField key
+  keys = keysFunc(child)
+  l = keys.length
+  i = 0
+  while i < l
+    mergeField keys[i]
+    i++
 
-  for key of child
-    if !hasOwn(parent, key)
-      mergeField key
-
-  options
+  parent
