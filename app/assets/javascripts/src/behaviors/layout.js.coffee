@@ -1,5 +1,5 @@
-import Layout from '../layouts/layout-view'
+import LayoutMgr from 'layouts/layout-manager'
 
 export default class extends Marionette.Behavior
   initialize: ->
-    Layout.render(@getOption('view'), {search: false})
+    LayoutMgr.render(@getOption('view'), {search: false})

@@ -1,5 +1,5 @@
 import Radio from 'backbone.radio'
-import Layout from '../../layouts/layout-view'
+import LayoutMgr from 'layouts/layout-manager'
 import FormView from './form-view'
 import { Calendar }  from '../../entities/index'
 
@@ -11,6 +11,6 @@ Controller =
 
     channel.request "when:fetched", calendar, =>
       formView = new FormView {model: calendar}
-      Layout.show('mainRegion', formView)
+      LayoutMgr.show('mainRegion', formView)
 
 export default Controller

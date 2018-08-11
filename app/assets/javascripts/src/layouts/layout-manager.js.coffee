@@ -1,6 +1,6 @@
 import AppLayout from './app/main-view'
 
-Layout = {}
+LayoutMgr = {}
 
 processView = (layoutName, options) ->
 
@@ -14,30 +14,30 @@ processView = (layoutName, options) ->
 
   view
 
-Layout._view = {}
+LayoutMgr._view = {}
 
-Layout.render = (layoutName, options) ->
+LayoutMgr.render = (layoutName, options) ->
 
   if !layoutName || !(layoutName == "application")
     throw new Error('You must provide a valid name for the layout.')
 
-  if Layout._view.layoutName != layoutName ||
-  Layout._view.search != options.search
+  if LayoutMgr._view.layoutName != layoutName ||
+  LayoutMgr._view.search != options.search
     view = processView(layoutName, options)
     view.instance.render()
 
-    Layout._view = view
+    LayoutMgr._view = view
 
   return
 
-Layout.show = (regionName, view) ->
+LayoutMgr.show = (regionName, view) ->
 
   if !@_view
     throw new Error('You must render a layout before.')
 
-  region = Layout._view.instance.getRegion(regionName)
+  region = LayoutMgr._view.instance.getRegion(regionName)
   region.show view
 
   return
 
-export default Layout;
+export default LayoutMgr
