@@ -13,7 +13,7 @@ import '../stylesheets/modules.css';
 import '../stylesheets/application.less';
 
 /* Application */
-import App from '../javascripts/backbone/app';
+import App from '../javascripts/src/app';
 
 document.addEventListener("DOMContentLoaded", function() {
   const app = new App();
