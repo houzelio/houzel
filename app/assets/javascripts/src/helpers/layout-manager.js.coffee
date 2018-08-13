@@ -1,16 +1,14 @@
-import AppLayout from './app/main-view'
+import AppLayout from 'layouts/app/main-view'
 
 LayoutMgr = {}
 
 processView = (layoutName, options) ->
 
   if layoutName == "application"
-    instance = new AppLayout
+    view = new AppLayout
 
-  view =
-    name: layoutName
-    search: options.search
-    instance: instance
+  options.layoutName = layoutName
+  view.mergeOptions(options, ['layoutName', 'search'])
 
   view
 
@@ -21,12 +19,13 @@ LayoutMgr.render = (layoutName, options) ->
   if !layoutName || !(layoutName == "application")
     throw new Error('You must provide a valid name for the layout.')
 
-  if LayoutMgr._view.layoutName != layoutName ||
-  LayoutMgr._view.search != options.search
+  if _.isEmpty(@view) ||
+  @_view.getOption('layoutName') != layoutName ||
+  @_view.getOption('search') != options.search
     view = processView(layoutName, options)
-    view.instance.render()
+    view.render()
 
-    LayoutMgr._view = view
+    @_view = view
 
   return
 
@@ -35,7 +34,7 @@ LayoutMgr.show = (regionName, view) ->
   if !@_view
     throw new Error('You must render a layout before.')
 
-  region = LayoutMgr._view.instance.getRegion(regionName)
+  region = @_view.getRegion(regionName)
   region.show view
 
   return

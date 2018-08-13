@@ -1,5 +1,5 @@
 import { ObjChan } from 'channels'
-import LayoutMgr from 'layouts/layout-manager'
+import LayoutMgr from 'helpers/layout-manager'
 import FormView from './form-view'
 import { Calendar }  from 'entities/index'
 

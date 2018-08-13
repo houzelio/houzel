@@ -1,5 +1,5 @@
 import { ObjChan } from 'channels'
-import LayoutMgr from 'layouts/layout-manager'
+import LayoutMgr from 'helpers/layout-manager'
 import ListView from './list-view'
 import { Patient } from 'entities/index'
 

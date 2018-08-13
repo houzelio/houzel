@@ -1,4 +1,4 @@
-import LayoutMgr from 'layouts/layout-manager'
+import LayoutMgr from 'helpers/layout-manager'
 
 export default class extends Marionette.Behavior
   initialize: ->
