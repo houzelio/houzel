@@ -1,12 +1,6 @@
-import Radio from 'backbone.radio'
+import { AppChan } from 'channels'
 import AppRouter from 'marionette.approuter'
 import Controller from './controller'
-
-channel = Radio.channel('App')
-
-channel.on "patient:list", (patient) ->
-  Backbone.history.navigate  "/patient"
-  Controller.listPatients()
 
 export default class extends AppRouter
   appRoutes:
@@ -15,3 +9,7 @@ export default class extends AppRouter
   controller:
     listPatients: ->
       Controller.listPatients()
+
+AppChan.on "patient:list", (patient) ->
+  Backbone.history.navigate  "/patient"
+  Controller.listPatients()
