@@ -1,7 +1,7 @@
-import Radio from 'backbone.radio'
+import { ObjChan } from 'channels'
 
-export initFetch = (channel) ->
-  Radio.channel(channel).reply "when:fetched", (object, callback) ->
+export initFetch = () ->
+  ObjChan.reply "when:fetched", (object, callback) ->
     xhrs = _.chain([object]).flatten().pluck("_fetch").value()
 
     $.when(xhrs...).done ->

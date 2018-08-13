@@ -1,8 +1,8 @@
 import { initSync } from './sync'
 import { initFetch } from './fetch'
-import { initMixin } from '../../api/mixin'
+import { initMixin } from 'javascripts/api/mixin'
 
 export initConfig = ->
-  initSync(Backbone)
-  initMixin(Backbone, Marionette)
-  initFetch('Object')
+  initSync()
+  initFetch()
+  initMixin()

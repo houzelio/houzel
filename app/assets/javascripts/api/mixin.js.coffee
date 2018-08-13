@@ -7,11 +7,12 @@ mixinBuiltIn = (klass) ->
 
   klass
 
-initMixin = (Backbone, Marionette) ->
+initMixin = () ->
   components = [Backbone.View]
 
   _.each(components, (klass) ->
     klass.prototype.preinitialize = ->
+      if @mixins
         mixinBuiltIn(@)
     )
 

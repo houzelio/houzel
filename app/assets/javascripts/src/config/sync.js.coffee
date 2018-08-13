@@ -1,4 +1,4 @@
-export initSync = (Backbone) ->
+export initSync = () ->
   Backbone.$.ajaxSetup
     cache: false
 
