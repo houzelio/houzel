@@ -1,7 +1,7 @@
 import { ObjChan } from 'channels'
 import LayoutMgr from 'layouts/layout-manager'
 import FormView from './form-view'
-import { Calendar }  from '../../entities/index'
+import { Calendar }  from 'entities/index'
 
 Controller =
   newCalendar: (args) ->

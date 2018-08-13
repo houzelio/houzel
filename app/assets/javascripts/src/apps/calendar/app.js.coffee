@@ -1,6 +1,6 @@
 import { AppChan } from 'channels'
+import Routes from 'helpers/routes'
 import AppRouter from 'marionette.approuter'
-import Routes from '../../helpers/routes'
 import Controller from './controller'
 
 export default class extends AppRouter
