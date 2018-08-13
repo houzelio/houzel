@@ -1,4 +1,4 @@
-import Radio 'backbone.radio'
+import Radio from 'backbone.radio'
 
 AppChan = Radio.channel('App')
 ObjChan = Radio.channel('Object')
