@@ -38,3 +38,71 @@
     z-index: 1040;
   }
 }
+
+//
+// backgrid
+// --------------------------------------------------
+.backgrid-container {
+  height: 100% !important;
+  overflow: visible !important;
+  margin-bottom: 15px;
+}
+
+#backPaginator {
+  min-height: 65px;
+}
+
+.pagination {
+  margin: 10px 0;
+}
+
+//
+// table
+// --------------------------------------------------
+.table.grid {
+  font-size: 15px;
+}
+
+.table.padding > tbody > tr > td { // Necessary?
+  padding: 10px;
+}
+
+.table > tbody > tr > td {
+  padding: 20px;
+}
+
+//
+// table > thead > tr > th
+// --------------------------------------------------
+.table > thead > tr > th {
+  color: @black-light;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 20px;
+}
+
+//
+// table > tfoot > tr > th
+// --------------------------------------------------
+.table > tfoot > tr > th {
+  vertical-align: middle;
+}
+
+//
+// table-form
+// --------------------------------------------------
+.table-form {
+  > thead > tr > th > {
+    font-weight: normal;
+  }
+}
+
+.table-condensed {
+  > thead > tr > th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  > tbody > tr > td {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
