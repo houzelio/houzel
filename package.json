@@ -17,7 +17,7 @@
     "marionette.approuter": "1.0.1",
     "node-polyglot": "2.2.2",
     "pug": "2.0.3",
-    "underscore": "1.8.3"
+    "underscore": "1.9.1"
   },
   "devDependencies": {
     "coffee-loader": "0.9.0",
