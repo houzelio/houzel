@@ -1,6 +1,6 @@
-import CalendarApp from './calendar/app'
-import PatientApp from './patient/app'
+import CalendarRouter from './calendar/app-route'
+import PatientRouter from './patient/app-route'
 
 export initApps = ->
-  new CalendarApp
-  new PatientApp
+  new CalendarRouter
+  new PatientRouter
