@@ -1,4 +1,4 @@
-import AppLayout from 'layouts/app/main-view'
+import AppLayout from 'layouts/application/main-view'
 
 LayoutMgr = {}
 
