@@ -4,7 +4,7 @@
     "@rails/webpacker": "3.2",
     "backbone": "ssh://git@bitbucket.org:marksbre/backbone-houzel.git",
     "backbone.marionette": "4.0.0",
-    "backbone.paginator": "2.0.6",
+    "backbone.paginator": "2.0.8",
     "backbone.radio": "2.0.0",
     "backgrid": "0.3.8",
     "backgrid-paginator": "0.3.9",
