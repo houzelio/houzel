@@ -1,4 +1,5 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 module.exports = {
   module: {
@@ -25,6 +26,10 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin({
       filename: '[name]-[contenthash].css'
+    }),
+
+    new MomentLocalesPlugin({
+      localesToKeep: ['es-us', 'pt-br']
     })
   ]
 }
