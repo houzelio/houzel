@@ -6,6 +6,7 @@ const file = require('./loaders/file')
 const eco = require('./loaders/eco')
 const pug = require('./loaders/pug')
 const yaml2js = require('./loaders/yaml2js')
+const expose = require('./loaders/expose')
 
 const babelLoader = environment.loaders.get('babel')
 
@@ -25,6 +26,7 @@ environment.loaders.append('file', file)
 environment.loaders.append('eco', eco)
 environment.loaders.append('pug', pug)
 environment.loaders.append('yaml2js', yaml2js)
+environment.loaders.append('expose', expose)
 
 // Plugins
 environment.plugins.append(
