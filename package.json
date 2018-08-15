@@ -16,14 +16,17 @@
     "js-yaml": "3.12.1",
     "less": "3.9.0",
     "marionette.approuter": "1.0.1",
+    "moment": "2.22.2",
     "node-polyglot": "2.2.2",
     "pug": "2.0.3",
     "underscore": "1.9.1"
   },
   "devDependencies": {
     "coffee-loader": "0.9.0",
+    "expose-loader": "0.7.5",
     "file-loader": "3.0.1",
     "less-loader": "4.1.0",
+    "moment-locales-webpack-plugin": "1.0.7",
     "pug-loader": "2.4.0",
     "webpack-dev-server": "2.11.2"
   }
