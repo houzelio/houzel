@@ -77,10 +77,11 @@
           color: @sidebar-item-color-active;
         }
         // Item icon
-        > em {
-          width: 2em;
+        > svg {
+          margin-right: 1em;
           color: @sidebar-icon-color;
         }
+
       }
 
       // Active item state
@@ -93,7 +94,7 @@
           background-color: @sidebar-item-bg-active;
           color: @sidebar-item-color-active;
         }
-        > a > em {
+        > a > svg {
           color: @sidebar-icon-color-active;
         }
       }
@@ -151,13 +152,13 @@
       overflow: visible !important;
       // Applies to first level items
       > .nav {
-        
+
         > .nav-heading {
           display: none !important;
         }
 
         // increase icons size
-        > li > a > em {
+        > li > a > svg {
           font-size: 1.6em;
           width: auto;
         }
@@ -186,7 +187,7 @@
         // accessibility
         > li > a:focus {
           background-color: transparent;
-          > em { 
+          > svg {
             color: inherit;
           }
         }

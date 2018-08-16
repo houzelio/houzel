@@ -57,3 +57,55 @@
     }
   }
 }
+
+//
+// modal
+// --------------------------------------------------
+.modal {
+  text-align: center;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    height: 40%;
+    margin-right: -4px;
+  }
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    margin: 1.75rem auto;
+  }
+}
+
+//
+// others
+// --------------------------------------------------
+.panel-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.panel-text {
+  padding: 0px 15px 5px 15px;
+  font-weight: 300;
+}
+
+/* no-gutters class rules */
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+   padding-right: 0;
+   padding-left: 0;
+}
+
+/* medical-history component */
+.mclhs-cmp {
+  .table-responsive {
+    min-height: 0px;
+  }
+}
