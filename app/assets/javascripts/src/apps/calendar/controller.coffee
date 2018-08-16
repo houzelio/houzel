@@ -5,7 +5,7 @@ import { Calendar }  from 'entities/index'
 
 Controller =
   newCalendar: (args) ->
-    calendar = Calendar.newCalendar()
+    calendar = Calendar.create()
 
     ObjChan.request "when:fetched", calendar, =>
       formView = new FormView {model: calendar}

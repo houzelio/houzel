@@ -1,11 +1,11 @@
 import { ObjChan } from 'channels'
 import LayoutMgr from 'helpers/layout-manager'
 import ListView from './list-view'
-import { Patient } from 'entities/index'
+import { Patient, MclHistory } from 'entities/index'
 
 Controller =
   listPatients: ->
-    patients = Patient.getPatientList()
+    patients = Patient.getList()
 
     ObjChan.request "when:fetched", patients, =>
       listView = new ListView { collection: patients }

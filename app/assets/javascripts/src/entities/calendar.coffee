@@ -1,15 +1,15 @@
 import Routes from '../helpers/routes'
 
-class Calendar extends Backbone.Model
+class Model extends Backbone.Model
   urlRoot: -> Routes.calendar_index_path()
 
-newCalendar = ->
-  calendar = new Calendar
+create = (options) ->
+  calendar = new Model(options)
   calendar.url = Routes.new_calendar_path()
   calendar.fetch()
   calendar.url = Routes.calendar_index_path()
   calendar
 
 export {
-  newCalendar
+  create
 }
