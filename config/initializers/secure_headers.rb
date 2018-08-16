@@ -4,7 +4,7 @@ SecureHeaders::Configuration.default do |config|
     connect_src: %w('self'),
     font_src: %w('self' data: fonts.gstatic.com),
     img_src:  %w['self' data: blob: *],
-    script_src: %w['self' 'unsafe-inline'] ,
+    script_src: %w['self' 'unsafe-inline' 'unsafe-eval'] ,
     style_src: %w['self' 'unsafe-inline' fonts.googleapis.com]
   }
 
