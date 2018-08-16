@@ -51,7 +51,7 @@ strats.created = mergeDataOrFn
 defaultStrat = (parentVal, childVal) ->
   if childVal == undefined then parentVal else childVal
 
-export mergeOverStrat = (parent, child, keysFunc) ->
+export mergeStrats = (parent, child, keysFunc) ->
   if !keysFunc then keysFunc = _.allKeys
 
   if child.mixins

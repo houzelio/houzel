@@ -1,9 +1,9 @@
-import { mergeOverStrat } from './utils/strats'
+import { mergeStrats } from './utils/strats'
 import { getPrototypeOf } from './utils/props'
 
 mixinBuiltIn = (klass) ->
   proto = getPrototypeOf(klass)
-  mergeOverStrat(proto, proto, _.keys)
+  mergeStrats(proto, proto, _.keys)
 
   klass
 
