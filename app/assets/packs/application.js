@@ -17,6 +17,14 @@ import 'bootstrap';
 /* Application */
 import App from '../javascripts/src/app';
 import moment from 'moment';
+import logger from 'js-logger';
+
+/* Logger */
+logger.useDefaults({
+  formatter: function (messages) {
+    messages.unshift(new Date().toISOString())
+  }
+});
 
 document.addEventListener("DOMContentLoaded", function() {
   setupStartApp();
