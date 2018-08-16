@@ -8,31 +8,31 @@
 // layout file, like app/views/layouts/application.html.erb
 
 /* Stylesheet */
-import 'bootstrap';
 import '../stylesheets/modules.css';
 import '../stylesheets/application.less';
 
+/* Bootstrap */
+import 'bootstrap';
+
 /* Application */
 import App from '../javascripts/src/app';
+import moment from 'moment';
 
 document.addEventListener("DOMContentLoaded", function() {
-  const app = new App();
-  setupStartApp(app);
+  setupStartApp();
 });
 
-function setupStartApp(app) {
-  global.polyglot = new (require('node-polyglot'));
+function setupStartApp() {
   const locale = gon.locale;
 
   import(`${process.env.LOCALE_PATH}/${locale}.yml`)
   .then(strings => {
-    polyglot.extend(strings.json[locale].javascripts);
-    polyglot.locale(locale);
+    moment.locale(locale);
+
+    const app = new App({
+      strings: strings, locale: locale
+    });
+
+    app.start()
   })
-  .then(() => {
-    app.start({});
-  })
-  .catch(error => {
-    throw new Error(error);
-  });
 }
