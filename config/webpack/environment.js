@@ -1,7 +1,7 @@
 const { environment } = require('@rails/webpacker')
 const houzelConfig = require('./houzel')
 const webpack = require('webpack')
-const path = require('path');
+const path = require('path')
 const file = require('./loaders/file')
 const url = require('./loaders/url')
 const eco = require('./loaders/eco')
@@ -13,7 +13,7 @@ const imports = require('./loaders/imports')
 const babelLoader = environment.loaders.get('babel')
 
 // Extensions
-environment.config.set('resolve.extensions', ['.coffee', '.js.coffee'])
+environment.config.set('resolve.extensions', ['.coffee'])
 
 // Merge houzel config
 environment.config.merge(houzelConfig)
