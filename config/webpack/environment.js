@@ -3,6 +3,7 @@ const houzelConfig = require('./houzel')
 const webpack = require('webpack')
 const path = require('path');
 const file = require('./loaders/file')
+const url = require('./loaders/url')
 const eco = require('./loaders/eco')
 const pug = require('./loaders/pug')
 const yaml2js = require('./loaders/yaml2js')
@@ -23,6 +24,7 @@ environment.loaders.insert('coffee', {
 })
 
 environment.loaders.append('file', file)
+environment.loaders.append('url', url)
 environment.loaders.append('eco', eco)
 environment.loaders.append('pug', pug)
 environment.loaders.append('yaml2js', yaml2js)
