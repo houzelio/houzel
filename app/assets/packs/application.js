@@ -8,16 +8,15 @@
 // layout file, like app/views/layouts/application.html.erb
 
 /* Stylesheet */
-import '../stylesheets/modules.css';
-import '../stylesheets/application.less';
+import '../stylesheets/less/style.less';
 
 /* Bootstrap */
 import 'bootstrap';
 
 /* Application */
-import App from '../javascripts/src/app';
 import moment from 'moment';
 import logger from 'js-logger';
+import App from '../javascripts/src/app';
 
 /* Logger */
 logger.useDefaults({

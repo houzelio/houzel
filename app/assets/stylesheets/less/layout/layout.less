@@ -1,0 +1,231 @@
+//
+// Main layout
+// This file controls the presentation of all components
+//  .wrapper
+//    > section
+//      > .content-wrapper
+//    > .aside
+//
+// If modified or removed make sure to check the variable
+// shared with other components
+// -------------------------------------------------------------
+
+@aside-wd:                                250px;
+@aside-wd-toggled:                        70px;
+
+@content-bg:                              #e8eef2;
+@content-heading-bg:                      #fafbfc;
+@content-heading-border:                  #cfdbe2;
+
+@navbar-hg:                               @navbar-height;
+
+@z-index-main-section:                    11;
+
+html {
+  height: 100%;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+// Main wrapper
+// -----------------------------
+.wrapper {
+  .clearfix();
+  position: relative;
+  width: 100%;
+  height: 100%;
+  .transition(all .3s cubic-bezier(.23,1,.32,1));
+
+  // Contains the main sidebar
+  > .aside {
+    position: absolute;
+    margin-top: @navbar-hg * 2;
+    top: 0; left: 0;
+    bottom: 0;
+    width: @aside-wd;
+    z-index: @z-index-main-section - 1; // Hides behind the main section
+  }
+
+  // Contains the main content
+  > section {
+    position: relative;
+    background-color: @content-bg;
+    min-height: 100%;
+    z-index: @z-index-main-section;
+    margin-left: 0;
+
+  }
+}
+
+// Boxed layout
+// Apply to html or body tag
+// -----------------------------
+.boxed-layout {
+  .wrapper {
+    max-width: 1140px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    .aside,
+    .offsidebar,
+    .navbar-top {
+      position: absolute;
+    }
+    .offsidebar {
+      z-index: 10;
+    }
+  }
+}
+
+// Page main content
+// -----------------------------
+.content-wrapper {
+  padding-bottom: 30px;
+  overflow: auto; // required for portlets
+  padding: 15px;
+
+  > h3 {
+    margin: -15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    font-weight: normal;
+    background-color: @content-heading-bg;
+    border-bottom: 1px solid @content-heading-border;
+    > small {
+      display: block;
+      font-size: 12px;
+      color: @text-muted;
+    }
+  }
+  > button, > .btn {
+    margin: 10px 10px 0 0;
+  }
+
+  @media @tablet {
+    @content-padding: 20px;
+    padding: @content-padding;
+    //overflow: auto; // required for portlets
+    > h3 {
+      margin: -@content-padding;
+      margin-bottom: @content-padding;
+      padding: @content-padding;
+    }
+    > button, > .btn {
+      margin: 0;
+    }
+  }
+}
+
+// Desktop layout
+// -----------------------------
+
+@media @tablet {
+
+  body {
+    min-height: 100%;
+  }
+
+  .wrapper {
+
+    > .aside {
+      position: fixed;
+      z-index: 501;
+      margin-top: @navbar-hg;
+    }
+
+    > section {
+      margin-left: @aside-wd;
+      padding-top: @navbar-hg;
+
+      // with just a margin we can make the
+      // right sidebar always visible
+      &.has-sidebar-right {
+        margin-right: @aside-wd;
+        + .offsidebar {
+          z-index: 1;
+        }
+      }
+
+    }
+  }
+  // Adjust padding on tablet and desktops
+  .content-wrapper {
+    // padding: 20px 40px;
+  }
+
+}
+
+// Aside toggled layout
+// On mobile acts like offcanvas
+// -----------------------------
+
+.aside-toggled {
+  overflow-y: hidden;
+  height: 100%;
+  .wrapper > section  {
+    margin-left: @aside-wd;
+  }
+}
+
+.csstransforms3d  {
+
+  .wrapper > section {
+    .translate3d(0,0,0);
+     .transition-transform(.3s ease);
+  }
+
+  .aside-toggled {
+    .wrapper > section  {
+      margin-left: 0;
+      .translate3d(@aside-wd,0,0);
+      .transition-transform(.3s ease);
+    }
+  }
+
+}
+
+// Aside toggled layout
+// On desktop acts like condensed
+// -------------------------------
+
+@media @tablet {
+  // Aside status toggled via JS
+  .aside-collapsed {
+    overflow-y: auto;
+    .wrapper {
+      > .aside {
+        width: @aside-wd-toggled;
+      }
+      > section {
+        margin-left: @aside-wd-toggled;
+      }
+    }
+  }
+
+  // reset transform animation on desktop
+  .csstransforms3d  {
+    .wrapper > section {
+      //.disable-transform();
+      //.transition(none);
+    }
+    .aside-collapsed {
+      .wrapper > section {
+        .disable-transform();
+        margin-left: @aside-wd-toggled;
+        //.transition(none);
+      }
+    }
+  }
+
+}
+
+// mixin to remove transformations
+.disable-transform () {
+   -webkit-transform: none;
+   -moz-transform: none;
+   -opera-transform: none;
+   -ms-transform: none;
+   transform: none;
+}
