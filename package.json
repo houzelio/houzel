@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "@fortawesome/fontawesome-free": "5.1.1",
+    "@fortawesome/fontawesome-svg-core": "1.2.4",
+    "@fortawesome/free-solid-svg-icons": "5.3.1",
     "@rails/webpacker": "3.2",
     "backbone": "ssh://git@bitbucket.org:marksbre/backbone-houzel.git",
     "backbone.marionette": "4.0.0",
@@ -10,6 +11,7 @@
     "backgrid-paginator": "0.3.9",
     "bootbox": "4.4.0",
     "bootstrap": "3.3.7",
+    "chosen-js": "1.8.7",
     "coffeescript": "2.1.0",
     "eco": "1.1.0-rc-3",
     "jquery": "3.3.1",
