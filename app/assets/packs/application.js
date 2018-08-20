@@ -8,6 +8,8 @@
 // layout file, like app/views/layouts/application.html.erb
 
 /* Stylesheet */
+import 'chosen-js/chosen.min.css';
+import 'backgrid/lib/backgrid.min.css';
 import '../stylesheets/less/style.less';
 
 /* Bootstrap */
