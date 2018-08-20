@@ -1,9 +1,8 @@
 en:
   javascripts:
-    general:
-      patient:
+    patient:
       title: "Patient"
-      label:
+      labels:
         sex: "Sex"
         location: "Location/City"
         zip_code: "Zip code"
@@ -11,12 +10,30 @@ en:
         blood_type: "Blood type"
         profession: "Profession"
         parent: "Parent"
-      sex:
+      message:
+        delete: "Are you sure you want to delete the patient %{name}?"
+        empty_text: "No patients found."
+    visit:
+      labels:
+        chief-complaint: "Chief complaint"
+        diagnosis: "Diagnosis"
+        notes: "Notes"
+      messages:
+        empty-notes: "No notes added"
+    general:
+      labels:
         male: "Male"
         female: "Female"
-      message:
-        deleete: "Are you sure you want to delete the patient %{name}?"
-        empty_text: "No patients found."
-    layout:
-      side-bar:
+      navigation:
         patient: "Patients"
+      pagination:
+        rewind:
+          title: "First"
+        back:
+          title: "Previous"
+        forward:
+          title: "Next"
+        fastForward:
+          title: "Last"
+      messages:
+        empty-set: "No information added"

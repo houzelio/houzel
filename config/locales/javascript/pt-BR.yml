@@ -1,7 +1,6 @@
 pt-BR:
   javascripts:
-    general:
-      patient:
+    patient:
       title: "Paciente"
       label:
         sex: "Sexo"
@@ -11,12 +10,30 @@ pt-BR:
         blood_type: "Tipo sanguíneo"
         profession: "Profissão"
         parent: "Responsável"
-      sex:
-        male: "Masculino"
-        female: "Feminino"
       message:
         delete: "Tem certeza que deseja deletar o paciente %{name}?"
         empty_text: "Nenhum paciente encontrado."
-    layout:
-      side-bar:
+    visit:
+      labels:
+        chief_complaint: "Queixa principal"
+        diagnosis: "Diagnóstico"
+        notes: "Notas"
+      messages:
+        empty-notes: "Nenhuma nota adicionada"
+    general:
+      labels:
+        male: "Masculino"
+        female: "Feminino"
+      navigation:
         patient: "Pacientes"
+      pagination:
+        rewind:
+          title: "Primeira"
+        back:
+          title: "Anterior"
+        forward:
+          title: "Próxima"
+        fastForward:
+          title: "Última"
+      messages:
+        empty-set: "Nenhuma informação adicionada"
