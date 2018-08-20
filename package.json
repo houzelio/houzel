@@ -35,5 +35,8 @@
     "pug-loader": "2.4.0",
     "url-loader": "1.1.1",
     "webpack-dev-server": "2.11.2"
+  },
+  "resolutions": {
+    "**/**/backbone": "ssh://git@bitbucket.org:marksbre/backbone-houzel.git"
   }
 }
