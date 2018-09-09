@@ -34,3 +34,4 @@ yarn.lock
 
 # Generated files
 log/
+yarn*.log
