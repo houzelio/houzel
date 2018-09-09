@@ -1,0 +1,20 @@
+div.container-fluid
+  div.row.no-gutters
+    if (visit.chief_complaint && !!visit.chief_complaint.trim())
+      div.panel-heading
+        = t("visit.label.chief_complaint")
+      div.panel-text
+        = visit.chief_complaint
+      
+    if (visit.diagnosis && !!visit.diagnosis.trim())        
+      div.panel-heading
+          = t("visit.label.diagnosis")
+      div.panel-text
+        = visit.diagnosis
+  
+  div.row.no-gutters
+    div.panel-heading
+      = t("visit.label.anamnesis.note")
+    if (visit.anamnesis && !!visit.anamnesis.trim())      
+      div.panel-text
+        = visit.chief_complaint

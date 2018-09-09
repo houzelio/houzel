@@ -1,0 +1,6 @@
+div.pl-lg
+  =mom(calendar.start_date).format("L")
+  | 
+  =mom(calendar.start_date).format('HH[h]mm')
+  |  - 
+  =mom(calendar.end_date).format('HH[h]mm')
