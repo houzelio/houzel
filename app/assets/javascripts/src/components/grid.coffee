@@ -29,7 +29,7 @@ _.extend(GridView.prototype, Marionette.Events)
 defaultRender = () ->
   $el = @$el
   model = @model
-  columnName = @column.get("name")
+  columnName = @column.get("name");
   data = @formatter.fromRaw(model.get(columnName), model)
 
   template = @template
@@ -116,7 +116,13 @@ export default Component.extend({
     if _.isFunction(formatter)
       column.formatter = _.extend({}, Backgrid.CellFormatter.prototype, {
         fromRaw: formatter
-    })
+      })
+
+    thClassName = column.thClassName
+    if _.isString(thClassName)
+      column.headerCell = Backgrid.HeaderCell.extend({
+        className: thClassName
+      })
 
     cell = column.cell
     if _.has(cell, "extend")
@@ -128,10 +134,9 @@ export default Component.extend({
 
   _extendCell: (cell) ->
     props = _.result(cell, 'extend')
+    props = _.defaults(props, render: defaultRender)
 
-    _cell = Backgrid.Cell.extend()
-    _.extend(_cell.prototype, _.defaults(props, render: defaultRender))
-
+    _cell = Backgrid.Cell.extend(props)
     _cell
 
   _destroyView: () ->
