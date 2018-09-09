@@ -7,6 +7,7 @@ App = class extends Marionette.Application
     initIntl(options)
     initApps()
 
+    return
 
   onStart: (app, options) ->
     Backbone.history.start
