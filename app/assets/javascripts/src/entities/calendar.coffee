@@ -1,7 +1,8 @@
 import Routes from '../helpers/routes'
 
-class Model extends Backbone.Model
+Model = Backbone.Model.extend({
   urlRoot: -> Routes.calendar_index_path()
+})
 
 create = (options) ->
   calendar = new Model(options)

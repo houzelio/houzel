@@ -1,6 +1,6 @@
-PageableCollection = require("backbone.paginator");
+PageableCollection = require("backbone.paginator")
 
-export default class extends PageableCollection
+export default PageableCollection.extend({
   state:
     pageSize: 10
 
@@ -12,3 +12,4 @@ export default class extends PageableCollection
 
   parseRecords: (resp, options) ->
     resp.items
+})
