@@ -8,14 +8,15 @@ gem 'webpacker', '3.2.0'
 
 # Database
 gem 'pg', '0.19.0'
-gem 'sequel-rails', '0.9.13'
+gem 'sequel', '5.12.0'
+gem 'sequel-rails', '1.0.0'
 
 # Templating
 gem 'rabl', '0.13.1'
 gem 'oj', '2.18.0'
 gem 'gon', '6.1.0'
 
-# AppServer 
+# AppServer
 gem 'puma', '3.7.1'
 
 # Responder
@@ -46,7 +47,7 @@ end
 
 group :test do
   # RSpec (unit tests, ...)
-  
+
   gem 'capybara', '2.12'
   gem 'database_cleaner', '1.5.3'
 
