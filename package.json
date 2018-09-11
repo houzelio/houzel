@@ -13,7 +13,6 @@
     "bootstrap": "3.3.7",
     "chosen-js": "1.8.7",
     "coffeescript": "2.1.0",
-    "eco": "1.1.0-rc-3",
     "jquery": "3.3.1",
     "js-logger": "1.4.0",
     "js-yaml": "3.12.1",
