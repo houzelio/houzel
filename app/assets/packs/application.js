@@ -20,7 +20,7 @@ import { library, config, dom } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import moment from 'moment';
 import logger from 'js-logger';
-import App from '../javascripts/src/app';
+import App from 'javascripts/core/app';
 
 
 /* fontaewsome */
