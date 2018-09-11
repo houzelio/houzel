@@ -56,7 +56,7 @@ export mergeStrats = (parent, child, keysFunc) ->
 
   if child.mixins
     for mixin in child.mixins
-      parent = mergeOverStrat(parent, mixin, keysFunc)
+      parent = mergeStrats(parent, mixin, keysFunc)
 
   mergeField = (key) ->
     strat = strats[key] || defaultStrat
