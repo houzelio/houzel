@@ -10,6 +10,7 @@ gem 'webpacker', '3.2.0'
 gem 'pg', '0.19.0'
 gem 'sequel', '5.12.0'
 gem 'sequel-rails', '1.0.0'
+gem 'sequel-devise', '0.0.13'
 
 # Templating
 gem 'rabl', '0.13.1'
