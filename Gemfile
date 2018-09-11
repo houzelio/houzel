@@ -19,6 +19,9 @@ gem 'gon', '6.1.0'
 # AppServer
 gem 'puma', '3.7.1'
 
+# Authentication
+gem 'devise', '4.5.0'
+
 # Responder
 gem 'responders', '2.3.0'
 
