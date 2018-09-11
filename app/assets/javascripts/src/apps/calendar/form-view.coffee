@@ -1,4 +1,4 @@
-import LayoutBehavior from '../../behaviors/layout'
+import LayoutBehavior from 'behaviors/layout'
 template = require('./templates/form.pug')
 
 export default class extends Marionette.View
