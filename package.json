@@ -4,6 +4,7 @@
     "@fortawesome/free-solid-svg-icons": "5.3.1",
     "@rails/webpacker": "3.2",
     "backbone": "ssh://git@bitbucket.org:marksbre/backbone-houzel.git",
+    "backbone-validation": "0.11.5",
     "backbone.marionette": "4.0.0",
     "backbone.paginator": "2.0.8",
     "backbone.radio": "2.0.0",
