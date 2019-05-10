@@ -7,6 +7,8 @@
     "backbone.marionette": "4.0.0",
     "backbone.paginator": "2.0.8",
     "backbone.radio": "2.0.0",
+    "backbone.stickit": "0.9.2",
+    "backbone.syphon": "0.6.3",
     "backgrid": "0.3.8",
     "backgrid-paginator": "0.3.9",
     "bootbox": "4.4.0",
