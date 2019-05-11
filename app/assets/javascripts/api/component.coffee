@@ -104,6 +104,15 @@ Component = Marionette.MnObject.extend({
 
     return
 
+  getOption: (optionName, parentName) ->
+    if !optionName then return
+
+    parentOption = @[parentName]
+    if parentOption && !_.isUndefined(parentOption[optionName])
+      parentOption[optionName]
+    else
+      Marionette.MnObject.prototype.getOption.call(@, optionName)
+
   destroy: (options) ->
     if @_isDestroyed then return
 
