@@ -94,13 +94,13 @@ Component = Marionette.MnObject.extend({
 
     return
 
-  mergeIntoOption: (classOption, options, keys) ->
-    option = _.result(@, classOption, {})
-    func =_.bind(@mergeOptions, option, options, keys)
+  mergeIntoOption: (optionName, options, keys) ->
+    optionValue = _.result(@, optionName, {})
+    func =_.bind(@mergeOptions, optionValue, options, keys)
     func()
 
-    if !_.isEmpty(option)
-      @[classOption] = option
+    if !_.isEmpty(optionValue)
+      @[optionName] = optionValue
 
     return
 
