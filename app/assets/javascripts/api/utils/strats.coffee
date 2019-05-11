@@ -2,6 +2,11 @@ import { hasOwn, set } from './props'
 import { hasSymbol } from './env'
 import { isPlainObject } from './elem'
 
+import {
+  EVENTS_HASH,
+  FUNCTIONS_CALLBACKS
+} from 'javascripts/shared/constants'
+
 strats = {}
 
 mergeData = (toObj, fromObj) ->
@@ -46,11 +51,28 @@ mergeDataOrFn = (parentVal, childVal) ->
       if _.isFunction(parentVal) then parentVal.call(this, this) else parentVal
     )
 
-strats.created = mergeDataOrFn
+FUNCTIONS_CALLBACKS.forEach (fn) =>
+  strats[fn] = mergeDataOrFn
+
+#
+# Object hashes.
+#
+mergeObjHash = (parentVal, childVal) ->
+  if !parentVal then return childVal
+
+  ret = _.extend({}, parentVal, childVal)
+  return ret
+
+EVENTS_HASH.forEach (obj) =>
+  strats[obj] = mergeObjHash
 
 defaultStrat = (parentVal, childVal) ->
   if childVal == undefined then parentVal else childVal
 
+#
+# Merge source object into destination object
+# according to strats.
+#
 export mergeStrats = (parent, child, keysFunc) ->
   if !keysFunc then keysFunc = _.allKeys
 
