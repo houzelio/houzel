@@ -4,6 +4,7 @@ import "chosen-js"
 Dom = Marionette.DomApi
 
 SelectOptions = [
+  'disable_search',
   'disable_search_threshold',
   'no_results_text',
   'max_selected_options',
@@ -14,37 +15,48 @@ SelectOptions = [
 export default Component.extend({
   viewClass: false
 
+  selectOptions:
+    width: '100%'
+
   initialize: (options) ->
     @mergeIntoOption('selectOptions', options, SelectOptions)
-    @_setElement()
+
+    el = @getOption('el')
+    @el = if el instanceof $ then el[0] else el
+
+    @_initSelect()
 
     return
 
-  show: () ->
-    $el = @$el
+  _initSelect: () ->
+    $el = @_getEl(@el)
 
     selectOptions = _.result(@, 'selectOptions', {})
-    $el.chosen(selectOptions)
-
-    $el.chosen().on('change', (evt, options) =>
-      @triggerMethod('select:change', options)
+    $el.chosen(selectOptions).on('change', (event, options) =>
+      @triggerMethod('select:change', event, @getValue(), options)
     )
 
+    @setValue(@getOption('value'))
     @updateSelect()
 
     return
 
-  _setElement: () ->
-    el = @getOption('el')
-    if !el then throw new Error('An element must be provide for a select.')
-
-    @el = if el instanceof $ then el[0] else el
-    @$el = Dom.getEl(@el)
+  setValue: (value) ->
+    @$el.val(value)
+    @updateSelect()
 
     return
+
+  getValue: () ->
+    @$el.val()
 
   updateSelect: () ->
     @$el.trigger('chosen:updated')
 
     return
+
+  _getEl: (el) ->
+    if !el then throw new Error('An element must be provide for a select.')
+    @$el = Dom.getEl(@el)
+
 })
