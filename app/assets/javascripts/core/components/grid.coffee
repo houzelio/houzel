@@ -12,7 +12,9 @@ ClassOptions = [
 ViewOptions = [
   'columns',
   'collection',
-  'className'
+  'className',
+  'emptyText',
+  'footer'
 ]
 
 defaults = {
@@ -39,6 +41,7 @@ defaultRender = () ->
   $el.html(data)
   @updateStateClassesMaybe()
   @delegateEvents()
+  $el.trigger('el:rendered')
   @
 
 export default Component.extend({
@@ -51,9 +54,9 @@ export default Component.extend({
 
   initialize: (options) ->
     @mergeOptions(options, ClassOptions)
+    @mergeIntoOption('viewOptions', options, ViewOptions)
 
     @_normalizeColumns(options)
-    @mergeIntoOption('viewOptions', options, ViewOptions)
 
     el = @getOption('el')
     @el = if el instanceof $ then el[0] else el
@@ -70,20 +73,22 @@ export default Component.extend({
     return
 
   _showPaginator: (parentEl) ->
-    state = @viewOptions.collection.state
-    totalRecords = _.result(state, 'totalRecords', -1)
+    allowPagination = @getOption('allowPagination')
+    if !_.isUndefined(allowPagination) && !allowPagination then return
+
+    collection = @getCollection()
+    totalRecords = _.result(collection.state, 'totalRecords', -1)
     if !(totalRecords > @windowSize) then return
 
-    $el = @_addPaginatorEl(parentEl)
+    $el = @_paginatorEl(parentEl)
 
     @showPaginator($el)
 
     return
 
   showPaginator: ($el) ->
-    collection = _.pick(@viewOptions, 'collection')
-    paginatorOptions = _.extend({}, _.pick(@, 'windowsSize'),
-    collection)
+    collection = @getCollection()
+    paginatorOptions = _.extend({}, _.pick(@, 'windowsSize'), collection)
 
     paginatorView = new Paginator(paginatorOptions)
     region = new Marionette.Region({el: $el})
@@ -93,7 +98,7 @@ export default Component.extend({
 
     return
 
-  _addPaginatorEl: (parentEl, className) ->
+  _paginatorEl: (parentEl) ->
     className = _.result(@options, 'classPaginator', 'pagination-container')
     el = '<div class="' + className + '"></div>'
     $el = $(el)
@@ -138,6 +143,9 @@ export default Component.extend({
 
     _cell = Backgrid.Cell.extend(props)
     _cell
+
+  getCollection: () ->
+    @getOption('collection', 'viewOptions')
 
   _destroyView: () ->
     region = @regionPaginator
