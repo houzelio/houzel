@@ -26,29 +26,29 @@ export default Component.extend({
 
     return
 
-  show: (dialogName, message, options) ->
-    if !_.contains(dialogs, dialogName)
+  show: (dialogType, message, options) ->
+    if !_.contains(dialogs, dialogType)
       throw new Error("A valid dialog is required.")
 
     callback = (result) =>
       @triggerMethod("dialog:action:result", result)
 
-    dialogOptions = _.defaults(_.result(@, 'dialogOptions'), options)
-    dialogOptions = _.extend({},
-      dialogOptions, {
+    dialogOptions = _.extend(
+      _.defaults(_.result(@, 'dialogOptions'), options),
+      {
         message: message,
         callback: callback
       }
     )
 
-    dialog = @_proxyDialogFn(dialogName)
+    dialog = @_proxyDialogFn(dialogType)
     dialog(dialogOptions)
 
-  _proxyDialogFn: (dialogName) ->
+  _proxyDialogFn: (dialogType) ->
     bsDialog = bootbox
 
     (options) =>
-      bsDialog[dialogName].call(bsDialog, options).
+      bsDialog[dialogType].call(bsDialog, options).
         on('shown.bs.modal', =>
           @triggerMethod("dialog:shown:modal")
         )
