@@ -40,7 +40,7 @@ gem 'uuid', '2.3.7'
 gem 'js-routes', '1.3.2'
 
 # Headers
-gem 'secure_headers', '6.0.0'
+gem 'secure_headers', '6.1.0'
 
 # Localization
 gem 'http_accept_language', '2.1.0'
