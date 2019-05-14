@@ -25,7 +25,7 @@ gem 'puma', '3.7.1'
 gem 'devise', '4.5.0'
 
 # Responder
-gem 'responders', '2.3.0'
+gem 'responders', '2.4.1'
 
 # Configuration
 gem 'configurate', '0.3.1'
