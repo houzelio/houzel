@@ -31,7 +31,7 @@ gem 'responders', '2.4.1'
 gem 'configurate', '0.3.1'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder', '2.7.0'
 
 # GUID generation
 gem 'uuid', '2.3.7'
