@@ -57,6 +57,7 @@ export default Component.extend({
     @mergeIntoOption('viewOptions', options, ViewOptions)
 
     @_normalizeColumns(options)
+    @_initCollection()
 
     el = @getOption('el')
     @el = if el instanceof $ then el[0] else el
@@ -144,8 +145,35 @@ export default Component.extend({
     _cell = Backgrid.Cell.extend(props)
     _cell
 
+  addElement: (model) ->
+    collection = @getCollection()
+    collection.add(model)
+
+  removeElement: (model) ->
+    collection = @getCollection()
+    collection.remove(model)
+
+  _initCollection: () ->
+    collection = @getOption('collection')
+
+    if !(collection instanceof Backbone.Collection)
+      @viewOptions.collection = new Backbone.Collection(collection)
+
+    @_collectionEvents()
+
+    return
+
   getCollection: () ->
     @getOption('collection', 'viewOptions')
+
+  _collectionEvents: () ->
+    collection = @getOption('collection', 'viewOptions')
+    ['add', 'remove', 'change'].forEach (event) =>
+      @listenTo(collection, event, (model) =>
+        @triggerMethod('grid:' + event, model, collection)
+      )
+
+    return
 
   _destroyView: () ->
     region = @regionPaginator
