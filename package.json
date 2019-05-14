@@ -23,9 +23,11 @@
     "js-logger": "1.4.0",
     "js-yaml": "3.12.1",
     "less": "3.9.0",
+    "line-awesome2": "^0.9.0",
     "marionette.approuter": "1.0.1",
     "moment": "2.22.2",
     "node-polyglot": "2.2.2",
+    "numeral": "2.0.6",
     "pug": "2.0.3",
     "underscore": "1.9.1"
   },
