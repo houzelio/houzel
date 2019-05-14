@@ -11,6 +11,7 @@ gem 'pg', '0.19.0'
 gem 'sequel', '5.12.0'
 gem 'sequel-rails', '1.0.0'
 gem 'sequel-devise', '0.0.13'
+gem 'orm_adapter-sequel', '0.1.0'
 
 # Templating
 gem 'rabl', '0.13.1'
