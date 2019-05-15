@@ -45,6 +45,9 @@ gem 'secure_headers', '6.1.0'
 # Localization
 gem 'http_accept_language', '2.1.0'
 
+# View-Models
+gem 'draper', '3.1.0'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
