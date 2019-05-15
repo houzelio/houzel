@@ -45,6 +45,9 @@ gem 'secure_headers', '6.1.0'
 # Localization
 gem 'http_accept_language', '2.1.0'
 
+# Money and Currency
+gem 'money', '6.13.1'
+
 # View-Models
 gem 'draper', '3.1.0'
 
