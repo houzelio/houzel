@@ -19,7 +19,7 @@ gem 'oj', '2.18.0'
 gem 'gon', '6.1.0'
 
 # AppServer
-gem 'puma', '3.7.1'
+gem 'puma', '3.12.1'
 
 # Authentication
 gem 'devise', '4.5.0'
