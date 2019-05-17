@@ -1,4 +1,4 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 module.exports = {
@@ -6,25 +6,26 @@ module.exports = {
     rules: [
       {
         test: /\.less$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [{
+        use: [
+          'style-loader',
+          MiniCssExtractPlugin.loader,
+          {
             loader: 'css-loader', options: {
               sourceMap: true
             }
-          }, {
-            loader: 'postcss-loader'
-          }, {
+          },
+          'postcss-loader',
+          {
             loader: 'less-loader', options: {
               sourceMap: true
             }
-          }]
-        })
+          }
+        ]
       }
     ]
   },
   plugins: [
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: '[name]-[contenthash].css'
     }),
 
