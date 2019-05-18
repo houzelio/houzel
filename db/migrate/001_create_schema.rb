@@ -1,5 +1,47 @@
 Sequel.migration do
   change do
+    create_table :user do
+      primary_key :id
+      ## Database authenticatable
+      column :email,                  String,   :null=>false, :default=>""
+      column :encrypted_password,     String,   :null=>false, :default=>""
+
+      ## Localization
+      column :language, String
+
+      ## Recoverable
+      column :reset_password_token,   String
+      column :reset_password_sent_at, DateTime
+
+      ## Rememberable
+      column :remember_created_at,    DateTime
+
+      ## Trackable
+      column :sign_in_count,          Integer,  :default=>0, :null=>false
+      column :current_sign_in_at,     DateTime
+      column :last_sign_in_at,        DateTime
+      column :current_sign_in_ip,     :inet
+      column :last_sign_in_ip,        :inet
+
+      ## Confirmable
+      column :confirmation_token,     String
+      column :confirmed_at,           DateTime
+      column :confirmation_sent_at,   DateTime
+      column :unconfirmed_email,      String # Only if using reconfirmable
+
+      column :authentication_token,   String
+
+      ## Lockable
+      column :locked_at,              DateTime
+
+      ## Timestamps
+      column :created_at,             DateTime, :null=>false
+      column :updated_at,             DateTime, :null=>false
+    end
+
+    add_index :user, [:email],                :unique=> true
+    add_index :user, [:reset_password_token], :unique=> true
+    add_index :user, [:confirmation_token],   :unique=> true
 
     create_table :person do
       primary_key :id
@@ -13,6 +55,26 @@ Sequel.migration do
 
     add_index :person, [:guid], :name => 'index_person_on_guid', :using => :btree, :unique=>true
     add_index :person, [:owner_id], :name => 'index_person_on_user_id'
+
+    create_table :profile do
+      primary_key :id
+      column :name,       String,   :null=>false, :size=>255
+      column :birthday,   Date
+      column :gender,     String,   :size=>255
+      column :location,   String,   :size=>127
+      column :phone,      String,   :size=>63
+      column :person_id,  Integer
+      column :created_at, DateTime, :null=>false
+      column :updated_at, DateTime, :null=>false
+    end
+
+    create_table :role do
+      primary_key :id
+      column :name,       String,   :null=>false, :size=>63
+      column :person_id,  Integer
+      column :created_at, DateTime, :null=>false
+      column :updated_at, DateTime, :null=>false
+    end
 
     create_table :patient do
       primary_key :id
@@ -130,6 +192,16 @@ Sequel.migration do
 
     add_index :notification_actor, [:notification_id], :name => 'index_notification_actor_on_notification_id'
     add_index :notification_actor, [:person_id], :name => 'index_notification_actor_on_person_id', using: :btree
+
+    # foreign_key
+    alter_table :profile do
+      add_foreign_key [:person_id], :person, :on_delete=>:cascade, :null=>false
+    end
+
+    # foreign_key
+    alter_table :role do
+      add_foreign_key [:person_id], :person, :on_delete=>:cascade, :null=>false
+    end
 
     alter_table :appointment do
       add_foreign_key [:visit_id], :visit, :null=>false
