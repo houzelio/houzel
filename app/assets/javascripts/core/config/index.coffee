@@ -1,8 +1,6 @@
-import { initSync } from './sync'
-import { initFetch } from './fetch'
+import { initBackbone } from './backbone'
 import { initMixin } from 'javascripts/api/mixin'
 
-export initConfig = ->
-  initSync()
-  initFetch()
+export initConfig = () ->
+  initBackbone()
   initMixin()
