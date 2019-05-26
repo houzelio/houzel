@@ -1,4 +1,5 @@
-import Routes from '../helpers/routes'
+import Routes from 'helpers/routes'
+import { t } from 'helpers/i18n'
 import PageableCollection from './_base'
 
 Model = Backbone.Model.extend({
