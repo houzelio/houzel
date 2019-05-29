@@ -9,5 +9,6 @@ SecureHeaders::Configuration.default do |config|
   }
 
   config.hsts = SecureHeaders::OPT_OUT # added by Rack::SSL
+  config.x_content_type_options = "nosniff"
 
 end
