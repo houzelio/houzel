@@ -1,0 +1,83 @@
+pt-BR:
+  visit:
+    messages:
+      checked_out: "O paciente foi liberado"
+      saved: "O registro de visita foi salvo"
+      updated: "O registro de visita foi atualizado"
+  appointment:
+    messages:
+      scheduled: "A consulta para %{name} foi agendada"
+  patient:
+    messages:
+      saved: "O paciente %{name} foi salvo(a)"
+      updated: "O paciente %{name} foi atualizado(a)"
+  service:
+    messages:
+      saved: "O serviço foi salvo"
+      updated: "O serviço foi atualizado"
+      deleted: "O serviço foi removido"
+  invoice:
+    messages:
+      create: "O fatura foi salva"
+      updated: O fatura foi atualizada"
+  user:
+    labels:
+      name: "Nome"
+      email: "Email"
+      password: "Senha"
+      new_password: "Nova senha"
+      password_confirmation: "Confirmar senha"
+      register: "Registrar"
+      signin: "Entrar"
+      send: "Enviar"
+    messages:
+      signup_title: "CRIE UMA CONTA"
+      signin_title: "ENTRE COM SUA CONTA"
+      confirmation_title: "REENVIAR EMAIL DE CONFIRMAÇÃO"
+      forgot_pwd_title: "ESQUECI MINHA SENHA"
+      placeholder_name: "Digite seu nome"
+      placeholder_email: "Digite seu email"
+      placeholder_password: "Digite sua senha"
+      placeholder_new_password: "Digite sua nova senha"
+      link_create: "Cadastre-se agora mesmo"
+      forgot_password: "Esqueceu sua senha?"
+      confirmation_warning: "Preencha com seu email para receber instruções sobre como confirmar seu email."
+      forgot_pwd_warning: "Preencha com seu email para receber instruções sobre como redefinir sua senha."
+      required_email: "Email não está preenchido"
+      changed_email: "Email já esta em uso"
+      email_format: "Email está em um formato inválido"
+      required_password: "Senha não está preenchido"
+      password_confirmation: "Senha não coincidem"
+      password_format: "Senha está muito curta"
+      access_closed: "Acesso revogado"
+  profile:
+    messages:
+      required_name: "Nome não está preenchido"
+  general:
+    messages:
+      not_found: "Não encontrado"
+      permission_denied: "Permissão negada"
+  sequel:
+    messages:
+      presence: "Preenchimento necessário"
+      includes: "Não está no intervalo ou no conjunto de %{set}"
+      integer: "Não é um número válido"
+      numeric: "Não é um número válido"
+      not_null: "Preenchimento necessário"
+      unique: "Já existe outro elemento com o mesmo valor"
+      max_length: "Número de caracteres deve ser menor que %{max}"
+      min_length: "Número de caracteres deve ser maior que %{max}"
+      format: "%{with} é inválido"
+  time:
+    formats:
+      date: "%d/%m/%Y"
+      datetime: "%d/%m/%Y %H:%M"
+  number:
+    currency:
+      format:
+        delimiter: "."
+        separator: ","
+  number:
+    format:
+      delimiter: "."
+      separator: ","
