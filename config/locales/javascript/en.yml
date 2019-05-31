@@ -3,29 +3,53 @@ en:
     patient:
       title: "Patient"
       labels:
+        age: "Age"
+        phone: "Phone"
+        email: "Email"
+        birthday: "Day of birth"
         sex: "Sex"
-        location: "Location/City"
+        male: "Male"
+        female: "Female"
+        site: "Location/City"
         zip_code: "Zip code"
         address: "Address"
         blood_type: "Blood type"
         profession: "Profession"
         parent: "Parent"
-      message:
-        delete: "Are you sure you want to delete the patient %{name}?"
-        empty_text: "No patients found."
-    visit:
-      labels:
-        chief-complaint: "Chief complaint"
-        diagnosis: "Diagnosis"
-        notes: "Notes"
-      messages:
-        empty-notes: "No notes added"
-    general:
-      labels:
+        observation: "Observations"
+      titles:
+        delete_patient: "Delete Patient"
         male: "Male"
-        female: "Female"
+        female : "Female"
+        appointments: "Appointments"
+      messages:
+        remove_patient: "Are you sure you want to delete the patient?"
+    service:
+      title: "Service"
+      labels:
+        category: "Category"
+        private: "Private"
+        insurance: "Insurance"
+        other: "Other"
+        service_delete: "Delete Service"
+      messages:
+        service_required: "Include at least one service"
+        remove_service: "Are you sure you want to delete the service?"
+    general:
+      buttons:
+        new: "New"
+        back: "Back"
+        save: "Save"
+        delete: "Delete"
+        view: "View"
+        edit: "Edit"
+        checkin: "Check In"
+      labels:
+        name: "Name"
+        value: "Value"
       navigation:
-        patient: "Patients"
+        patients: "Patients"
+        billing: "Billing"
       pagination:
         rewind:
           title: "First"
@@ -36,4 +60,5 @@ en:
         fastForward:
           title: "Last"
       messages:
-        empty-set: "No information added"
+        empty_set: "No information added"
+        required_field: "This field is required"

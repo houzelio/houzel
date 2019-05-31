@@ -2,30 +2,54 @@ pt-BR:
   javascripts:
     patient:
       title: "Paciente"
-      label:
+      labels:
+        age: "Idade"
+        phone: "Telefone"
+        email: "Email"
+        birthday: "Data de Nascimento"
         sex: "Sexo"
-        location: "Localização/Cidade"
+        male: "Masculino"
+        female: "Feminino"
+        site: "Localização/Cidade"
         zip_code: "CEP"
         address: "Endereço"
         blood_type: "Tipo sanguíneo"
         profession: "Profissão"
         parent: "Responsável"
-      message:
-        delete: "Tem certeza que deseja deletar o paciente %{name}?"
-        empty_text: "Nenhum paciente encontrado."
-    visit:
-      labels:
-        chief_complaint: "Queixa principal"
-        diagnosis: "Diagnóstico"
-        notes: "Notas"
-      messages:
-        empty-notes: "Nenhuma nota adicionada"
-    general:
-      labels:
+        observation: "Observações"
+      titles:
+        delete_patient: "Excluir Paciente"
         male: "Masculino"
-        female: "Feminino"
+        female : "Feminino"
+        appointments: "Atendimentos"
+      messages:
+        remove_patient: "Tem certeza que deseja remover o paciente?"
+    service:
+      title: "Serviço"
+      labels:
+        category: "Categoria"
+        private: "Privado"
+        insurance: "Convênio"
+        other: "Outro"
+        service_delete: "Excluir Serviço"
+      messages:
+        service_required: "Inclua ao menos um serviço"
+        remove_service: "Tem certeza que deseja remover o serviço?"
+    general:
+      buttons:
+        new: "Novo"
+        back: "Voltar"
+        save: "Salvar"
+        delete: "Deletar"
+        view: "Visualizar"
+        edit: "Editar"
+        checkin: "Entrar"
+      labels:
+        name: "Nome"
+        value: "Valor"
       navigation:
-        patient: "Pacientes"
+        patients: "Pacientes"
+        billing: "Cobrança"
       pagination:
         rewind:
           title: "Primeira"
@@ -36,4 +60,5 @@ pt-BR:
         fastForward:
           title: "Última"
       messages:
-        empty-set: "Nenhuma informação adicionada"
+        empty_set: "Nenhuma informação adicionada"
+        required_field: "Preênchimento necessário"
