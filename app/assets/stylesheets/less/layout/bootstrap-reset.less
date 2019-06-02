@@ -4,6 +4,9 @@
 // Makes easy to update new framework versions
 // --------------------------------------------------
 
+@btn-info-bg: #17a2b8;
+@btn-info-border: @btn-info-bg;
+
 a {
   outline: none !important;
 }
@@ -37,34 +40,6 @@ hr {
   border: 1px solid @gray;
 }
 
-.nav-tabs > li > a {
-  font-weight: bold;
-  color: @text-color;
-  background-color: @gray-lighter;
-  margin: 0;
-  border: 1px solid @gray;
-  border-radius: 0;
-  padding: 10px 20px;
-}
-
-.nav-tabs > li.active > a {
-  &, &:hover, &:focus {
-    color: inherit;
-    border-bottom-color: #fff;
-  }
-}
-.tab-content {
-  padding: 10px 20px 0px;
-  border-style: solid;
-  border-width: 0 1px 1px 1px;
-  border-color: @gray;
-  .nav-pills + & {
-    border: 0;
-    padding: 0;
-  }
-}
-
-
 .btn {
   border-radius: 3px;
   font-size: 13px;
@@ -87,8 +62,9 @@ hr {
   }
 }
 
-.btn-lg {
-  //box-shadow: 0 -2px 0px rgba(0,0,0,.15) inset;
+.btn-info {
+  background-color: @btn-info-bg;
+  border-color: @btn-info-border;
 }
 
 // FORMS
