@@ -8,7 +8,7 @@
 @multiple-tag-bg: #f5f6f7;
 
 .chosen-container-multi .chosen-choices {
-  .form-control;
+  .form-control();
 }
 
 .chosen-container-multi .chosen-choices li.search-field input[type=text] {
@@ -23,19 +23,16 @@
   background-image: none;
 }
 
-.chosen-container .chosen-results li.highlighted {
-  background-color: #a1a2a3;
-  background-image: none;
+.chosen-container-multi .chosen-choices li.search-field input[type=text] {
+  color: @input-color-placeholder;
 }
-.chosen-container .chosen-drop {
-  border-color: #ddd;
-}
-.chosen-container .chosen-results li.group-result {
-  color: #747576;
-  letter-spacing: 0.02em;
-}
+
 // SINGLE
-.chosen-container-single .chosen-single,
+.chosen-container {
+  display: block;
+}
+
+.chosen-container .chosen-single,
 .chosen-container-active.chosen-with-drop .chosen-single {
   .form-control();
 }
@@ -49,8 +46,16 @@
   right: 5px;
 }
 
-.chosen-container-multi .chosen-choices li.search-field input[type=text] {
-  color: @input-color-placeholder;
+.chosen-container .chosen-results li.highlighted {
+  background-color: #a1a2a3;
+  background-image: none;
+}
+.chosen-container .chosen-drop {
+  border-color: #ddd;
+}
+.chosen-container .chosen-results li.group-result {
+  color: #747576;
+  letter-spacing: 0.02em;
 }
 
 // Reuse form contrl definition from BS
