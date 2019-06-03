@@ -48,7 +48,21 @@
 }
 
 //
-// others
+// components
+// --------------------------------------------------
+.mclhs-cmp {
+  .table-responsive {
+    min-height: 0px;
+
+    &.backgrid-container {
+      > table > tbody > tr:first-child {
+        > td {
+          border-top: none;
+        }
+      }
+    }
+  }
+}
 // --------------------------------------------------
 .panel-heading {
   font-size: 1.5rem;
@@ -67,9 +81,5 @@
    padding-left: 0;
 }
 
-/* medical-history component */
-.mclhs-cmp {
-  .table-responsive {
-    min-height: 0px;
   }
 }
