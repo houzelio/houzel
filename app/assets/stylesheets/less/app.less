@@ -39,14 +39,16 @@
   }
 }
 
-
 //
 // backgrid
 // --------------------------------------------------
 .backgrid-container {
   height: 100% !important;
-  overflow: visible !important;
   margin-bottom: 15px;
+
+  @media @desktop {
+    overflow: visible !important;
+  }
 }
 
 .pagination-container {
@@ -71,6 +73,7 @@
 .table > tbody > tr > td {
   padding: 20px;
 }
+
 
 //
 // table > thead > tr > th
@@ -105,5 +108,49 @@
   > tbody > tr > td {
     padding-top: 12px;
     padding-bottom: 12px;
+  }
+}
+
+.table-total {
+
+  > tbody > tr > td {
+    color: @black-light;
+    border: none;
+  }
+
+  @media @tablet {
+    border-top: 1px solid #e4eaec;
+  }
+}
+
+//
+// panel
+// --------------------------------------------------
+.panel-transparent {
+  border: 0px;
+  border-radius: 0px;
+  box-shadow: none;
+}
+
+.panel-total {
+  @media @tablet {
+    margin-left: -20px;
+  }
+}
+
+.panel-srvc {
+  @media @tablet {
+    margin-top: 15px;
+  }
+}
+
+//
+// nav
+// --------------------------------------------------
+.tab-content {
+  > .tab-pane {
+    &:not([data-tab]) {
+      margin-left: -20px;
+    }
   }
 }
