@@ -9,8 +9,8 @@ class ApplicationController < ActionController::Base
   private
 
   def set_locale
-    locale = http_accept_language
-              .language_region_compatible_from I18n.available_locales.map(& :to_s )
+    locale = http_accept_language.language_region_compatible_from(
+      I18n.available_locales.map(& :to_s ))
 
     locale ||= DEFAULT_LANGUAGE
     I18n.locale = locale
