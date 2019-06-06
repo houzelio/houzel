@@ -20,4 +20,23 @@ class ApplicationController < ActionController::Base
     gon.push(locale: I18n.locale)
   end
 
+  def respond_with_message(text, type, status, data = nil)
+    @message = {:message => {:text => text, :type => type}}
+    @message.merge(data) if !data.blank?
+
+    render json: @message, :status => status
+  end
+
+  def params_filter(param)
+    params[:filter].try(:[], param)
+  end
+
+  def pagination_value_for(type)
+    case type
+    when :page
+      (params[:page] || 1).to_i
+    when :per_page
+      (params[:per_page] || 10).to_i
+    end
+  end
 end
