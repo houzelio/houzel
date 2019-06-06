@@ -2,11 +2,16 @@ class PatientController < ApplicationController
   respond_to :json
 
   def index
-    page = (params[:page] || 1).to_i
-    per_page = (params[:per_page] || 10).to_i
-    p = Patient.dataset.order(:name).paginate(page, per_page)
+    page = pagination_value_for(:page)
+    per_page = pagination_value_for(:per_page)
 
-    @patients = p
+    patients = Patient.order(:name).paginate(page, per_page).where(removed_at: nil)
+    if params_filter(:name)
+      patients = patients.where(Sequel.ilike(:name, "%#{params_filter(:name)}%"))
+    end
+
+    @patients = patients
+  end
   end
 
   private
