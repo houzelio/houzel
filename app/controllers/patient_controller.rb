@@ -18,9 +18,14 @@ class PatientController < ApplicationController
 
   def patient_params
     params.require(:patient).permit(
-      :id, :name, :birthday, :sex, :blood_type, :phone,:email, 
-      :location, :zip_code, :address, :profession, :parent, :observation
+      :id, :name, :birthday, :sex, :blood_type, :phone, :email,
+      :site, :zip_code, :address, :profession, :parent_name, :observation
     )
+  end
+
+  def patient_fields
+    [:name, :birthday, :sex, :blood_type, :phone, :email,
+      :site, :zip_code, :address, :profession, :parent_name, :observation]
   end
 
 end
