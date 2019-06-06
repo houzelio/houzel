@@ -12,6 +12,16 @@ class PatientController < ApplicationController
 
     @patients = patients
   end
+
+  def create
+    patient = Patient.new
+    patient.set_fields(patient_params, patient_fields)
+
+    if patient.save
+      respond_with_message(I18n.t('patient.messages.saved', name: patient.name), "success", :ok)
+    else
+      respond_with patient
+    end
   end
 
   private
