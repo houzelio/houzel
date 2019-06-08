@@ -1,5 +1,5 @@
 import LayoutBehavior from 'behaviors/layout'
-template = require('./templates/list.pug')
+import template from './templates/list.pug'
 
 export default class extends Marionette.View
   template: template
