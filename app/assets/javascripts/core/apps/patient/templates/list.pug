@@ -1,3 +1,6 @@
+include ../../../partials/content-header
++header(t('patient.title'), t('general.buttons.new'), route())
+
 div.panel.panel-transparent
   div.panel-body
-    div#grid.table-responsive.backgrid-container  
+    include ../../../partials/grid-region
