@@ -1,18 +1,21 @@
-import ListView from './list-view'
 import { AppChan, ObjChan } from 'channels'
 import { showView } from 'helpers/layout-region'
 import { Patient, MclHistory } from 'entities/index'
 import Syphon from 'backbone.syphon'
+import ListView from './list-view'
 import FormView from './form-view'
 import ShowView from './show-view'
 
 Controller =
-  listPatients: ->
+  listPatients: () ->
     patients = Patient.getList()
 
-    ObjChan.request "when:fetched", patients, =>
-      listView = new ListView { collection: patients }
-      LayoutMgr.show('mainRegion', listView)
+    ObjChan.request("when:fetched", patients, =>
+      view = new ListView { collection: patients }
+      showView(view)
+    )
+
+    return
 
   newPatient: () ->
     patient = Patient.create()
