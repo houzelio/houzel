@@ -27,6 +27,16 @@ Controller =
 
     return
 
+  editPatient: (id) ->
+    patient = Patient.get(id)
+
+    ObjChan.request("when:fetched", patient, =>
+      view = @_getFormView(patient, true)
+      showView(view)
+    )
+
+    return
+
   _getFormView: (model, deleteOption) ->
     view = new FormView {model: model}
 
