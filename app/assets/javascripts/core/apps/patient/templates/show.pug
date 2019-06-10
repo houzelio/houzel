@@ -1,0 +1,37 @@
+include ../../../partials/content-header
++header(t('patient.title'), t('general.buttons.back'), route())
+
+div.panel.panel-transparent
+  div.panel-body
+    div.col-xs-10.col-md-6.col-md-offset-2
+      div.row
+        div.col-xs-10
+          - title = t('general.labels.name')
+          label.mr-sm #{title}
+          span.font-16.font-weight-bold
+            = name
+      div.row
+        div.col-xs-10
+          - title = t('patient.labels.sex')
+          label.mr-sm #{title}
+          span.font-15
+            = sex == 'male' ? t('patient.titles.male') : t('patient.titles.female')
+      div.row
+        div.col-xs-10
+          - title = t('patient.labels.age')
+          label.mr-sm #{title}
+          span.font-15
+            = age      
+      div.row.tabbable-line.mt-xl
+        ul.nav.nav-tabs
+          li.active
+            - title = t('visit.titles.history')
+            a(href="#history-tab" data-toggle="tab") #{title}
+          li
+            - title = t('patient.titles.appointments')
+            a(href="#appointment-tab" data-toggle="tab") #{title}
+      div.tab-content.mt-lg
+        div#history-tab.tab-pane.fade.in.active
+          div#mcl-history-region
+        div#appointment-tab.tab-pane.fade
+          div#appointment-grid
