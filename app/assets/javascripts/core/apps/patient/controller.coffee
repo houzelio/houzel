@@ -27,6 +27,18 @@ Controller =
 
     return
 
+  showPatient: (id) ->
+    patient = Patient.get(id, {relation: 'appointment'})
+    mcl_histories = MclHistory.getList({ patient_id: id })
+
+    ObjChan.request("when:fetched", [patient, mcl_histories], =>
+      view = new ShowView { model: patient }
+      view.mclHistoryCollection = mcl_histories
+      showView(view)
+    )
+
+    return
+
   editPatient: (id) ->
     patient = Patient.get(id)
 
