@@ -1,4 +1,4 @@
-PageableCollection = require("backbone.paginator")
+import PageableCollection from "backbone.paginator"
 
 export default PageableCollection.extend({
   state:
