@@ -1,4 +1,4 @@
-import { isBreakpoint } from '../../helpers/responsive'
+import { isBreakpoint } from 'helpers/responsive'
 import template from './templates/header.pug'
 
 export default class extends Marionette.View
