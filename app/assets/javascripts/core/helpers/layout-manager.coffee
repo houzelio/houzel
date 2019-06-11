@@ -12,30 +12,32 @@ processView = (layoutName, options) ->
 
   view
 
-LayoutMgr._view = {}
+LayoutMgr.currentView = {}
 
 LayoutMgr.render = (layoutName, options) ->
 
   if !layoutName || !(layoutName == "application")
     throw new Error('You must provide a valid name for the layout.')
 
-  if _.isEmpty(@view) ||
-  @_view.getOption('layoutName') != layoutName ||
-  @_view.getOption('search') != options.search
-    view = processView(layoutName, options)
-    view.render()
+  currView = @currentView
 
-    @_view = view
+  if _.isEmpty(currView) ||
+  currView.getOption('layoutName') != layoutName ||
+  currView.getOption('search') != options.search
+    layoutView = processView(layoutName, options)
+    layoutView.render()
+
+    @currentView = layoutView
 
   return
 
 LayoutMgr.show = (regionName, view) ->
+  currView = @currentView
 
-  if !@_view
+  if !currView
     throw new Error('You must render a layout before.')
 
-  region = @_view.getRegion(regionName)
-  region.show view
+  currView.showChildView(regionName, view)
 
   return
 
