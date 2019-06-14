@@ -7,4 +7,9 @@ class User < Sequel::Model
 
   one_to_one :person, key: :owner_id
 
+  before_validation :set_current_language, on: :create
+
+  def set_current_language
+   self.language = I18n.locale.to_s if self.language.blank?
+ end
 end
