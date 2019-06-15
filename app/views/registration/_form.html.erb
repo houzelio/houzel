@@ -1,0 +1,26 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= show_messages %>
+
+  <%= fields_for @profile do |p| %>
+    <div class="form-group has-feedback">
+      <%= p.label I18n.t("user.labels.name"), class: "text-muted" %>
+      <%= p.text_field :name, placeholder: I18n.t("user.messages.placeholder_name"), class: "form-control", type: "" %>
+      <i class="fa fa-user form-control-feedback text-muted"></i>
+    </div>
+  <% end %>
+
+  <div class="form-group has-feedback">
+    <%= f.label I18n.t("user.labels.email"), class: "text-muted" %>
+    <%= f.email_field :email, placeholder: I18n.t("user.messages.placeholder_email"), class: "form-control", type: "", value: @user.email || @recipient_email, readonly: @recipient_email %>
+    <i class="fa fa-envelope form-control-feedback text-muted"></i>
+  </div>
+
+  <div class="form-group has-feedback">
+    <%= f.label I18n.t("user.labels.password"), class: "text-muted" %>
+    <%= f.password_field :password, placeholder: I18n.t("user.messages.placeholder_password"), class: "form-control" %>
+    <i class="fa fa-lock form-control-feedback text-muted"></i>
+  </div>
+
+  <%= f.submit I18n.t("user.labels.register"), class:"btn btn-block btn-primary" %>
+
+<% end %>
