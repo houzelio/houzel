@@ -14,4 +14,8 @@ class Person < Sequel::Model
     self.guid
   end
 
+  def lock_access!
+    self.closed_account = true
+    save_changes()
+  end
 end

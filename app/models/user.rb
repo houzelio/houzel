@@ -12,4 +12,9 @@ class User < Sequel::Model
   def set_current_language
    self.language = I18n.locale.to_s if self.language.blank?
  end
+
+ def close_account!
+   person.lock_access!
+   self.lock_access!
+ end
 end
