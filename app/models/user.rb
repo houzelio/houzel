@@ -26,6 +26,10 @@ class User < Sequel::Model
    self.language = I18n.locale.to_s if self.language.blank?
  end
 
+ def admin?
+   Role.is_admin?(person)
+ end
+
  def close_account!
    person.lock_access!
    self.lock_access!
