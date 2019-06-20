@@ -9,6 +9,19 @@ class User < Sequel::Model
 
   before_validation :set_current_language, on: :create
 
+  def validate
+    validates_presence :email, message: Sequel.lit(I18n.t("user.messages.required_email"))
+    if email_changed?
+      validates_unique :email, allow_blank: true, message: Sequel.lit(I18n.t("user.messages.changed_email"))
+      validates_format Devise.email_regexp, :email, allow_blank: true, message: Sequel.lit(I18n.t("user.messages.email_format"))
+    end
+
+    validates_presence :password, message: Sequel.lit(I18n.t("user.messages.required_password"))
+    validates_length_range Devise.password_length, :password, allow_blank: true, message: Sequel.lit(I18n.t("user.messages.password_format"))
+
+    validates_includes AVAILABLE_LANGUAGE_CODES, :language
+  end
+
   def set_current_language
    self.language = I18n.locale.to_s if self.language.blank?
  end
