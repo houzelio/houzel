@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :gon_push_appdata
 
+  rescue_from Sequel::NoExistingObject do
+    respond_with_message(I18n.t('general.messages.not_found'), "error", 404)
+  end
+
   def after_sign_out_path_for(resource_or_scope)
     new_user_session_path
   end
