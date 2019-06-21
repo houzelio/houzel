@@ -29,7 +29,10 @@ class ApplicationController < ActionController::Base
   end
 
   def gon_push_appdata
-    gon.push(locale: I18n.locale)
+    gon.push({
+      locale: I18n.locale,
+      user: current_user ? UserDecorator.new(current_user) : {}
+    })
   end
 
   def respond_with_message(text, type, status, data = nil)
