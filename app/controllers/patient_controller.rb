@@ -31,6 +31,17 @@ class PatientController < ApplicationController
     @patient = PatientDecorator.new(patient, context: {relation: params[:relation]})
   end
 
+  def update
+    patient = Patient.first(id: params[:id])
+    raise Sequel::NoExistingObject unless patient.present?
+
+    if patient.update_fields(patient_params, patient_fields)
+      respond_with_message(I18n.t('patient.messages.updated', name: patient.name), "success", :ok)
+    else
+      respond_with patient
+    end
+  end
+
   private
 
   def patient_params
