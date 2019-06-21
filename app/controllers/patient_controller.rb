@@ -24,6 +24,13 @@ class PatientController < ApplicationController
     end
   end
 
+  def show
+    patient = Patient.first(id: params[:id])
+    raise Sequel::NoExistingObject unless patient.present?
+
+    @patient = PatientDecorator.new(patient, context: {relation: params[:relation]})
+  end
+
   private
 
   def patient_params
