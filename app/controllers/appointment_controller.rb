@@ -6,6 +6,21 @@ class AppointmentController < ApplicationController
     @examiners = SafeQuery::MedProfessionals.new.examiners
   end
 
+  def create
+    visit = Visit.new(status: "scheduled")
+    visit.set_fields(visit_params, visit_fields)
+
+    appointment = Appointment.new
+    appointment.set_fields(appointment_params, appointment_fields)
+    visit.appointment = appointment
+
+    if visit.save()
+      respond_with_message(I18n.t('appointment.messages.scheduled', name: visit.patient.name), "success", :ok)
+    else
+      respond_with visit
+    end
+  end
+
   private
 
   def patients_select
