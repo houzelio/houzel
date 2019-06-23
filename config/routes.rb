@@ -17,5 +17,13 @@ Houzel::Application.routes.draw do
 
   resources :user, only: :destroy
   resources :patient
-  resources :calendar, :except => [:index]
+  resources :visit
+  resources :appointment
+  resources :medical_history, only: :index
+  resources :service
+  resources :invoice
+
+  scope "admin", controller: :admin do
+    get :users_role, path: "/users"
+  end
 end
