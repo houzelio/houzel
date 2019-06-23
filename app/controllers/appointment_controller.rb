@@ -21,6 +21,16 @@ class AppointmentController < ApplicationController
     end
   end
 
+  def show
+    appointment = Appointment.first(id: params[:id])
+    raise Sequel::NoExistingObject unless appointment.present?
+
+    @appointment =  AppointmentDecorator.new(appointment)
+
+    @patients = patients_select
+    @examiners = SafeQuery::MedProfessionals.new.examiners
+  end
+
   private
 
   def patients_select
