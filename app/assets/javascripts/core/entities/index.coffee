@@ -1,5 +1,7 @@
+import * as Appointment from './appointment'
 import * as Patient from './patient'
 
 export {
-  Patient
+  Appointment,
+  Patient,
 }
