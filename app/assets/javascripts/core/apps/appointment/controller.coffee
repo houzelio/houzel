@@ -14,6 +14,15 @@ Controller =
 
     return
 
+  editAppointment: (id) ->
+    appointment = Appointment.get(id)
+    ObjChan.request("when:fetched", appointment, =>
+      view = @_getFormView(appointment, true)
+      showView(view)
+    )
+
+    return
+
   _getFormView: (model, deleteOption) ->
     view = new FormView {model: model}
 
