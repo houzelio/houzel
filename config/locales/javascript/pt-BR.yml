@@ -1,5 +1,16 @@
 pt-BR:
   javascripts:
+    appointment:
+      title: "Atendimento"
+      labels:
+        patient: "Paciente"
+        examiner: "Examinador"
+        date_of_visit: "Data da Visita"
+        begin_time: "Início"
+        finish_time: "Fim"
+        description: "Descrição"
+      buttons:
+        schedule: "Agendar"
     patient:
       title: "Paciente"
       labels:

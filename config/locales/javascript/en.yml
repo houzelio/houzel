@@ -1,5 +1,16 @@
 en:
   javascripts:
+    appointment:
+      title: "Appointment"
+      labels:
+        patient: "Patient"
+        examiner: "Examiner"
+        date_of_visit: "Date of Visit"
+        begin_time: "Begin"
+        finish_time: "Finish"
+        description: "Description"
+      buttons:
+        schedule: "Schedule"
     patient:
       title: "Patient"
       labels:
