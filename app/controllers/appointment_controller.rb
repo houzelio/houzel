@@ -31,6 +31,20 @@ class AppointmentController < ApplicationController
     @examiners = SafeQuery::MedProfessionals.new.examiners
   end
 
+  def update
+    appointment = Appointment.first(id: params[:id])
+    raise Sequel::NoExistingObject unless appointment.present?
+
+    visit = appointment.visit
+    visit.set_appointment_fields(appointment_params, appointment_fields)
+
+    if visit.update_fields(visit_params, visit_fields)
+      respond_with_message(I18n.t('appointment.messages.scheduled', name: visit.patient.name), "success", :ok)
+    else
+      respond_with visit
+    end
+  end
+
   private
 
   def patients_select
