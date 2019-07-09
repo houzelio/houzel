@@ -420,24 +420,60 @@ Based on Rails routes of Houzel::Application
     };
     namespace(root, "Routes");
     root.Routes = {
-// calendar => /calendar/:id(.:format)
+// appointment => /appointment/:id(.:format)
   // function(id, options)
-  calendar_path: Utils.route(["id"], ["format"], [2,[7,"/",false],[2,[6,"calendar",false],[2,[7,"/",false],[2,[3,"id",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
-// calendar_index => /calendar(.:format)
+  appointment_path: Utils.route(["id"], ["format"], [2,[7,"/",false],[2,[6,"appointment",false],[2,[7,"/",false],[2,[3,"id",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
+// appointment_index => /appointment(.:format)
   // function(options)
-  calendar_index_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"calendar",false],[1,[2,[8,".",false],[3,"format",false]],false]]], {}),
-// edit_calendar => /calendar/:id/edit(.:format)
+  appointment_index_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"appointment",false],[1,[2,[8,".",false],[3,"format",false]],false]]], {}),
+// destroy_user_session => /signout(.:format)
+  // function(options)
+  destroy_user_session_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"signout",false],[1,[2,[8,".",false],[3,"format",false]],false]]], {}),
+// edit_appointment => /appointment/:id/edit(.:format)
   // function(id, options)
-  edit_calendar_path: Utils.route(["id"], ["format"], [2,[7,"/",false],[2,[6,"calendar",false],[2,[7,"/",false],[2,[3,"id",false],[2,[7,"/",false],[2,[6,"edit",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]]]], {}),
+  edit_appointment_path: Utils.route(["id"], ["format"], [2,[7,"/",false],[2,[6,"appointment",false],[2,[7,"/",false],[2,[3,"id",false],[2,[7,"/",false],[2,[6,"edit",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]]]], {}),
+// edit_invoice => /invoice/:id/edit(.:format)
+  // function(id, options)
+  edit_invoice_path: Utils.route(["id"], ["format"], [2,[7,"/",false],[2,[6,"invoice",false],[2,[7,"/",false],[2,[3,"id",false],[2,[7,"/",false],[2,[6,"edit",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]]]], {}),
 // edit_patient => /patient/:id/edit(.:format)
   // function(id, options)
   edit_patient_path: Utils.route(["id"], ["format"], [2,[7,"/",false],[2,[6,"patient",false],[2,[7,"/",false],[2,[3,"id",false],[2,[7,"/",false],[2,[6,"edit",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]]]], {}),
-// new_calendar => /calendar/new(.:format)
+// edit_service => /service/:id/edit(.:format)
+  // function(id, options)
+  edit_service_path: Utils.route(["id"], ["format"], [2,[7,"/",false],[2,[6,"service",false],[2,[7,"/",false],[2,[3,"id",false],[2,[7,"/",false],[2,[6,"edit",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]]]], {}),
+// edit_visit => /visit/:id/edit(.:format)
+  // function(id, options)
+  edit_visit_path: Utils.route(["id"], ["format"], [2,[7,"/",false],[2,[6,"visit",false],[2,[7,"/",false],[2,[3,"id",false],[2,[7,"/",false],[2,[6,"edit",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]]]], {}),
+// invoice => /invoice/:id(.:format)
+  // function(id, options)
+  invoice_path: Utils.route(["id"], ["format"], [2,[7,"/",false],[2,[6,"invoice",false],[2,[7,"/",false],[2,[3,"id",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
+// invoice_index => /invoice(.:format)
   // function(options)
-  new_calendar_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"calendar",false],[2,[7,"/",false],[2,[6,"new",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
+  invoice_index_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"invoice",false],[1,[2,[8,".",false],[3,"format",false]],false]]], {}),
+// medical_history_index => /medical_history(.:format)
+  // function(options)
+  medical_history_index_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"medical_history",false],[1,[2,[8,".",false],[3,"format",false]],false]]], {}),
+// new_appointment => /appointment/new(.:format)
+  // function(options)
+  new_appointment_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"appointment",false],[2,[7,"/",false],[2,[6,"new",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
+// new_invoice => /invoice/new(.:format)
+  // function(options)
+  new_invoice_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"invoice",false],[2,[7,"/",false],[2,[6,"new",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
 // new_patient => /patient/new(.:format)
   // function(options)
   new_patient_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"patient",false],[2,[7,"/",false],[2,[6,"new",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
+// new_service => /service/new(.:format)
+  // function(options)
+  new_service_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"service",false],[2,[7,"/",false],[2,[6,"new",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
+// new_user_registration => /signup(.:format)
+  // function(options)
+  new_user_registration_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"signup",false],[1,[2,[8,".",false],[3,"format",false]],false]]], {}),
+// new_user_session => /signin(.:format)
+  // function(options)
+  new_user_session_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"signin",false],[1,[2,[8,".",false],[3,"format",false]],false]]], {}),
+// new_visit => /visit/new(.:format)
+  // function(options)
+  new_visit_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"visit",false],[2,[7,"/",false],[2,[6,"new",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
 // patient => /patient/:id(.:format)
   // function(id, options)
   patient_path: Utils.route(["id"], ["format"], [2,[7,"/",false],[2,[6,"patient",false],[2,[7,"/",false],[2,[3,"id",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
@@ -458,7 +494,34 @@ Based on Rails routes of Houzel::Application
   rails_mailers_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"rails",false],[2,[7,"/",false],[2,[6,"mailers",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
 // root => /
   // function(options)
-  root_path: Utils.route([], [], [7,"/",false], {})}
+  root_path: Utils.route([], [], [7,"/",false], {}),
+// service => /service/:id(.:format)
+  // function(id, options)
+  service_path: Utils.route(["id"], ["format"], [2,[7,"/",false],[2,[6,"service",false],[2,[7,"/",false],[2,[3,"id",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
+// service_index => /service(.:format)
+  // function(options)
+  service_index_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"service",false],[1,[2,[8,".",false],[3,"format",false]],false]]], {}),
+// user => /user/:id(.:format)
+  // function(id, options)
+  user_path: Utils.route(["id"], ["format"], [2,[7,"/",false],[2,[6,"user",false],[2,[7,"/",false],[2,[3,"id",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
+// user_index => /user(.:format)
+  // function(options)
+  user_index_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"user",false],[1,[2,[8,".",false],[3,"format",false]],false]]], {}),
+// user_registration => /signup(.:format)
+  // function(options)
+  user_registration_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"signup",false],[1,[2,[8,".",false],[3,"format",false]],false]]], {}),
+// user_session => /signin(.:format)
+  // function(options)
+  user_session_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"signin",false],[1,[2,[8,".",false],[3,"format",false]],false]]], {}),
+// users_role => /admin/users(.:format)
+  // function(options)
+  users_role_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"admin",false],[2,[7,"/",false],[2,[6,"users",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
+// visit => /visit/:id(.:format)
+  // function(id, options)
+  visit_path: Utils.route(["id"], ["format"], [2,[7,"/",false],[2,[6,"visit",false],[2,[7,"/",false],[2,[3,"id",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
+// visit_index => /visit(.:format)
+  // function(options)
+  visit_index_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"visit",false],[1,[2,[8,".",false],[3,"format",false]],false]]], {})}
 ;
     root.Routes.options = defaults;
     root.Routes.default_serializer = function(object, prefix) {
