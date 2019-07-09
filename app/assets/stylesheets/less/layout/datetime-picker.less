@@ -1,0 +1,45 @@
+//
+// flatpickr
+//
+// ------------------------------
+
+@day-width:         38.5px;
+@cal-width: @day-width * 7;
+
+.flatpickr-wrapper {
+  > input {
+    &[readonly] {
+      background-color: transparent;
+    }
+  }
+
+  > a {
+    cursor: pointer;
+  }
+}
+
+.flatpickr-input {
+  &[readonly] {
+    background-color: transparent;
+  }
+}
+
+.flatpickr-calendar {
+  width: @cal-width;
+}
+
+.dayContainer {
+  width: @cal-width;
+  min-width: @cal-width;
+  max-width: @cal-width;
+}
+
+.flatpickr-days {
+  max-width: @cal-width;
+}
+
+.flatpickr-day {
+  max-width: @day-width;
+  height: @day-width;
+  line-height: @day-width;
+}
