@@ -1,0 +1,28 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name, :token => params[:token]), :html => { class: "mb-lg mt-lg" }) do |f| %>
+  <div class="form-group has-feedback">
+    <%= f.email_field :email, placeholder: I18n.t("user.messages.placeholder_email"), class: "form-control", value: @recipient_email, readonly: @recipient_email %>
+    <i class="fa fa-envelope form-control-feedback text-muted"></i>
+  </div>
+
+  <div class="form-group has-feedback">
+    <%= f.password_field :password, autocomplete: "off", placeholder: I18n.t("user.messages.placeholder_password"), class: "form-control" %>
+    <i class="fa fa-lock form-control-feedback text-muted"></i>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%>
+
+  <div class="clearfix">
+    <div class="pull-right pb">
+      <%= link_to I18n.t("user.messages.forgot_password"), new_password_path(:user), class: "text-muted"  %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit I18n.t("user.labels.signin"), class: "btn btn-block btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<div class="page-wrapper">
+  <div class="block-center">
+    <div class="panel panel-dark panel-flat">
+      <div class="panel-heading text-center">
+        <div class="pt">
+          <a href="<%= root_path %>">
+
+          </a>
+        </div>
+        <p class="text-center mt-lg">
+          <strong><%= I18n.t("user.messages.signin_title") %></strong>
+        </p>
+      </div>
+
+      <div class="panel-body">
+        <%= render partial: 'form' %>
+
+        <div class="text-center pb pt-lg">          
+          <%= link_to I18n.t("user.messages.link_create"), new_user_registration_path  %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

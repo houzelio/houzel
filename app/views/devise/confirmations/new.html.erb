@@ -1,0 +1,33 @@
+<div class="page-wrapper">
+  <div class="block-center">
+    <div class="panel panel-dark panel-flat">
+      <div class="panel-heading text-center">
+        <div class="pt">
+          <a href="<%= root_path %>">
+          </a>
+        </div>
+        <p class="text-center mt-lg">
+          <strong><%= I18n.t("user.messages.confirmation_title") %></strong>
+        </p>
+      </div>
+      <div class="panel-body">
+        <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+          <%= devise_error_messages! %>
+
+          <p class="text-center"><%= I18n.t("user.messages.confirmation_warning") %></p>
+
+          <div class="form-group has-feedback">
+            <%= f.label I18n.t("user.labels.email"), class: "text-muted" %>
+            <%= f.email_field :email, autofocus: true, placeholder: I18n.t("user.messages.placeholder_email"), class: "form-control", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+            <i class="fa fa-envelope form-control-feedback text-muted"></i>
+          </div>
+
+          <div class="actions">
+            <%= f.submit I18n.t("user.labels.send"), class:"btn btn-block btn-primary" %>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
