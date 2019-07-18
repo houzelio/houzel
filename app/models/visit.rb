@@ -5,6 +5,8 @@ class Visit < Sequel::Model
 
   many_to_one :patient
   one_to_one  :appointment
+  one_to_one  :medical_history
 
   nested_association :appointment
+  nested_association :medical_history
 end
