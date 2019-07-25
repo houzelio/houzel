@@ -20,6 +20,13 @@ class VisitController < ApplicationController
     end
   end
 
+  def show
+    visit = Visit.first(id: params[:id])
+    raise Sequel::NoExistingObject unless visit.present?
+
+    @visit =  VisitDecorator.new(visit)
+  end
+
   private
 
   def visit_params
