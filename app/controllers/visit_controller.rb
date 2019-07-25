@@ -5,6 +5,21 @@ class VisitController < ApplicationController
     @patients = Patient.select(:id, :name).order(:name)
   end
 
+  def create
+    visit = Visit.new
+    visit.set_fields(visit_params, visit_fields)
+
+    mcl_history = MedicalHistory.new
+    mcl_history.set_fields(mcl_history_params, mcl_history_fields)
+    visit.medical_history = mcl_history
+
+    if visit.save()
+      respond_with_message(I18n.t(visit.end_date ? 'visit.messages.checked_out' : 'visit.messages.saved'), "success", :ok)
+    else
+      respond_with visit
+    end
+  end
+
   private
 
   def visit_params
