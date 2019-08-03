@@ -59,4 +59,10 @@ Controller =
           view.showErrors($.parseJSON(jqXHR.responseText).errors)
     })
 
+  onVisitConfirmDelete: (view) ->
+    model = view.model
+    model.destroy()
+
+    AppChan.request("patient:outpatient")
+
 export default Controller
