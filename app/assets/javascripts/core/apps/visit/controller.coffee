@@ -1,6 +1,6 @@
 import { AppChan, ObjChan } from 'channels'
 import { showView } from 'helpers/layout-region'
-import { Visit } from 'entities/index'
+import { Visit, Patient, MclHistory } from 'entities/index'
 import Syphon from 'backbone.syphon'
 import FormView from './form-view'
 
@@ -24,6 +24,15 @@ Controller =
       view.on('visit:confirm:delete', @onVisitConfirmDelete)
 
     view
+
+  onVisitSelectPatient: (view, id) ->
+    patient = Patient.get(id)
+    mcl_histories = MclHistory.getList({ patient_id: id })
+
+    ObjChan.request("when:fetched", [patient, mcl_histories], =>
+      patient = new Patient.create({patient: _.clone(patient.attributes)})
+      view.showPatientInfo(patient, mcl_histories)
+    )
 
   onVisitSave: (view) ->
     model = view.model
