@@ -1,0 +1,69 @@
+include ../../../partials/content-header
++header(t('visit.title'), t('general.buttons.back'), route())
+
+- var title
+- 
+  function isNew() {
+    return !id || status == 'scheduled'
+  }
+
+div.panel.panel-transparent
+  div.panel-body
+    form.col-lg-8.col-lg-offset-2(role="form")
+      div#patient-region
+        if ( !id )
+          div.row
+            div.form-group.col-sm-5.required
+              - title = t('patient.title')          
+              label.control-label(for="patient_id") #{title}
+              select#patient-sel.chosen-select(data-placeholder=title)
+                option(value)
+                each patient in patients
+                  option(value=patient.id) #{patient.name}
+              span.help-block
+        else
+          include ./regions/patient.pug
+      div.row.check-pickr
+        div.form-group.col-sm-6.required
+          - title = t('visit.labels.checkin_time')
+          - start_date = start_date ? start_date : mom().format('L HH:mm')
+          label.control-label(for="start_date") #{title}
+          div.input-group
+            input#checkin-pickr.flatpickr.flatpickr-input.form-control.font-15(name="start_date" value=start_date data-input)
+            a.input-group-addon.cursor-pointer(data-click)
+              i.la.la-lg.la-sign-in
+          span.help-block
+        div.form-group.col-sm-6
+          - title = t('visit.labels.checkout_time')
+          label.control-label(for="end_date") #{title}
+          div.input-group
+            input#checkout-pickr.flatpickr.flatpickr-input.form-control.font-15(name="end_date" value=end_date data-input)
+            a.input-group-addon.cursor-pointer(data-click)
+              i.la.la-lg.la-sign-out 
+      div.row.tabbable-line.mt-xl
+        ul.nav.nav-tabs
+          li.active
+            - title = t('visit.titles.visit_information')
+            a( href="#anamnesis-tab" data-toggle="tab") #{title}
+          li
+            - title = t('visit.titles.history')
+            a(href="#history-tab" data-toggle="tab") #{title}
+      div.tab-content.mt-lg
+        div#anamnesis-tab.tab-pane.fade.in.active(data-tab="")
+          div.row
+            div.form-group.col-sm-10
+              - title = t('visit.labels.complaint')
+              label.control-label(for="complaint") #{title}
+              textarea#complaint-in.form-control(name="complaint")
+                =history.complaint
+              span.help-block            
+          div#diagnosis-region            
+            include ./regions/diagnosis.pug
+          button#save-btn.btn.btn-primary
+            = t('general.buttons.save')
+          if ( !isNew() )
+            button#delete-btn.btn.btn-default.ml-sm
+              = t('general.buttons.delete')              
+        div#history-tab.tab-pane.fade
+          div#mcl-history-region
+    

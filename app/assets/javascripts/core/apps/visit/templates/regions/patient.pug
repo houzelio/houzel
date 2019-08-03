@@ -1,0 +1,12 @@
+div.row
+  div.col-sm-10
+    - title = t('general.labels.name')
+    label.mr-sm #{title}
+    span.font-16.font-weight-bold
+      = patient.name
+div.row.mb-xl
+  div.col-sm-6
+    - title = t('patient.labels.observation')
+    label.mr-sm #{title}
+    span.font-15      
+      = patient.observation                     
