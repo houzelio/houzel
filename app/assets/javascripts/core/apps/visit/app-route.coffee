@@ -7,4 +7,5 @@ export default class extends AppRouter
 
   appRoutes:
     "visit/new" : "newVisit"
+    "visit/:id" : "editVisit"
 
