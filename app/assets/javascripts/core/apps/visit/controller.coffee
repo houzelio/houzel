@@ -1,6 +1,7 @@
 import { AppChan, ObjChan } from 'channels'
 import { showView } from 'helpers/layout-region'
 import { Visit } from 'entities/index'
+import Syphon from 'backbone.syphon'
 import FormView from './form-view'
 
 Controller =
@@ -23,5 +24,18 @@ Controller =
       view.on('visit:confirm:delete', @onVisitConfirmDelete)
 
     view
+
+  onVisitSave: (view) ->
+    model = view.model
+    if !model.isValid(true) then return
+
+    data = Syphon.serialize(view)
+    model.save(data, {
+      success: () ->
+        AppChan.request("patient:outpatient")
+      error: (model, jqXHR) ->
+        if jqXHR.status != 404
+          view.showErrors($.parseJSON(jqXHR.responseText).errors)
+    })
 
 export default Controller
