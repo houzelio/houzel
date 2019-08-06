@@ -154,3 +154,95 @@
     }
   }
 }
+
+
+//
+// settings page
+// --------------------------------------------------
+.aup-panel {
+  display: table;
+  min-height: 400px;
+}
+
+.aup-panel-body {
+  display: table-cell;
+  padding: 0px 20px;
+
+  &:before, &:after {
+    display: none;
+  }
+
+  > section h1 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -0.0006em;
+    color: #434E64;
+  }
+}
+
+.aup-nav-panel {
+  display: table-cell;
+  width: 235px;
+  padding: 10px 20px 20px 10px;
+  border-right: 1px solid #ccc;
+
+  &, .aup-sidebar {
+    min-height: 400px;
+  }
+
+  .aup-sidebar {
+    &.sidebar {
+      border: 0;
+      background-color:  transparent;
+
+      .nav {
+        > li {
+          &:hover {
+            & {
+              background-color: transparent;
+            }
+
+            > a,
+            > a > .item-text,
+            .nav {
+              background-color: rgba(9,30,66,.04);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .aup-nav {
+    &.nav {
+      > li {
+        > a {
+          color: #0052CC;
+          padding: 7px 10px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+.aup-nav-heading {
+  font-size: 1.02em;
+  letter-spacing: -.003em;
+  text-transform: uppercase;
+
+  > strong {
+    font-weight: 700;
+  }
+}
+
+.aup-navgroup-inner {
+  .aup-nav-heading {
+    padding: 0px 10px 4px 11px;
+  }
+}
+
+.aup-panel-grid {
+  min-width: 550px;
+}
