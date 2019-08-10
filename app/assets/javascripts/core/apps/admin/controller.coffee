@@ -9,6 +9,7 @@ Controller =
     users = Admin.getUsersRole()
     ObjChan.request("when:fetched", users, =>
       view = new UserView {collection: users}
+      view.on('admin:remove:user', @onAdminRemoveUser)
       @_showView(view)
     )
 
@@ -20,5 +21,12 @@ Controller =
     settingView.showChildView('settingRegion', view)
 
     return
+
+  onAdminRemoveUser: (model, collection) ->
+    user = User.create(id: model.get("id"))
+    user.destroy({
+      success: () ->
+        collection.remove(model)
+    })
 
 export default Controller
