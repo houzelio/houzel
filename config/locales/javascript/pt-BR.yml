@@ -1,5 +1,19 @@
 pt-BR:
   javascripts:
+    visit:
+      title: "Visita"
+      labels:
+        checkin_time: "Entrada"
+        checkout_time: "Saída"
+        admission_date: "Data de Admissão"
+        complaint: "Motivo da Visita"
+        diagnosis: "Diagnósticos"
+        notes: "Notas"
+      titles:
+        visit_information: "Informação de Visita"
+        history: "Histórico"
+      buttons:
+        add_diagnosis: "Adicionar Diagnósticos"
     appointment:
       title: "Atendimento"
       labels:
@@ -11,6 +25,14 @@ pt-BR:
         description: "Descrição"
       buttons:
         schedule: "Agendar"
+    mcl-history:
+      labels:
+        complaint: "Motivo da Visita"
+        diagnosis: "Diagnóstico"
+        notes: "Notas"
+      messages:
+        empty_notes: "Nenhuma nota adicionada"
+        no_history_available: "Histórico não disponível"
     patient:
       title: "Paciente"
       labels:
@@ -46,6 +68,27 @@ pt-BR:
       messages:
         service_required: "Inclua ao menos um serviço"
         remove_service: "Tem certeza que deseja remover o serviço?"
+    invoice:
+      title: "Fatura"
+      list_title: "Faturas"
+      labels:
+        description: "Descrição"
+        base_price: "Preço Base"
+        charge: "Cobrança"
+        final_charge: "Valor Final"
+        total: "Total"
+        remarks: "Observações"
+        billed_date: "Data de Faturamento"
+      messages:
+        no_services_added: "Nenhum serviço adicionado"
+    admin:
+      labels:
+        general: "Geral"
+        user_access: "Usuários e direitos de acesso"
+      buttons:
+        access_revoke: "Revogar"
+      messages:
+        revoke_access: "Você tem certeza que deseja revogar o acesso para %{name}?"
     general:
       buttons:
         new: "Novo"

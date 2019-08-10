@@ -1,5 +1,19 @@
 en:
   javascripts:
+    visit:
+      title: "Appointment"
+      labels:
+        checkin_time: "Check In"
+        checkout_time: "Check Out"
+        admission_date: "Admission Date"
+        complaint: "Reason For Visit"
+        diagnosis: "Diagnosis"
+        notes: "Notes"
+      titles:
+        visit_information: "Visit Information"
+        history: "History"
+      buttons:
+        add_diagnosis: "Add Diagnosis"
     appointment:
       title: "Appointment"
       labels:
@@ -11,6 +25,14 @@ en:
         description: "Description"
       buttons:
         schedule: "Schedule"
+    mcl-history:
+      labels:
+        complaint: "Reason For Visit"
+        diagnosis: "Diagnosis"
+        notes: "Notes"
+      messages:
+        empty_notes: "No notes added"
+        no_history_available: "No history available"
     patient:
       title: "Patient"
       labels:
@@ -46,6 +68,27 @@ en:
       messages:
         service_required: "Include at least one service"
         remove_service: "Are you sure you want to delete the service?"
+    invoice:
+      title: "Invoice"
+      list_title: "Invoices"
+      labels:
+        description: "Description"
+        base_price: "Base Price"
+        charge: "Charge"
+        final_charge: "Final Charge"
+        total: "Total"
+        remarks: "Remarks"
+        billed_date: "Bill Date"
+      messages:
+        no_services_added: "No services added"
+    admin:
+      labels:
+        general: "General"
+        user_access: "Users and rigth access"
+      buttons:
+        access_revoke: "Revoke"
+      messages:
+        revoke_access: "Are you sure you want to revoke the access to %{name}"
     general:
       buttons:
         new: "New"
