@@ -116,3 +116,7 @@ en:
       messages:
         empty_set: "No information added"
         required_field: "This field is required"
+    numeral:
+      formats:
+        decimal_mark: '.'
+        delimiter: ','

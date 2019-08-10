@@ -116,3 +116,7 @@ pt-BR:
       messages:
         empty_set: "Nenhuma informação adicionada"
         required_field: "Preênchimento necessário"
+    numeral:
+      formats:
+        decimal_mark: ','
+        delimiter: '.'
