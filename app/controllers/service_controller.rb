@@ -25,6 +25,11 @@ class ServiceController < ApplicationController
     end
   end
 
+  def show
+    @service = Service.first(id: params[:id])
+    raise Sequel::NoExistingObject unless @service.present?
+  end
+
   private
 
   def service_params
