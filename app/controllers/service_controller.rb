@@ -14,6 +14,17 @@ class ServiceController < ApplicationController
     @services = services
   end
 
+  def create
+    service = Service.new
+    service.set_fields(service_params, service_fields)
+
+    if service.save
+      respond_with_message(I18n.t('service.messages.saved'), "success", :ok)
+    else
+      respond_with service
+    end
+  end
+
   private
 
   def service_params
