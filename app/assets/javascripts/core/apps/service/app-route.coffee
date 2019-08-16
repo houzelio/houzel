@@ -7,3 +7,4 @@ export default class extends AppRouter
 
   appRoutes:
     "service/new" : "newService"
+    "service/:id" : "editService"
