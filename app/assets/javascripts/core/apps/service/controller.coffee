@@ -1,9 +1,29 @@
-import { AppChan } from 'channels'
+import { AppChan, ObjChan } from 'channels'
 import { showView } from 'helpers/layout-region'
 import { formatCurr } from 'helpers/numeral'
+import { Service }  from 'entities/index'
 import Syphon from 'backbone.syphon'
+import FormView from './form-view'
 
 Controller =
+  newService: () ->
+    service = Service.create()
+    ObjChan.request("when:fetched", service, =>
+      view = @_getFormView(service)
+      showView(view)
+    )
+
+    return
+
+  _getFormView: (model, deleteOption) ->
+    view = new FormView {model: model}
+
+    view.on('service:save', @onServiceSave)
+    if deleteOption
+      view.on('service:confirm:delete', @onServiceConfirmDelete)
+
+    view
+
   onServiceSave: (view) ->
     model = view.model
     if !model.isValid(true) then return
