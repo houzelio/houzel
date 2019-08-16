@@ -21,4 +21,10 @@ Controller =
         AppChan.request("service:list")
     })
 
+  onServiceConfirmDelete: (view) ->
+    model = view.model
+    model.destroy()
+
+    AppChan.request("service:list")
+
 export default Controller
