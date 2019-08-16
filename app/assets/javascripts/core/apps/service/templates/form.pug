@@ -1,0 +1,38 @@
+include ../../../partials/content-header
++header(t('service.title'), t('general.buttons.back'), route())
+
+- var title
+
+div.panel.panel-transparent
+  div.panel-body
+    form.col-lg-6.col-lg-offset-2(role="form")
+      div.form-group.required
+        - title = t('service.title')
+        label.control-label(for="name") #{title}
+        input#name-in.form-control(type="text" name="name" value=name maxlength="127")
+        span.help-block
+      div.row
+        div.form-group.col-sm-6.required.mb0
+          - title = t('service.labels.category')
+          label.control-label(for="category") #{title}
+          select#category-sel.chosen-select(name="category" data-placeholder=" ")
+            option(value="private")
+              = t('service.labels.private')
+            option(value="insurance")
+              = t('service.labels.insurance')
+            option(value="other")
+              =t('service.labels.other')
+        div.form-group.col-sm-6.required.mb0
+          - title = t('general.labels.value')
+          label.control-label(for="value") #{title}
+          input#value-in.form-control.fs-input-num(type="text" name="value" value=value 
+          autocomplete="off" data-toggle="currency")
+          span.help-block
+      div.form-group
+        button#save-btn.btn.btn-primary
+          = t('general.buttons.save')
+        if ( id )
+          button#delete-btn.btn.btn-default.ml-sm
+            = t('general.buttons.delete')
+          
+          
