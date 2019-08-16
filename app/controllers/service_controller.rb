@@ -30,6 +30,17 @@ class ServiceController < ApplicationController
     raise Sequel::NoExistingObject unless @service.present?
   end
 
+  def update
+    service = Service.first(id: params[:id])
+    raise Sequel::NoExistingObject unless service.present?
+
+    if service.update_fields(service_params, service_fields)
+      respond_with_message(I18n.t('service.messages.updated'), "success", :ok)
+    else
+      respond_with service
+    end
+  end
+
   private
 
   def service_params
