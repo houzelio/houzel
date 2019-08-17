@@ -64,7 +64,7 @@ end
 
 group :development, :test do
   # RSpec (unit tests, ...)
-  gem 'rspec-rails', '3.5.2'
+  gem 'rspec-rails', '3.8.2'
 
   # Shell
   gem 'pry-rails'
