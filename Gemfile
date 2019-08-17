@@ -58,8 +58,6 @@ end
 
 group :test do
   # RSpec (unit tests, ...)
-
-  gem 'capybara', '2.12'
   gem 'database_cleaner', '1.5.3'
 
 end
