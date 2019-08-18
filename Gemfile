@@ -65,6 +65,8 @@ end
 group :development, :test do
   # RSpec (unit tests, ...)
   gem 'rspec-rails', '3.8.2'
+  # Random data
+  gem 'ffaker', '2.9.0'
 
   # Shell
   gem 'pry-rails'
