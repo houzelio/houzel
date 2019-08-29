@@ -5,6 +5,8 @@ mixinBuiltIn = (klass) ->
   proto = getPrototypeOf(klass)
   mergeStrats(proto, proto, _.keys)
 
+  proto._isMixed = true
+
   klass
 
 initMixin = () ->
@@ -12,7 +14,7 @@ initMixin = () ->
 
   _.each(components, (klass) ->
     klass.prototype.preinitialize = ->
-      if @mixins
+      if @mixins && !@_isMixed
         mixinBuiltIn(@)
     )
 
