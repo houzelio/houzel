@@ -55,8 +55,7 @@ Controller =
       success: () ->
         AppChan.request("patient:outpatient")
       error: (model, jqXHR) ->
-        if jqXHR.status != 404
-          view.showErrors($.parseJSON(jqXHR.responseText).errors)
+        view.showRespErrors(jqXHR)
     })
 
   onVisitConfirmDelete: (view) ->

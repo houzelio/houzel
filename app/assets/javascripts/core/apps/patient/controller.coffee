@@ -67,11 +67,7 @@ Controller =
       success: () ->
         AppChan.request("patient:list")
       error: (model, jqXHR) ->
-        if jqXHR.status != 404
-          view.showErrors($.parseJSON(jqXHR.responseText).errors)
-          return
-
-        AppChan.request("patient:list")
+        view.showRespErrors(jqXHR)
     })
 
   onPatientConfirmDelete: (view) ->

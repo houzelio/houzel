@@ -43,11 +43,7 @@ Controller =
       success: () ->
         AppChan.request("service:list")
       error: (model, jqXHR) ->
-        if jqXHR.status != 404
-          view.showErrors($.parseJSON(jqXHR.responseText).errors)
-          return
-
-        AppChan.request("service:list")
+        view.showRespErrors(jqXHR)
     })
 
   onServiceConfirmDelete: (view) ->
