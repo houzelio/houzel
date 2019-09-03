@@ -1,23 +1,9 @@
 import { ObjChan } from 'channels'
 import { showNotification } from 'helpers/notification'
 import Validation from 'backbone-validation'
-import logger from 'js-logger'
 
 #Mix in validation on the model's prototype
 _.extend(Backbone.Model.prototype, Validation.mixin)
-
-#Check the fetched entity for errors
-ObjChan.reply("when:fetched", (object, callback) ->
-  xhrs = _.chain([object]).flatten().pluck("_fetch").value()
-
-  $.when(xhrs...)
-    .done ->
-      try
-        callback()
-      catch error
-        logger.error(error)
-)
-
 
 patchSync = (cache = false) ->
   Backbone.$.ajaxSetup
