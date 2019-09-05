@@ -14,15 +14,21 @@ en:
         history: "History"
       buttons:
         add_diagnosis: "Add Diagnosis"
+        checkin: "Check In"
+        checkout: "Check Out"
     appointment:
       title: "Appointment"
       labels:
         patient: "Patient"
         examiner: "Examiner"
-        date_of_visit: "Date of Visit"
+        date_of_appointment: "Date of Appointment"
         begin_time: "Begin"
         finish_time: "Finish"
         description: "Description"
+        all: "All"
+        day: "Day"
+        week: "Week"
+        month: "Month"
       buttons:
         schedule: "Schedule"
     mcl-history:
@@ -37,9 +43,7 @@ en:
       title: "Patient"
       labels:
         age: "Age"
-        phone: "Phone"
         email: "Email"
-        birthday: "Day of birth"
         sex: "Sex"
         male: "Male"
         female: "Female"
@@ -89,6 +93,24 @@ en:
         access_revoke: "Revoke"
       messages:
         revoke_access: "Are you sure you want to revoke the access to %{name}"
+    profile:
+      title: "Profile"
+      labels:
+        profile_details: "Profile Details"
+        change_email: "Change Email"
+        change_password: "Change Password"
+        general: "General"
+        email: "Email"
+        new_email: " New Email"
+        current_password: "Current Password"
+        new_password: "New Password"
+        password: "Password"
+        password_confirmation: "Confirm New Password"
+        location: "Location"
+        language: "Language"
+      messages:
+        refresh_profile: "The profile has been updated, and to load the new changes, we need to refresh this page."
+        email_warn: "Once you have changed your email, do remember to login with the new email next time."
     general:
       buttons:
         new: "New"
@@ -97,10 +119,11 @@ en:
         delete: "Delete"
         view: "View"
         edit: "Edit"
-        checkin: "Check In"
       labels:
         name: "Name"
         value: "Value"
+        birthday: "Day of Birth"
+        phone: "Phone"
       navigation:
         patients: "Patients"
         billing: "Billing"
@@ -116,7 +139,15 @@ en:
       messages:
         empty_set: "No information added"
         required_field: "This field is required"
+        select_item: "Select a %{item}"
+    session:
+      labels:
+        sign_out: "Sign Out"
     numeral:
-      formats:
+      format:
         decimal_mark: '.'
         delimiter: ','
+    language:
+      locales:
+        en: "English"
+        pt-BR: "Portuguese"

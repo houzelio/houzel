@@ -9,8 +9,8 @@ pt-BR:
       scheduled: "A consulta para %{name} foi agendada"
   patient:
     messages:
-      saved: "O paciente %{name} foi salvo(a)"
-      updated: "O paciente %{name} foi atualizado(a)"
+      saved: "O paciente %{name} foi salvo"
+      updated: "O paciente %{name} foi atualizado"
   service:
     messages:
       saved: "O serviço foi salvo"
@@ -19,7 +19,7 @@ pt-BR:
   invoice:
     messages:
       create: "O fatura foi salva"
-      updated: O fatura foi atualizada"
+      updated: "O fatura foi atualizada"
   user:
     labels:
       name: "Nome"
@@ -41,18 +41,22 @@ pt-BR:
       placeholder_new_password: "Digite sua nova senha"
       link_create: "Cadastre-se agora mesmo"
       forgot_password: "Esqueceu sua senha?"
-      confirmation_warning: "Preencha com seu email para receber instruções sobre como confirmar seu email."
-      forgot_pwd_warning: "Preencha com seu email para receber instruções sobre como redefinir sua senha."
+      confirmation_warning: "Preencha com seu email para receber instruções sobre como confirmar seu email"
+      forgot_pwd_warning: "Preencha com seu email para receber instruções sobre como redefinir sua senha"
       required_email: "Email não está preenchido"
-      changed_email: "Email já esta em uso"
+      taken_email: "Email já esta em uso"
       email_format: "Email está em um formato inválido"
       required_password: "Senha não está preenchido"
       password_confirmation: "Senha não coincidem"
       password_format: "Senha está muito curta"
+      password_changed: "Senha alterada com sucesso! Agora você pode usar sua nova senha para entrar no sistema."
+      password_not_changed: "Alteração da senha falhou"
+      settings_updated: "Configurações atualizadas"
       access_closed: "Acesso revogado"
   profile:
     messages:
       required_name: "Nome não está preenchido"
+      updated: "Seu perfil foi atualizado com sucesso"
   general:
     messages:
       not_found: "Não encontrado"

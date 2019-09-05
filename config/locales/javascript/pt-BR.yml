@@ -14,15 +14,21 @@ pt-BR:
         history: "Histórico"
       buttons:
         add_diagnosis: "Adicionar Diagnósticos"
+        checkin: "Entrar"
+        checkout: "Sair"
     appointment:
       title: "Atendimento"
       labels:
         patient: "Paciente"
         examiner: "Examinador"
-        date_of_visit: "Data da Visita"
+        date_of_appointment: "Data da Consulta"
         begin_time: "Início"
         finish_time: "Fim"
         description: "Descrição"
+        all: "Todos"
+        day: "Dia"
+        week: "Semana"
+        month: "Mês"
       buttons:
         schedule: "Agendar"
     mcl-history:
@@ -37,9 +43,7 @@ pt-BR:
       title: "Paciente"
       labels:
         age: "Idade"
-        phone: "Telefone"
         email: "Email"
-        birthday: "Data de Nascimento"
         sex: "Sexo"
         male: "Masculino"
         female: "Feminino"
@@ -89,6 +93,24 @@ pt-BR:
         access_revoke: "Revogar"
       messages:
         revoke_access: "Você tem certeza que deseja revogar o acesso para %{name}?"
+    profile:
+      title: "Perfil"
+      labels:
+        profile_details: "Detalhes do Perfil"
+        change_email: "Alterar Email"
+        change_password: "Alterar Senha"
+        general: "Geral"
+        email: "Email"
+        new_email: "Novo Email"
+        current_password: "Senha Atual"
+        new_password: "Nova Senha"
+        password: "Senha"
+        password_confirmation: "Confirmar Senha"
+        location: "Localização"
+        language: "Idioma"
+      messages:
+        refresh_profile: "O perfil foi atualizado, e para carregar as novas alterações essa página precisa ser recarregada."
+        email_warn: "Uma vez que tenha alterado seu e-mail, lembre-se de utilizar o novo email no próximo acesso"
     general:
       buttons:
         new: "Novo"
@@ -97,10 +119,11 @@ pt-BR:
         delete: "Deletar"
         view: "Visualizar"
         edit: "Editar"
-        checkin: "Entrar"
       labels:
         name: "Nome"
         value: "Valor"
+        birthday: "Data de Nascimento"
+        phone: "Telefone"
       navigation:
         patients: "Pacientes"
         billing: "Cobrança"
@@ -116,7 +139,15 @@ pt-BR:
       messages:
         empty_set: "Nenhuma informação adicionada"
         required_field: "Preênchimento necessário"
+        select_item: "Selecione um %{item}"
+    session:
+      labels:
+        sign_out: "Sair"
     numeral:
-      formats:
+      format:
         decimal_mark: ','
         delimiter: '.'
+    language:
+      locales:
+        en: "Inglês"
+        pt-BR: "Português"

@@ -43,15 +43,19 @@ en:
       confirmation_warning: "Fill with your mail to receive instructions on how to confirm your email."
       forgot_pwd_warning: "Fill with your mail to receive instructions on how to reset your password."
       required_email: "Email is required"
-      changed_email: "Email has already been taken"
+      taken_email: "Email has already been taken"
       email_format: "Email in invalid format"
       required_password: "Password is required"
       password_confirmation: "Password do not match"
       password_format: "Password is too short"
+      password_changed: "Password changed. You can now log in with your new password."
+      password_not_changed: "Password change failed"
+      settings_updated: "Settings updated"
       access_closed: "Access revoked"
   profile:
     messages:
       required_name: "Name is required"
+      updated: "Your profile has been updated"
   general:
     messages:
       not_found: "Not found"
