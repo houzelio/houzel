@@ -12,6 +12,7 @@
     "backbone.radio": "2.0.0",
     "backbone.stickit": "0.9.2",
     "backbone.syphon": "0.6.3",
+    "backbone.deep-model": "2.0.2",
     "backgrid": "0.3.8",
     "backgrid-paginator": "0.3.9",
     "bootbox": "4.4.0",
