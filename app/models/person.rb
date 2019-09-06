@@ -6,6 +6,7 @@ class Person < Sequel::Model
 
   many_to_one :user, key: :owner_id
   one_to_many :role
+  one_to_many :visit, key: :examiner_id
   one_to_one  :profile
 
   delegate :name, :to => :profile

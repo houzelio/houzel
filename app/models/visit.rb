@@ -4,6 +4,7 @@ class Visit < Sequel::Model
   plugin :nested_association
 
   many_to_one :patient
+  many_to_one :examiner, key: :examiner_id, class: :Person
   one_to_one  :appointment
   one_to_one  :medical_history
 
