@@ -9,7 +9,7 @@ class Person < Sequel::Model
   one_to_many :visit, key: :examiner_id
   one_to_one  :profile
 
-  delegate :name, :to => :profile
+  delegate :name, to: :profile
 
   def to_param
     self.guid
