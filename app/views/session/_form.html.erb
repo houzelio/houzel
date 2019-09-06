@@ -1,4 +1,6 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name, :token => params[:token]), :html => { class: "mb-lg mt-lg" }) do |f| %>
+  <%= show_messages %>
+
   <div class="form-group has-feedback">
     <%= f.email_field :email, placeholder: I18n.t("user.messages.placeholder_email"), class: "form-control", value: @recipient_email, readonly: @recipient_email %>
     <i class="fa fa-envelope form-control-feedback text-muted"></i>
