@@ -9,6 +9,10 @@ class VisitDecorator < ApplicationDecorator
     I18n.l(visit.end_date, format: :datetime) if visit.end_date
   end
 
+  def start_date_long
+    I18n.l(visit.start_date, format: :long) if visit.start_date
+  end
+
   def history
     visit.medical_history || {}
   end
