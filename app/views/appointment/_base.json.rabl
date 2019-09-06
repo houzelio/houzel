@@ -1,1 +1,1 @@
-attributes :id, :date, :start_time, :end_time, :patient_id, :specialist_id, :description
+attributes :id, :date, :start_time, :end_time, :patient_id, :examiner_id, :description
