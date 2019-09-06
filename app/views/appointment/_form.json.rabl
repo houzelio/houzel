@@ -3,5 +3,9 @@ child @patients => :patients do
 end
 
 child @examiners => :examiners do
-  attributes :id, :name
+  node do |att| {
+    :id => att[:id],
+    :name => att[:name]
+   }
+  end
 end
