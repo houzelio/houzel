@@ -78,46 +78,46 @@ Sequel.migration do
 
     create_table :patient do
       primary_key :id
-      column :name,            String,   :null=>false, :size=>255
-      column :birthday,        Date
-      column :sex,             String,   :size=>63
-      column :profession,      String,   :size=>127
-      column :site,            String,   :size=>255
-      column :address,         String,   :size=>382
-      column :zip_code,        String,   :size=>63
-      column :phone,           String,   :size=>63
-      column :email,           String,   :size=>127
-      column :parent_name,     String,   :size=>255
-      column :blood_type,      String,   :size=>32
+      column :name,        String,   :null=>false, :size=>255
+      column :birthday,    Date
+      column :sex,         String,   :size=>63
+      column :profession,  String,   :size=>127
+      column :site,        String,   :size=>255
+      column :address,     String,   :size=>382
+      column :zip_code,    String,   :size=>63
+      column :phone,       String,   :size=>63
+      column :email,       String,   :size=>127
+      column :parent_name, String,   :size=>255
+      column :blood_type,  String,   :size=>32
 
-      column :observation,     String
-      column :removed_at,      DateTime
-      column :created_at,      DateTime, :null=>false
-      column :updated_at,      DateTime, :null=>false
+      column :observation, String
+      column :removed_at,  DateTime
+      column :created_at,  DateTime, :null=>false
+      column :updated_at,  DateTime, :null=>false
     end
 
     create_table :service do
       primary_key :id
-      column :name,            String,   :size=>127
-      column :category,        String,   :size=>63  #"private; insurance"
-      column :value,           Numeric,  :null=>false
-      column :created_at,      DateTime, :null=>false
-      column :updated_at,      DateTime, :null=>false
+      column :name,       String,   :size=>127
+      column :category,   String,   :size=>63  #"private; insurance"
+      column :value,      Numeric,  :null=>false
+      column :created_at, DateTime, :null=>false
+      column :updated_at, DateTime, :null=>false
     end
 
     create_table :visit do
       primary_key :id
-      column :status,        String,   :size=>63
-      column :patient_id,    Integer
-      column :specialist_id, Integer
-      column :start_date,    DateTime
-      column :end_date,      DateTime
-      column :created_at,    DateTime, :null=>false
-      column :updated_at,    DateTime, :null=>false
+      column :status,      String,   :size=>63
+      column :patient_id,  Integer
+      column :examiner_id, Integer
+      column :start_date,  DateTime
+      column :end_date,    DateTime
+      column :created_at,  DateTime, :null=>false
+      column :updated_at,  DateTime, :null=>false
     end
 
-    add_index :visit, [:patient_id],    :name => 'index_visit_on_patient_id'
-    add_index :visit, [:specialist_id], :name => 'index_visit_on_specialist_id'
+    add_index :visit, [:patient_id],  :name => 'index_visit_on_patient_id'
+    add_index :visit, [:examiner_id], :name => 'index_visit_on_examiner_id'
 
     create_table :appointment do
       primary_key :id
@@ -208,8 +208,8 @@ Sequel.migration do
     end
 
     alter_table :visit do
-      add_foreign_key [:patient_id],    :patient,  :null=>false
-      add_foreign_key [:specialist_id], :person,   :null=>false
+      add_foreign_key [:patient_id],  :patient,  :null=>false
+      add_foreign_key [:examiner_id], :person,   :null=>false
     end
 
     alter_table :invoice do
