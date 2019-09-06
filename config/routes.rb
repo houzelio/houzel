@@ -1,6 +1,4 @@
 Houzel::Application.routes.draw do
-  root to: "application#index"
-
   if Sequel::Model.db.table_exists?(:user)
     devise_for :user, controllers: { registrations: "registration", sessions: "session" },
       skip: [:registration, :session]
@@ -15,7 +13,7 @@ Houzel::Application.routes.draw do
     post   "signup",  to: "registration#create", as: :user_registration
   end
 
-  resources :user, only: :destroy
+  resources :user, only: %i(update destroy)
   resources :patient
   resources :visit
   resources :appointment
@@ -26,4 +24,16 @@ Houzel::Application.routes.draw do
   scope "admin", controller: :admin do
     get :users_role, path: "/users"
   end
+
+  scope "user" do
+    resources :profile, only: :update do
+      collection do
+        get "/", action: :show
+        get "/email", to: redirect('/user/profile')
+        get "/password", to: redirect('/user/profile')
+      end
+    end
+  end
+
+  match "/", to: redirect('/patient'), via: :all
 end
