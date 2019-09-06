@@ -21,11 +21,15 @@ class ApplicationController < ActionController::Base
   private
 
   def set_locale
-    locale = http_accept_language.language_region_compatible_from(
-      I18n.available_locales.map(& :to_s ))
+    if user_signed_in?
+      I18n.locale = current_user.language
+    else
+      locale = http_accept_language.language_region_compatible_from(
+        I18n.available_locales.map(& :to_s ))
 
-    locale ||= DEFAULT_LANGUAGE
-    I18n.locale = locale
+      locale ||= DEFAULT_LANGUAGE
+      I18n.locale = locale
+    end
   end
 
   def gon_push_appdata
