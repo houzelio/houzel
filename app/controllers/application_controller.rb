@@ -41,7 +41,7 @@ class ApplicationController < ActionController::Base
 
   def respond_with_message(text, type, status, data = nil)
     @message = {:message => {:text => text, :type => type}}
-    @message.merge(data) if !data.blank?
+    @message.merge!(data) if !data.blank?
 
     render json: @message, :status => status
   end
