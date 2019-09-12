@@ -74,19 +74,12 @@
   padding: 20px;
 }
 
-
-//
-// table > thead > tr > th
-// --------------------------------------------------
 .table > thead > tr > th {
   color: @black-light;
   border-bottom: 1px solid #ddd;
   padding: 15px 20px;
 }
 
-//
-// table > tfoot > tr > th
-// --------------------------------------------------
 .table > tfoot > tr > th {
   vertical-align: middle;
 }
@@ -155,6 +148,27 @@
   }
 }
 
+.nav.nav-pills .active > a {
+ background-color: transparent;
+}
+
+.nav-pills {
+  &.quick-filter {
+    > li > a {
+      font-size: 1.22em;
+      color: @link-color;
+      padding: 15px 20px;
+      letter-spacing: -0.04em;
+    }
+
+    > li {
+      &.active > a,
+      > a:hover, > a:focus {
+        color: @link-color-active;
+      }
+    }
+  }
+}
 
 //
 // settings page
@@ -177,7 +191,7 @@
     font-weight: 600;
     margin: 0;
     letter-spacing: -0.0006em;
-    color: #434E64;
+    color: @link-color-active;
   }
 }
 
@@ -204,8 +218,7 @@
             }
 
             > a,
-            > a > .item-text,
-            .nav {
+            > a > .item-text {
               background-color: rgba(9,30,66,.04);
             }
           }
@@ -218,9 +231,19 @@
     &.nav {
       > li {
         > a {
-          color: #0052CC;
+          color: @link-color;
           padding: 7px 10px;
+          letter-spacing: -0.0003em;
           font-weight: 400;
+        }
+
+        > a:hover {
+          cursor: pointer;
+        }
+
+        > a.active, a:active {
+          color: @link-color-active;
+          font-weight: 600;
         }
       }
     }
