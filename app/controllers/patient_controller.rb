@@ -5,11 +5,12 @@ class PatientController < ApplicationController
     page = pagination_value_for(:page)
     per_page = pagination_value_for(:per_page)
 
-    patients = Patient.order(:name).paginate(page, per_page).where(removed_at: nil)
+    patients = Patient.where(removed_at: nil)
     if params_filter(:name)
       patients = patients.where(Sequel.ilike(:name, "%#{params_filter(:name)}%"))
     end
 
+    patients = patients.order(:name).paginate(page, per_page)
     @patients = patients
   end
 
