@@ -5,13 +5,15 @@ class Invoice < Sequel::Model
 
   many_to_one :patient
   one_to_many :invoice_service
-  
+
   def add_invoice_services(items_hash)
     invoice_services = Array.new
     pks = Array.new
 
     format_value = -> (value) {
-      m = Money.new(value.to_s.gsub(/\D+/, ""))
+      value = (value.is_a? Numeric) ? "%.2f" % value : value
+
+      m = Money.new(value.gsub(/\D+/, ""))
       m.format(symbol: nil, thousands_separator: "", decimal_mark: ".")
     }
 
@@ -35,8 +37,8 @@ class Invoice < Sequel::Model
       end
     }
 
-    excl_expr = InvoiceService.exclude(id: pks)
-    destroy = excl_expr.select(1).group(:invoice_id).first(invoice: self)
+    excl_expr = InvoiceService.exclude(id: pks).where(invoice: self)
+    destroy = excl_expr.select(1).group(:invoice_id).first
 
     if invoice_services.present? || destroy
       modified!
