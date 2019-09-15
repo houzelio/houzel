@@ -52,4 +52,8 @@ class Invoice < Sequel::Model
       }
     end
   end
+
+  def total
+    InvoiceService.where(invoice: self).sum(:value)
+  end
 end
