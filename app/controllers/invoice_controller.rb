@@ -6,6 +6,18 @@ class InvoiceController < ApplicationController
     @services = services_select
   end
 
+  def create
+    invoice = Invoice.new
+    invoice.set_fields(invoice_params, invoice_fields)
+    invoice.add_invoice_services(params[:invoice_services])
+
+    if invoice.save()
+      respond_with_message(I18n.t('invoice.messages.saved'), "success", :ok)
+    else
+      respond_with invoice
+    end
+  end
+
   private
 
   def services_select
