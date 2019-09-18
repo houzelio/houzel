@@ -11,4 +11,12 @@ class InvoiceController < ApplicationController
   def services_select
     Service.order(:name)
   end
+
+  def invoice_params
+    params.require(:invoice).permit(:patient_id, :bill_date, :remarks)
+  end
+
+  def invoice_fields
+    [:patient_id, :bill_date, :remarks]
+  end
 end
