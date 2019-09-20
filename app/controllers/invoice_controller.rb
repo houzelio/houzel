@@ -18,6 +18,16 @@ class InvoiceController < ApplicationController
     end
   end
 
+  def show
+    invoice = Invoice.first(id: params[:id])
+    raise Sequel::NoExistingObject unless invoice.present?
+
+    @invoice = InvoiceDecorator.new(invoice)
+
+    @services = services_select
+    @invoice_services = SafeQuery::MergedInvoiceService.new(invoice).services
+  end
+
   private
 
   def services_select
