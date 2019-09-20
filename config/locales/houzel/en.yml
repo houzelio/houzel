@@ -13,11 +13,12 @@ en:
       updated: "The patient %{name} has been updated"
   service:
     messages:
-      create: "The service has been saved"
+      saved: "The service has been saved"
       updated: "The service has been updated"
+      deleted: "The service were deleted"
   invoice:
     messages:
-      create: "The invoice has been saved"
+      saved: "The invoice has been saved"
       updated: "The invoice has been updated"
   user:
     labels:

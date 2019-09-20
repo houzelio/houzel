@@ -18,8 +18,8 @@ pt-BR:
       deleted: "O serviço foi removido"
   invoice:
     messages:
-      create: "O fatura foi salva"
-      updated: "O fatura foi atualizada"
+      saved: "A fatura foi salva"
+      updated: "A fatura foi atualizada"
   user:
     labels:
       name: "Nome"
