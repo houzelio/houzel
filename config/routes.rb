@@ -1,4 +1,6 @@
 Houzel::Application.routes.draw do
+  root to: redirect('/patient')
+
   if Sequel::Model.db.table_exists?(:user)
     devise_for :user, controllers: { registrations: "registration", sessions: "session" },
       skip: [:registration, :session]
@@ -34,6 +36,4 @@ Houzel::Application.routes.draw do
       end
     end
   end
-
-  match "/", to: redirect('/patient'), via: :all
 end
