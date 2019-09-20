@@ -28,6 +28,18 @@ class InvoiceController < ApplicationController
     @invoice_services = SafeQuery::MergedInvoiceService.new(invoice).services
   end
 
+  def update
+    invoice = Invoice.first(id: params[:id])
+    raise Sequel::NoExistingObject unless invoice.present?
+    invoice.add_invoice_services(params[:invoice_services])
+
+    if invoice.update_fields(invoice_params, invoice_fields)
+      respond_with_message(I18n.t('invoice.messages.updated'), "success", :ok)
+    else
+      respond_with invoice
+    end
+  end
+
   private
 
   def services_select
