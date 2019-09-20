@@ -1,4 +1,4 @@
-import DialogCmp from 'components/modal-dialog'
+import DialogCmp from 'components/dialog'
 
 export default DialogCmp.extend({
 
@@ -10,6 +10,4 @@ export default DialogCmp.extend({
     _message = template({message: message})
 
     DialogCmp.prototype.show.call(@, dialogType, _message, options)
-
-
 })
