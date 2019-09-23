@@ -9,8 +9,8 @@ module SafeQuery
 
   class MedProfessionals < Base
     def examiners
-      r = User.select(sel_column(:user, :id), sel_column(:profile], [:name]))
-      r = r.association_join(person: :profile)
+      r = Person.select(sel_column(:person, :id), sel_column(:profile, :name))
+      r = r.association_join(:profile)
       r
     end
   end
