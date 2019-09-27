@@ -1,35 +1,22 @@
 import Routes from 'helpers/routes'
 import { t } from 'helpers/i18n'
-import PageableCollection from './_base'
+import Entity from './entity'
 
-Model = Backbone.Model.extend({
+Visit = Entity.extend({
   urlRoot: -> Routes.visit_index_path()
 
   validation:
     patient_id:
       required: true
       msg: -> t('general.messages.required_field')
+
+  create: (attrs, options) ->
+    options = _.extend({}, options, {
+      urlRoot: Routes.new_visit_path(), fetch: true
+    })
+
+    Entity.prototype.create.call(@, attrs, options)
+
 })
 
-Collection = PageableCollection.extend({
-  model: Model
-  url: -> Routes.visit_index_path()
-})
-
-create = (options) ->
-  visit = new Model(options)
-  visit.url = Routes.new_visit_path()
-  visit.fetch()
-  visit.url = Routes.visit_index_path()
-  visit
-
-get = (id, options) ->
-  options = _.extend({}, options, id: id)
-  visit = new Model(options)
-  visit.fetch()
-  visit
-
-export {
-  create,
-  get
-}
+export default new Visit

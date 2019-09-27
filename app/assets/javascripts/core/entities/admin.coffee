@@ -1,18 +1,15 @@
 import Routes from 'helpers/routes'
-import PageableCollection from './_base'
+import Entity from './entity'
 
-Model = Backbone.Model.extend()
+Admin = Entity.extend({
 
-Collection = PageableCollection.extend({
-  model: Model
+  getUsersRole: (options) ->
+    @collectionClass.prototype.url = Routes.users_role_path()
+    users = @getList(options)
+
+    @collectionClass.prototype.url = null
+    users
+
 })
 
-getUsersRole = (options) ->
-  users = new Collection(options)
-  users.url = Routes.users_role_path()
-  users.fetch()
-  users
-
-export {
-  getUsersRole
-}
+export default new Admin

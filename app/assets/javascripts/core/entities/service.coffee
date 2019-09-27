@@ -1,8 +1,8 @@
 import Routes from 'helpers/routes'
 import { t } from 'helpers/i18n'
-import PageableCollection from './_base'
+import Entity from './entity'
 
-Model = Backbone.Model.extend({
+Service = Entity.extend({
   urlRoot: -> Routes.service_index_path()
 
   validation:
@@ -14,30 +14,4 @@ Model = Backbone.Model.extend({
       msg: -> t('general.messages.required_field')
 })
 
-Collection = PageableCollection.extend({
-  model: Model
-  url: -> Routes.service_index_path()
-})
-
-create = (options) ->
-  service = new Model(options)
-  service
-
-get = (id) ->
-  service = new Model(id: id)
-  service.fetch()
-  service
-
-getList = (options) ->
-  services = new Collection(options)
-  services.fetch()
-  services
-
-categories = () ->
-    
-
-export {
-  create,
-  get,
-  getList
-}
+export default new Service

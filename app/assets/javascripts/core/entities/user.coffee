@@ -1,20 +1,29 @@
-import Routes from 'helpers/routes'
 import { t } from 'helpers/i18n'
-import PageableCollection from './_base'
+import DeepModel from 'backbone.deep-model'
+import Entity from './entity'
 
-Model = Backbone.Model.extend({
-  urlRoot: -> "/user"
+Model = DeepModel.extend({
+  urlRoot: "/user"
+
+  validation:
+    email :
+      required: true
+      msg: -> t("general.messages.required_field")
+    'password_params.current_password':
+      required: true
+      msg: -> t("general.messages.required_field")
+    'password_params.new_password':
+      required: true
+      msg: -> t("general.messages.required_field")
+    'password_params.password_confirmation':
+      required: true
+      msg: -> t("general.messages.required_field")
 })
 
-Collection = PageableCollection.extend({
-  model: Model
-  url: -> "/user"
+User = Entity.extend({
+  url: "/user"
+
+  modelClass: Model
 })
 
-create = (options) ->
-  user = new Model(options)
-  user
-
-export {
-  create
-}
+export default new User

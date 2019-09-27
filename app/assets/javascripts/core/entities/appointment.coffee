@@ -1,35 +1,34 @@
 import Routes from '../helpers/routes'
 import { t } from 'helpers/i18n'
+import Entity from './entity'
 
-Model = Backbone.Model.extend({
+Appointment = Entity.extend({
   urlRoot: -> Routes.appointment_index_path()
 
   validation:
     patient_id:
       required: true
-    specialist_id:
+      msg: -> t('general.messages.select_item', item: t('patient.title'))
+    examiner_id:
       required: true
+      msg: -> t('general.messages.select_item', item: t('appointment.labels.examiner'))
     date:
       required: true
+      msg: -> t('general.messages.required_field')
     start_time:
       required: true
+      msg: -> t('general.messages.required_field')
     end_time:
       required: true
+      msg: -> t('general.messages.required_field')
+
+  create: (attrs, options) ->
+    options = _.extend({}, options, {
+      urlRoot: Routes.new_appointment_path(), fetch: true
+    })
+
+    Entity.prototype.create.call(@, attrs, options)
+
 })
 
-create = (options) ->
-  appointment = new Model(options)
-  appointment.url = Routes.new_appointment_path()
-  appointment.fetch()
-  appointment.url = Routes.appointment_index_path()
-  appointment
-
-get = (id) ->
-  appointment = new Model(id: id)
-  appointment.fetch()
-  appointment
-
-export {
-  create,
-  get
-}
+export default new Appointment
