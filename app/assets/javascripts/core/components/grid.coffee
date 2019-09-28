@@ -79,7 +79,7 @@ export default Component.extend({
 
     collection = @getCollection()
     totalRecords = _.result(collection.state, 'totalRecords', -1)
-    if !(totalRecords > @windowSize) then return
+    if totalRecords <= @windowSize then return
 
     $el = @_paginatorEl(parentEl)
 
