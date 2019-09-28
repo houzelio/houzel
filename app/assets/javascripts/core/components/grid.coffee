@@ -192,6 +192,23 @@ export default Component.extend({
     delete @regionPaginator
 
     return
+
+  filterBy: (params) ->
+    collection = @getCollection()
+    collection.state.currentPage = 1
+    collection.queryParams.filter = params
+    collection.fetch(
+      reset: true,
+      success: =>
+        if @regionPaginator && !@regionPaginator.isDestroyed()
+           @regionPaginator.destroy()
+
+        @_showPaginator(Dom.getEl(@el))
+        @triggerMethod("grid:filter", collection)
+    )
+
+    return
+
 })
 
 Paginator = Backgrid.Extension.Paginator.extend({
