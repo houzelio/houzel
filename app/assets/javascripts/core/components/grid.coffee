@@ -154,7 +154,7 @@ export default Component.extend({
     collection.remove(model)
 
   _initCollection: () ->
-    collection = @getOption('collection')
+    collection = @getCollection()
 
     if !(collection instanceof Backbone.Collection)
       @viewOptions.collection = new Backbone.Collection(collection)
