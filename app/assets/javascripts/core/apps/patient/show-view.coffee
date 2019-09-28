@@ -35,7 +35,7 @@ export default class extends Marionette.View
   _buildGrid: () ->
     columns = [
       name: 'start_date'
-      label: t('appointment.labels.date_of_visit')
+      label: t('appointment.labels.date_of_appointment')
       cell: 'string'
       formatter: (rawData, model) ->
         mom(rawData).format('L LT')
@@ -50,7 +50,7 @@ export default class extends Marionette.View
          """<div class="pull-right">
               <a class=href="javascript:void(0);" data-check="true">
                 <button type="button" class="btn btn-default btn-sm">
-                  <i class=" la la-sign-in mr-sm"></i> <%= t('general.buttons.checkin') %>
+                  <i class=" la la-sign-in mr-sm"></i> <%= t('visit.buttons.checkin') %>
                 </button>
               </a>
             </div"""

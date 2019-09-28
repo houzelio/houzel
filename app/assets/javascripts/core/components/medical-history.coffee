@@ -28,13 +28,13 @@ MainView = Marionette.View.extend({
               <div class='row mt-lg'>
                 <span class='grd-heading'><%= t("mcl-history.labels.complaint") %></span>
                 <div class='grd-text'>
-                  <%= (!!complaint.trim()) ? complaint : t("general.messages.empty-set") %>
+                  <%= (!!complaint.trim()) ? complaint : t("general.messages.empty_set") %>
                 </div>
               </div>
               <div class='row mt-lg'>
                 <span class='grd-heading'><%= t("mcl-history.labels.diagnosis") %></span>
                 <div class='grd-text'>
-                  <%= (!!diagnosis.trim()) ? diagnosis : t("general.messages.empty-set") %>
+                  <%= (!!diagnosis.trim()) ? diagnosis : t("general.messages.empty_set") %>
                 </div>
               </div>
             </div>"""

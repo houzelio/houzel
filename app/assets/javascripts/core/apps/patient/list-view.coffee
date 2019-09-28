@@ -35,7 +35,7 @@ export default class extends Marionette.View
       cell: 'string'
     ,
       name: 'phone'
-      label: t('patient.labels.phone')
+      label: t('general.labels.phone')
       cell: 'string'
     ,
       name: 'birthday'

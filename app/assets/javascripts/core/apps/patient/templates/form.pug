@@ -13,11 +13,9 @@ div.panel.panel-transparent
         span.help-block
       div.row
         div.form-group.col-sm-5
-          - title = t('patient.labels.birthday')
+          - title = t('general.labels.birthday')
           label.control-label(for="birthday") #{title}
           div#birth-pickr.flatpickr-wrapper.input-group
-            if birthday
-              - birthday = mom(birthday).format('L')
             input#birth-in.form-control(name="birthday" value=birthday data-input)
             a.input-group-addon(data-toggle)
               i.far.fa-calendar
@@ -32,7 +30,7 @@ div.panel.panel-transparent
                 = t('patient.labels.female')
       div.row
         div.form-group.col-sm-6
-          - title = t('patient.labels.phone')
+          - title = t('general.labels.phone')
           label.control-label(for="phone") #{title}
           input#phone-in.form-control(type="text" name="phone" value=phone maxlength="63")
         div.form-group.col-sm-6

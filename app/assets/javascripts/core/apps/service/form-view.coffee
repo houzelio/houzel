@@ -53,8 +53,8 @@ export default class extends Marionette.View
   _initFormatters: () ->
     new Cleave('.fs-input-num', {
       numeral: true,
-      numeralDecimalMark: t('numeral.formats.decimal_mark'),
-      delimiter: t('numeral.formats.delimiter')
+      numeralDecimalMark: t('numeral.format.decimal_mark'),
+      delimiter: t('numeral.format.delimiter')
     })
 
     return
