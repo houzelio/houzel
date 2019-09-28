@@ -57,7 +57,7 @@ Entity = Marionette.MnObject.extend({
     ModelClass = @modelClass
     model = new ModelClass(id: id, _.omit(options, 'fetchOptions'))
 
-    fetchOptions = _.pick(options, 'fetchOptions')
+    fetchOptions = @_fetchOptions(options)
     model.fetch(fetchOptions)
     model
 
@@ -65,9 +65,14 @@ Entity = Marionette.MnObject.extend({
     CollectionClass = @collectionClass
     collection = new CollectionClass(null, _.omit(options, 'fetchOptions'))
 
-    fetchOptions = _.pick(options, 'fetchOptions')
+    fetchOptions = @_fetchOptions(options)
     collection.fetch(fetchOptions)
     collection
+
+  _fetchOptions: (options) ->
+    if _.has(options, 'fetchOptions')
+      fetchOptions = _.result(options, 'fetchOptions')
+      if !_.isEmpty(fetchOptions) then return { data: fetchOptions }
 
 })
 
