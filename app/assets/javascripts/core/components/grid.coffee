@@ -47,15 +47,13 @@ defaultRender = () ->
 export default Component.extend({
   windowSize: 10
 
-  viewOptions:
-    className: "table grid table-hover"
-
   viewClass: GridView
 
   initialize: (options) ->
     @mergeOptions(options, ClassOptions)
     @mergeIntoOption('viewOptions', options, ViewOptions)
 
+    @_defaults()
     @_normalizeColumns(options)
     @_initCollection()
 
@@ -96,6 +94,11 @@ export default Component.extend({
     region.show(paginatorView)
 
     @regionPaginator = region
+
+    return
+
+  _defaults: () ->
+    @viewOptions = _.defaults(@viewOptions, className: "table grid table-hover")
 
     return
 
