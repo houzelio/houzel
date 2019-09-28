@@ -89,7 +89,7 @@ export default Component.extend({
 
   showPaginator: ($el) ->
     collection = @getCollection()
-    paginatorOptions = _.extend({}, _.pick(@, 'windowsSize'), collection)
+    paginatorOptions = _.extend({}, _.pick(@, 'windowsSize'), collection: collection)
 
     paginatorView = new Paginator(paginatorOptions)
     region = new Marionette.Region({el: $el})
