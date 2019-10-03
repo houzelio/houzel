@@ -1,7 +1,7 @@
 import { t } from 'helpers/i18n'
 import Component from 'javascripts/api/component'
 import GridCmp from './grid'
-import DialogCmp from './modal-dialog'
+import DialogCmp from './dialog'
 import template from './templates/medical-history/main.pug'
 
 MainView = Marionette.View.extend({
