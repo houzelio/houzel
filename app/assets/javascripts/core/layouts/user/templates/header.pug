@@ -1,0 +1,21 @@
+div.navbar-header-c
+  a.navbar-brand(href="")
+  
+div.nav-wrapper
+  ul.nav.navbar-nav.navbar-right.nav-main
+    li
+      a(href="" data-backbone="true")
+        span #{gon.user.name}
+    li
+      a.dropdown-toggle(href="javascript:void(0);" data-toggle="dropdown")
+        i.fas.fa-ellipsis-h.fa-fw
+      ul.dropdown-menu
+        li
+          a(href="" data-backbone="true")
+            i.fas.fa-plus-circle
+            span.ml-sm
+              = "Houzel App"
+          a(href="javascript:void(0);" data-exit="true")
+            i.fas.fa-power-off
+            span.ml-sm
+              = t('session.labels.sign_out')
