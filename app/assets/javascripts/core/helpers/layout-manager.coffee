@@ -1,13 +1,16 @@
 import AppLayout from 'layouts/application/main-view'
+import UserLayout from 'layouts/user/main-view'
 
 LayoutMgr = {}
 
-layouts = ['application']
+layouts = ['application', 'user']
 
 processView = (layoutName, options) ->
 
   if layoutName == "application"
     view = new AppLayout
+  else if layoutName == "user"
+    view = new UserLayout
   else
     throw new Error("Invalid layout.")
 
