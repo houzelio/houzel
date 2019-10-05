@@ -2,10 +2,14 @@ import AppLayout from 'layouts/application/main-view'
 
 LayoutMgr = {}
 
+layouts = ['application']
+
 processView = (layoutName, options) ->
 
   if layoutName == "application"
     view = new AppLayout
+  else
+    throw new Error("Invalid layout.")
 
   options.layoutName = layoutName
   view.mergeOptions(options, ['layoutName', 'search'])
@@ -16,7 +20,7 @@ LayoutMgr.currentView = {}
 
 LayoutMgr.render = (layoutName, options) ->
 
-  if !layoutName || !(layoutName == "application")
+  if !layoutName || !(_.contains(layouts, layoutName))
     throw new Error('You must provide a valid name for the layout.')
 
   currView = @currentView
@@ -39,6 +43,6 @@ LayoutMgr.show = (regionName, view) ->
 
   currView.showChildView(regionName, view)
 
-  return
+  view
 
 export default LayoutMgr
