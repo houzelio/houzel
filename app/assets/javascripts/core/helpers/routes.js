@@ -441,9 +441,15 @@ Based on Rails routes of Houzel::Application
 // edit_service => /service/:id/edit(.:format)
   // function(id, options)
   edit_service_path: Utils.route(["id"], ["format"], [2,[7,"/",false],[2,[6,"service",false],[2,[7,"/",false],[2,[3,"id",false],[2,[7,"/",false],[2,[6,"edit",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]]]], {}),
+// edit_user_password => /user/password/edit(.:format)
+  // function(options)
+  edit_user_password_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"user",false],[2,[7,"/",false],[2,[6,"password",false],[2,[7,"/",false],[2,[6,"edit",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]]]], {}),
 // edit_visit => /visit/:id/edit(.:format)
   // function(id, options)
   edit_visit_path: Utils.route(["id"], ["format"], [2,[7,"/",false],[2,[6,"visit",false],[2,[7,"/",false],[2,[3,"id",false],[2,[7,"/",false],[2,[6,"edit",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]]]], {}),
+// email_profile_index => /user/profile/email(.:format)
+  // function(options)
+  email_profile_index_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"user",false],[2,[7,"/",false],[2,[6,"profile",false],[2,[7,"/",false],[2,[6,"email",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]]]], {}),
 // invoice => /invoice/:id(.:format)
   // function(id, options)
   invoice_path: Utils.route(["id"], ["format"], [2,[7,"/",false],[2,[6,"invoice",false],[2,[7,"/",false],[2,[3,"id",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
@@ -465,6 +471,9 @@ Based on Rails routes of Houzel::Application
 // new_service => /service/new(.:format)
   // function(options)
   new_service_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"service",false],[2,[7,"/",false],[2,[6,"new",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
+// new_user_password => /user/password/new(.:format)
+  // function(options)
+  new_user_password_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"user",false],[2,[7,"/",false],[2,[6,"password",false],[2,[7,"/",false],[2,[6,"new",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]]]], {}),
 // new_user_registration => /signup(.:format)
   // function(options)
   new_user_registration_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"signup",false],[1,[2,[8,".",false],[3,"format",false]],false]]], {}),
@@ -474,12 +483,21 @@ Based on Rails routes of Houzel::Application
 // new_visit => /visit/new(.:format)
   // function(options)
   new_visit_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"visit",false],[2,[7,"/",false],[2,[6,"new",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
+// password_profile_index => /user/profile/password(.:format)
+  // function(options)
+  password_profile_index_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"user",false],[2,[7,"/",false],[2,[6,"profile",false],[2,[7,"/",false],[2,[6,"password",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]]]], {}),
 // patient => /patient/:id(.:format)
   // function(id, options)
   patient_path: Utils.route(["id"], ["format"], [2,[7,"/",false],[2,[6,"patient",false],[2,[7,"/",false],[2,[3,"id",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
 // patient_index => /patient(.:format)
   // function(options)
   patient_index_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"patient",false],[1,[2,[8,".",false],[3,"format",false]],false]]], {}),
+// profile => /user/profile/:id(.:format)
+  // function(id, options)
+  profile_path: Utils.route(["id"], ["format"], [2,[7,"/",false],[2,[6,"user",false],[2,[7,"/",false],[2,[6,"profile",false],[2,[7,"/",false],[2,[3,"id",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]]]], {}),
+// profile_index => /user/profile(.:format)
+  // function(options)
+  profile_index_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"user",false],[2,[7,"/",false],[2,[6,"profile",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
 // rails_info => /rails/info(.:format)
   // function(options)
   rails_info_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"rails",false],[2,[7,"/",false],[2,[6,"info",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
@@ -504,9 +522,9 @@ Based on Rails routes of Houzel::Application
 // user => /user/:id(.:format)
   // function(id, options)
   user_path: Utils.route(["id"], ["format"], [2,[7,"/",false],[2,[6,"user",false],[2,[7,"/",false],[2,[3,"id",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
-// user_index => /user(.:format)
+// user_password => /user/password(.:format)
   // function(options)
-  user_index_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"user",false],[1,[2,[8,".",false],[3,"format",false]],false]]], {}),
+  user_password_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"user",false],[2,[7,"/",false],[2,[6,"password",false],[1,[2,[8,".",false],[3,"format",false]],false]]]]], {}),
 // user_registration => /signup(.:format)
   // function(options)
   user_registration_path: Utils.route([], ["format"], [2,[7,"/",false],[2,[6,"signup",false],[1,[2,[8,".",false],[3,"format",false]],false]]], {}),
