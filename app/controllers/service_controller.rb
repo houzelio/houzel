@@ -11,7 +11,7 @@ class ServiceController < ApplicationController
       services = services.where(Sequel.ilike(:name, "%#{params_filter(:name)}%"))
     end
 
-    services = services.order(Sequel.desc(:category), :name).paginate(page, per_page)
+    services = services.order(Sequel.desc(:updated_at), :name).paginate(page, per_page)
     @services = services
   end
 
