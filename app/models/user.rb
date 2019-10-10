@@ -7,6 +7,8 @@ class User < Sequel::Model
 
   one_to_one :person, key: :owner_id
 
+  delegate :id, :to => :person, prefix: true
+
   before_validation :set_current_language, on: :create
 
   def validate
