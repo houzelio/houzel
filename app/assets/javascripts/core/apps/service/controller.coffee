@@ -4,8 +4,18 @@ import { formatCurr } from 'helpers/numeral'
 import { Service }  from 'entities/index'
 import Syphon from 'backbone.syphon'
 import FormView from './form-view'
+import ListView from './list-view'
 
 Controller =
+  listServices: () ->
+    services = Service.getList()
+    ObjChan.request("when:fetched", services, =>
+      view = new ListView { collection: services }
+      showView(view)
+    )
+
+    return
+
   newService: () ->
     service = Service.create()
     ObjChan.request("when:fetched", service, =>
