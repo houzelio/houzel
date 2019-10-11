@@ -1,6 +1,20 @@
 class VisitController < ApplicationController
   respond_to :json
 
+  def index
+    page = (params[:page] || 1).to_i
+    per_page = (params[:per_page] || 10).to_i
+
+    visits = Visit.select_all(:visit).select_append(:name, :sex).association_join(:patient)
+    visits = visits.where(status: 'checked')
+    if params_filter(:name)
+      visits = visits.where(Sequel.ilike(:name, "%#{params_filter(:name)}%"))
+    end
+
+    visits = visits.order(Sequel.desc(:start_date)).paginate(page, per_page)
+    @visits = VisitDecorator.decorate_collection(visits)
+  end
+
   def new
     @patients = Patient.select(:id, :name).order(:name)
   end
