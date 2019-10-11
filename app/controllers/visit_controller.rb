@@ -32,12 +32,12 @@ class VisitController < ApplicationController
   def visit_params
     params.require(:visit).permit(:patient_id, :start_date, :end_date).tap do |p|
       p[:status] = "checked"
-      p[:specialist_id] = p[:specialist_id] || current_user.person_id
+      p[:examiner_id] = p[:examiner_id] || current_user.person_id
     end
   end
 
   def visit_fields
-    [:patient_id, :specialist_id, :status, :start_date, :end_date]
+    [:patient_id, :examiner_id, :status, :start_date, :end_date]
   end
 
   def mcl_history_params
