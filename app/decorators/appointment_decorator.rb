@@ -5,8 +5,12 @@ class AppointmentDecorator < ApplicationDecorator
     appointment.visit.patient_id
   end
 
-  def specialist_id
-    appointment.visit.specialist_id
+  def examiner_id
+    appointment.visit.examiner_id
+  end
+
+  def examiner_name
+    appointment.visit.examiner.name
   end
 
   def date
