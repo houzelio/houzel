@@ -64,7 +64,7 @@ Controller =
     data = Syphon.serialize(view)
     model.save(data, {
       success: () ->
-        AppChan.request("patient:outpatient")
+        AppChan.request("visit:list")
       error: (model, jqXHR) ->
         view.showRespErrors(jqXHR)
     })
