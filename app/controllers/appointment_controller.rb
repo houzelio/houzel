@@ -1,6 +1,27 @@
 class AppointmentController < ApplicationController
   respond_to :json
 
+  def index
+    page = (params[:page] || 1).to_i
+    per_page = (params[:per_page] || 10).to_i
+
+    appointments = Appointment.select_all(:appointment).select_append(:name).association_join(visit: :patient)
+    if params_filter(:name)
+      appointments = appointments.where(Sequel.ilike(:name, "%#{params_filter(:name)}%"))
+    end
+
+    if params_filter(:start_date)
+      appointments = appointments.where(Sequel.lit("appointment.start_date >= ?", params_filter(:start_date)))
+    end
+
+    if params_filter(:end_date)
+      appointments = appointments.where(Sequel.lit("appointment.end_date <= ?", params_filter(:end_date)))
+    end
+
+    appointments = appointments.order(Sequel.desc(Sequel[:appointment][:start_date])).paginate(page, per_page)
+    @appointments = AppointmentDecorator.decorate_collection(appointments)
+  end
+
   def new
     @patients = patients_select
     @examiners = SafeQuery::MedProfessionals.new.examiners
