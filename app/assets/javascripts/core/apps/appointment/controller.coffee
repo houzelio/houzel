@@ -41,7 +41,7 @@ Controller =
       success: () ->
         AppChan.request("appointment:list")
       error: (post, jqXHR) ->
-        if jqXHR.status != 404
+        if jqXHR.status == 422
           errors = $.parseJSON(jqXHR.responseText).errors
 
           # Objects validated by the plugin 'validated_associated'
