@@ -29,7 +29,7 @@ Controller =
 
   editVisit: (id) ->
     visit = Visit.get(id)
-    mcl_histories = MclHistory.getList({ visit_id: id })
+    mcl_histories = MclHistory.getList({ fetchOptions: visit_id: id })
 
     ObjChan.request("when:fetched", [visit, mcl_histories], =>
       view = @_getFormView(visit, true)
