@@ -43,7 +43,7 @@ export default class extends Marionette.View
 
     new SelectCmp({
       el: '#specialist-sel'
-      value: @model.get("specialist_id")
+      value: @model.get("examiner_id")
     })
 
     return
