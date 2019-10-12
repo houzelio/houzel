@@ -59,10 +59,6 @@ Controller =
             )
 
           view.showErrors(errors)
-
-          return
-
-        AppChan.request("appointment:list")
     })
 
     return
