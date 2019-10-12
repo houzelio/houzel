@@ -3,8 +3,18 @@ import { showView } from 'helpers/layout-region'
 import { Appointment } from 'entities/index'
 import Syphon from 'backbone.syphon'
 import FormView from './form-view'
+import ListView from './list-view'
 
 Controller =
+  listAppointments: () ->
+    appointments = Appointment.getList()
+    ObjChan.request("when:fetched", appointments, =>
+      view = new ListView { collection: appointments }
+      showView(view)
+    )
+
+    return
+
   newAppointment: () ->
     appointment = Appointment.create()
     ObjChan.request("when:fetched", appointment, =>

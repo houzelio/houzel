@@ -1,0 +1,19 @@
+include ../../../partials/content-header
++header(t('appointment.title'), t('general.buttons.new'), route())
+
+div.panel.panel-transparent
+  div.panel-body
+    ul.nav.nav-pills.quick-filter.mb-sm
+      li.active
+        a(href="#all" data-toggle="tab")
+          = t("appointment.labels.all")
+      li
+        a(href="#day" data-toggle="tab")
+          = t("appointment.labels.day")
+      li
+        a(href="#week" data-toggle="tab")
+          = t("appointment.labels.week")
+      li
+        a(href="#month" data-toggle="tab")
+          = t("appointment.labels.month")    
+    include ../../../partials/grid-region
