@@ -20,7 +20,7 @@ div.panel.panel-transparent
           label.control-label(for="specialist_id") #{title}
           select#specialist-sel.chosen-select(data-placeholder=title)
             option(value)
-            each examiner in examiner
+            each examiner in examiners
               option(value=examiner.id) #{examiner.name}
           span.help-block
       div.row
