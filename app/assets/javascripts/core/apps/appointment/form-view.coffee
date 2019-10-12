@@ -19,7 +19,7 @@ export default class extends Marionette.View
 
   bindings:
     '#patient-sel' : 'patient_id'
-    '#specialist-sel' : 'specialist_id'
+    '#examiner-sel' : 'examiner_id'
     '#date-in' : 'date'
     '#start-in' : 'start_time'
     '#end-in' : 'end_time'
@@ -42,7 +42,7 @@ export default class extends Marionette.View
     })
 
     new SelectCmp({
-      el: '#specialist-sel'
+      el: '#examiner-sel'
       value: @model.get("examiner_id")
     })
 

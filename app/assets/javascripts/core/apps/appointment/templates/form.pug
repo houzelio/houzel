@@ -17,8 +17,8 @@ div.panel.panel-transparent
           span.help-block
         div.form-group.col-sm-6.required
           - title = t('appointment.labels.examiner')
-          label.control-label(for="specialist_id") #{title}
-          select#specialist-sel.chosen-select(data-placeholder=title)
+          label.control-label(for="examiner_id") #{title}
+          select#examiner-sel.chosen-select(data-placeholder=title)
             option(value)
             each examiner in examiners
               option(value=examiner.id) #{examiner.name}
