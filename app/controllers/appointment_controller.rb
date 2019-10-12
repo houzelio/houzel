@@ -63,10 +63,10 @@ class AppointmentController < ApplicationController
   end
 
   def visit_params
-    params.require(:appointment).permit(:patient_id, :specialist_id)
+    params.require(:appointment).permit(:patient_id, :examiner_id)
   end
 
   def visit_fields
-    [:patient_id, :specialist_id]
+    [:patient_id, :examiner_id]
   end
 end
