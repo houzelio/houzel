@@ -6,6 +6,7 @@ export default class extends AppRouter
   controller: Controller
 
   appRoutes:
+    "visit" : "listVisits"
     "visit/new" : "newVisit"
     "visit/:id" : "editVisit"
 

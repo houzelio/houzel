@@ -3,8 +3,19 @@ import { showView } from 'helpers/layout-region'
 import { Visit, Patient, MclHistory } from 'entities/index'
 import Syphon from 'backbone.syphon'
 import FormView from './form-view'
+import ListView from './list-view'
 
 Controller =
+  listVisits: () ->
+    visits = Visit.getList()
+
+    ObjChan.request("when:fetched", visits, =>
+      view = new ListView { collection: visits }
+      showView(view)
+    )
+
+    return
+
   newVisit: () ->
     visit = Visit.create()
 
