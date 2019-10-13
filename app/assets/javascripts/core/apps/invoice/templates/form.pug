@@ -1,0 +1,60 @@
+include ../../../partials/content-header
++header(t('invoice.title'), t('general.buttons.back'), route())
+
+- var title
+
+div.panel.panel-transparent
+  div.panel-body
+    form.col-lg-8.col-lg-offset-2(role="form")      
+      div#patient-region        
+        if ( !id )    
+          div.row
+            div.form-group.col-md-5.col-sm-7.required
+              - title = t('patient.title')
+              label.control-label(for="patient_id") #{title}
+              select#patient-sel.chosen-select(data-placeholder=" ")
+                option(value)
+                each patient in patients
+                  option(value=patient.id) #{patient.name}
+              span.help-block
+        else
+          include ./regions/patient.pug
+      div.row
+        div.form-group.col-md-4.col-sm-5.required
+          - title = t('invoice.labels.billed_date')
+          label.control-label(for="date") #{title}
+          div#date-pickr.flatpickr-wrapper.input-group
+            input#date-in.form-control(name="bill_date" value=bill_date data-input)
+            a.input-group-addon(data-toggle)
+              i.far.fa-calendar
+        div.form-group.col-sm-6.col-sm-offset-1
+          - title = t('invoice.labels.remarks')
+          label.control-label(for="remarks") #{title}
+          input#remarks-in.form-control(type="text" name="remarks" value=remarks)                 
+      div.row.panel-srvc
+        div.form-group.col-md-5.col-sm-7
+          - title = t('service.title')          
+          label.control-label(for="service_id") #{title}
+          div.input-group
+            select#service-sel.chosen-select(data-placeholder=" ")
+              option(value)
+              each service in services
+                option(value=service.id) #{service.name}
+            span.input-group-btn
+              button#btn-service.btn.btn-info.group-btn-sel(type="button" onclick="this.blur();")
+                i.fas.fa-plus.fa-fw
+      div.panel-total.mt-lg
+        include ../../../partials/grid-region
+        - title = t('invoice.labels.total')        
+        div.table-responsive
+          table.table.table-hover.table-total
+            tbody
+              tr
+                td.font-weight-bold #{title}
+                td#total-td.pull-right #{total()}
+      div.form-group
+        button#save-btn.btn.btn-primary
+          = t('general.buttons.save')
+          if ( id )
+            button#delete-btn.btn.btn-default.ml-sm
+              = t('general.buttons.delete')

@@ -1,0 +1,18 @@
+div.row
+  div.col-sm-10
+    - title = t('general.labels.name')
+    label.mr-sm #{title}
+    span.font-16.font-weight-bold
+      = patient.name
+div.row
+  div.col-sm-3
+    - title = t('patient.labels.age')
+    label.mr-sm #{title}
+    span.font-15
+      = patient.age
+div.row.mb-xl
+  div.col-sm-6
+    - title = t('patient.labels.address')
+    label.mr-sm #{title}
+    span.font-15      
+      = patient.address
