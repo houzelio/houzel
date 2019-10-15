@@ -15,6 +15,15 @@ Controller =
 
     return
 
+  editInvoice: (id) ->
+    invoice = Invoice.get(id)
+    ObjChan.request("when:fetched", invoice, =>
+      view = @_getFormView(invoice, true)
+      showView(view)
+    )
+
+    return
+
   _getFormView: (model, deleteOption) ->
     view = new FormView {model: model}
 

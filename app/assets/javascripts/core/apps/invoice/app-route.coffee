@@ -8,4 +8,5 @@ export default class extends AppRouter
 
   appRoutes:
     "invoice/new" : "newInvoice"
+    "invoice/:id" : "editInvoice"
 
