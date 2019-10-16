@@ -1,6 +1,19 @@
 class InvoiceController < ApplicationController
   respond_to :json
 
+  def index
+    page = pagination_value_for(:page)
+    per_page = pagination_value_for(:per_page)
+
+    invoices = Invoice.select_all(:invoice).select_append(:name).association_join(:patient)
+    if params_filter(:name)
+      invoices = invoices.where(Sequel.ilike(:name, "%#{params_filter(:name)}%"))
+    end
+
+    invoices = invoices.order(Sequel.desc(:updated_at), :name).paginate(page, per_page)
+    @invoices = InvoiceDecorator.decorate_collection(invoices)
+  end
+
   def new
     @patients = Patient.select(:id, :name).order(:name)
     @services = services_select
