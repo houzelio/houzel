@@ -57,6 +57,8 @@ Controller =
 
     data = Syphon.serialize(view)
     model.save(data, {
+      success: () ->
+        AppChan.request("invoice:list")
       error: (model, jqXHR) ->
         view.showRespErrors(jqXHR)
     })
