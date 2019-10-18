@@ -7,6 +7,7 @@ export default class extends AppRouter
   controller: Controller
 
   appRoutes:
+    "invoice" : "listInvoices"
     "invoice/new" : "newInvoice"
     "invoice/:id" : "editInvoice"
 

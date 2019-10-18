@@ -3,8 +3,19 @@ import { showView } from 'helpers/layout-region'
 import { Invoice, Patient } from 'entities/index'
 import Syphon from 'backbone.syphon'
 import FormView from './form-view'
+import ListView from './list-view'
 
 Controller =
+  listInvoices: () ->
+    invoices = Invoice.getList()
+
+    ObjChan.request("when:fetched", invoices, =>
+      view = new ListView { collection: invoices }
+      showView(view)
+    )
+
+    return
+
   newInvoice: () ->
     invoice = Invoice.create()
     ObjChan.request("when:fetched", invoice, =>
