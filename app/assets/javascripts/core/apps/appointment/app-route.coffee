@@ -11,12 +11,17 @@ export default class extends AppRouter
     "appointment/new" : "newAppointment"
     "appointment/:id" : "editAppointment"
 
-AppChan.on("appointment:new", () ->
+AppChan.reply("appointment:list", () ->
+  Backbone.history.navigate  Routes.appointment_index_path()
+  Controller.listAppointments()
+)
+
+AppChan.reply("appointment:new", () ->
   Backbone.history.navigate Routes.new_appointment_path()
   Controller.newAppointment()
 )
 
-AppChan.on("appointment:edit", (id) ->
+AppChan.reply("appointment:edit", (id) ->
   Backbone.history.navigate Routes.appointment_path(id)
   Controller.editAppointment(id)
 )
