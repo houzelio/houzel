@@ -3,6 +3,9 @@ class ProfileController < ApplicationController
 
   respond_to :json
 
+  def show
+    @profile = ProfileDecorator.new(current_user.person.profile)
+  end
 
   private
 
