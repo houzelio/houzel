@@ -1,0 +1,38 @@
+- var languages = { 'locales': [{'code': 'en'}, {'code': 'pt-BR'}] }
+- var title
+
+form(role="form")
+  div.form-group.required
+    - title = t('general.labels.name')
+    label.control-label(for="name") #{title}
+    input#name-in.form-control(type="text" name="name" value=name maxlength="255")
+    span.help-block
+  div.row
+    div.form-group.col-sm-5
+      - title = t('general.labels.birthday')
+      label.control-label(for="birthday") #{title}
+      div#birth-pickr.flatpickr-wrapper.input-group        
+        input#birth-in.form-control(name="birthday" value=birthday data-input)
+        a.input-group-addon(data-toggle)
+          i.far.fa-calendar
+    div.form-group.col-sm-6.col-md-offset-1
+      - title = t('general.labels.phone')
+      label.control-label(for="phone") #{title}
+      input#phone-in.form-control(type="text" name="phone" value=phone maxlength="63")
+  div.form-group
+    - title = t('profile.labels.location')
+    label.control-label(for="location") #{title}
+    input#location-in.form-control(type="text" name="location" value=site maxlength="255")
+  div.row
+    div.form-group.col-sm-6
+      - title = t('profile.labels.language')
+      label.control-label(for="language") #{title}
+      select#language-sel.chosen-select(name="locale" data-placeholder=" ")        
+        option(value)
+        each locale in languages.locales
+          - title = t(`language.locales.${locale.code}`)
+          option(value=locale.code) #{title}
+  hr
+  div.form-group
+    button#save-btn.btn.btn-primary
+      = t('general.buttons.save')
