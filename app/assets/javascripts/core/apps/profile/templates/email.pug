@@ -1,0 +1,16 @@
+span.fa-stack
+  i.fas.fa-circle.fa-stack-2x
+  i.fas.fa-exclamation-triangle.fa-stack-1x.fa-inverse.text-white    
+p.pb-lg= t('profile.messages.email_warn')
+  
+form(role="form")
+  div.row
+    div.form-group.required.col-md-7
+      - title = t('profile.labels.new_email')
+      label.control-label(for="email") #{title}
+      input#email-in.form-control(type="text" name="email" maxlength="255")
+      span.help-block
+  hr
+  div.form-group
+    button#save-btn.btn.btn-primary
+      = t('general.buttons.save')
