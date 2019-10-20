@@ -10,4 +10,8 @@ export default class extends AppRouter
     "user/profile" : "editProfile"
     "user/profile/password" : "changePassword"
     "user/profile/email" : "changeEmail"
+
+AppChan.reply("profile:edit", () ->
+  Backbone.history.navigate Routes.profile_index_path()
+  Controller.editProfile()
 )
