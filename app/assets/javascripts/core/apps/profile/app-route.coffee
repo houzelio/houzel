@@ -8,4 +8,6 @@ export default class extends AppRouter
 
   appRoutes:
     "user/profile" : "editProfile"
+    "user/profile/password" : "changePassword"
+    "user/profile/email" : "changeEmail"
 )
