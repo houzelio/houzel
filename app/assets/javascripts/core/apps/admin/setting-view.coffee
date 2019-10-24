@@ -7,10 +7,10 @@ export default class extends Marionette.View
   tagName: "div"
   className: "content-wrapper"
 
-  regions:
-    settingRegion: "#setting-region"
-
   behaviors:
     Layout:
       behaviorClass: LayoutBehavior
       view: 'application'
+
+  regions:
+    settingRegion: "#setting-region"
