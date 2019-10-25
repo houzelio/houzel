@@ -31,6 +31,8 @@ en:
         month: "Month"
       buttons:
         schedule: "Schedule"
+      messages:
+        no_appointments: "No appointments"
     mcl-history:
       labels:
         complaint: "Reason For Visit"
@@ -41,6 +43,8 @@ en:
         no_history_available: "No history available"
     patient:
       title: "Patient"
+      buttons:
+        view: "View"
       labels:
         age: "Age"
         email: "Email"

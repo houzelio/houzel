@@ -31,6 +31,8 @@ pt-BR:
         month: "Mês"
       buttons:
         schedule: "Agendar"
+      messages:
+        no_appointments: "Sem consultas"
     mcl-history:
       labels:
         complaint: "Motivo da Visita"
@@ -41,6 +43,8 @@ pt-BR:
         no_history_available: "Histórico não disponível"
     patient:
       title: "Paciente"
+      buttons:
+        view: "Visualizar"
       labels:
         age: "Idade"
         email: "Email"
