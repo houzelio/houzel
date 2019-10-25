@@ -61,6 +61,7 @@ export default class extends Marionette.View
       el: '#appointment-grid'
       columns: columns
       collection: @model.get('appointments')
+      emptyText: t('appointment.messages.no_appointments')
     })
 
   _showMclHistory: () ->
