@@ -209,6 +209,11 @@ export default Component.extend({
 
     return
 
+  onShow: () ->
+    if !@getOption('removeThead') then return
+
+    $el = Dom.getEl(@el).find('thead')
+    $el.remove()
 })
 
 Paginator = Backgrid.Extension.Paginator.extend({
