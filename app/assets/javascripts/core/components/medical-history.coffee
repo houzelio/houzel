@@ -11,7 +11,6 @@ MainView = Marionette.View.extend({
 
   onAttach: () ->
     @grid.showView()
-    @_removeHeader()
 
   initialize: (options) ->
     @_buildGrid()
@@ -47,15 +46,12 @@ MainView = Marionette.View.extend({
     @grid = new GridCmp({
       el: '#grid'
       columns: columns
-      collection: @getOption("mclHistoryCollection"),
+      collection: @getOption("mclHistoryCollection")
+      removeThead: true
       emptyText: t("mcl-history.messages.no_history_available")
     })
 
     return
-
-  _removeHeader: () ->
-    $("thead").remove()
-
 })
 
 ViewOptions = [
