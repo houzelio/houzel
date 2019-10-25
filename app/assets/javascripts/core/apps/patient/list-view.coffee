@@ -49,15 +49,27 @@ export default class extends Marionette.View
       label: ''
       cell: extend:
         template: _.template(
-         """<a href="javascript:void(0);" data-show="true">
-              <button type="button" class="btn btn-default btn-sm">
-                <%= t('general.buttons.edit') %>
-              </button>
-           </a>"""
+         """<div class="pull-right">
+              <a href="javascript:void(0);" data-show="true" data-option="no-edit">
+                <button type="button" class="btn btn-default btn-sm">
+                  <%= t('general.buttons.view') %>
+                </button>
+              </a>
+              <a href="javascript:void(0);" data-show="true">
+                <button type="button" class="btn btn-default btn-sm">
+                  <%= t('general.buttons.edit') %>
+                </button>
+              </a>
+            </div"""
         )
         events:
-          'click a[data-show="true"]' : () ->
-            AppChan.request("patient:edit", @model.get('id'))
+          'click a[data-show="true"]' : (event) ->
+            $el = $(event.currentTarget)
+
+            if $el.attr("data-option") == "no-edit"
+              AppChan.request("patient:show", @model.get('id'))
+            else
+              AppChan.request("patient:edit", @model.get('id'))
     ]
 
     @grid = new GridCmp({
