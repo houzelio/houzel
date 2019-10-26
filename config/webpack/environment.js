@@ -39,7 +39,8 @@ environment.plugins.append(
     jQuery: 'jquery',
     jquery: 'jquery',
     Backbone: 'backbone',
-    Marionette: 'backbone.marionette'
+    Marionette: 'backbone.marionette',
+    Dom: ['backbone.marionette', 'DomApi']
   })
 )
 
