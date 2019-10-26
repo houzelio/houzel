@@ -85,13 +85,13 @@ html, body {
   overflow: auto; // required for portlets
 
   .content-header {
-    background-color: #fafbfc;
+    background-color: @list-group-hover-bg;
     margin: -20px -20px 10px -20px;
     height: 55px;
 
     .content-title {
       height: 50%;
-      margin-bottom: -12px;
+      margin: 0 0 -12px -5px;
 
       > h1 {
         float: left;
@@ -109,7 +109,7 @@ html, body {
       float: right;
       margin-right: @line-height-computed;
       > a > button {
-        width: 75px;
+        min-width: 75px;
       }
     }
   }

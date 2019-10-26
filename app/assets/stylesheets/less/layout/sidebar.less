@@ -70,12 +70,10 @@
         padding: 14px 25px;
         color: @sidebar-item-color;
         letter-spacing: .025em;
+        font-size: 1.6rem;
         font-weight: 600;
         .transition(background-color 0.2s ease);
-        &:focus {
-          text-decoration: underline !important;
-          color: @sidebar-item-color-active;
-        }
+
         // Item icon
         > svg {
           margin-right: 1em;
@@ -89,8 +87,7 @@
       &:hover {
         &,
         > a,
-        > a > .item-text,
-        .nav {
+        > a > .item-text {
           background-color: @sidebar-item-bg-active;
           color: @sidebar-item-color-active;
         }
@@ -99,20 +96,16 @@
         }
       }
 
-      &.active{
+      &.active {
         border-left-color: @brand-primary;
       }
 
-
     }
-
 
     // Sub Levels
     .nav {
-      padding-left: 55px;
       background-color: @sidebar-bg;
       > li  {
-        border-left: 0;
         > a,
         > .nav-item {
           display: block;
@@ -120,9 +113,6 @@
           padding: 10px 30px 10px 6px;
           background-color: transparent !important;
           font-weight: normal;
-          &:focus, &:hover {
-            color: @sidebar-item-color-active;
-          }
         }
 
         &.active {
