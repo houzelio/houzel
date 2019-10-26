@@ -2,6 +2,7 @@ pt-BR:
   javascripts:
     visit:
       title: "Visita"
+      plu_title: "Visitas"
       labels:
         checkin_time: "Entrada"
         checkout_time: "Saída"
@@ -9,15 +10,16 @@ pt-BR:
         complaint: "Motivo da Visita"
         diagnosis: "Diagnósticos"
         notes: "Notas"
-      titles:
         visit_information: "Informação de Visita"
         history: "Histórico"
       buttons:
         add_diagnosis: "Adicionar Diagnósticos"
+        patient_check_in: "Dar Entrada"
         checkin: "Entrar"
         checkout: "Sair"
     appointment:
-      title: "Atendimento"
+      title: "Consulta"
+      plu_title: "Consultas"
       labels:
         patient: "Paciente"
         examiner: "Examinador"
@@ -30,7 +32,7 @@ pt-BR:
         week: "Semana"
         month: "Mês"
       buttons:
-        schedule: "Agendar"
+        new_appointment: "Nova Consulta"
       messages:
         no_appointments: "Sem consultas"
     mcl-history:
@@ -43,8 +45,7 @@ pt-BR:
         no_history_available: "Histórico não disponível"
     patient:
       title: "Paciente"
-      buttons:
-        view: "Visualizar"
+      plu_title: "Pacientes"
       labels:
         age: "Idade"
         email: "Email"
@@ -58,27 +59,31 @@ pt-BR:
         profession: "Profissão"
         parent: "Responsável"
         observation: "Observações"
-      titles:
         delete_patient: "Excluir Paciente"
-        male: "Masculino"
-        female : "Feminino"
         appointments: "Atendimentos"
+        schedule: "Agendar"
+      buttons:
+        view: "Visualizar"
+        new_patient: "Novo Paciente"
       messages:
         remove_patient: "Tem certeza que deseja remover o paciente?"
     service:
       title: "Serviço"
+      plu_title: "Serviços"
       labels:
         category: "Categoria"
         private: "Privado"
         insurance: "Convênio"
         other: "Outro"
         service_delete: "Excluir Serviço"
+      buttons:
+        new_service: "Novo Serviço"
       messages:
         service_required: "Inclua ao menos um serviço"
         remove_service: "Tem certeza que deseja remover o serviço?"
     invoice:
       title: "Fatura"
-      list_title: "Faturas"
+      plu_title: "Faturas"
       labels:
         description: "Descrição"
         base_price: "Preço Base"
@@ -87,6 +92,8 @@ pt-BR:
         total: "Total"
         remarks: "Observações"
         billed_date: "Data de Faturamento"
+      buttons:
+        new_invoice: "Nova Fatura"
       messages:
         no_services_added: "Nenhum serviço adicionado"
     admin:
@@ -115,6 +122,9 @@ pt-BR:
       messages:
         refresh_profile: "O perfil foi atualizado, e para carregar as novas alterações essa página precisa ser recarregada."
         email_warn: "Uma vez que tenha alterado seu e-mail, lembre-se de utilizar o novo email no próximo acesso"
+        update_profile: "Atualize as informações do seu perfil"
+        change_email: "Altere o email usado para acessar a aplicação"
+        change_password: "Altere a senha usada para acessar a aplicação"
     general:
       buttons:
         new: "Novo"
@@ -130,7 +140,21 @@ pt-BR:
         phone: "Telefone"
       navigation:
         patients: "Pacientes"
+        patients_listing: "Listar Pacientes"
+        new_patient: "Novo Paciente"
+        scheduling: "Agendamento"
+        appointment_listing: "Listar Consultas"
+        new_appointment: "Nova Consulta"
+        visits: "Visitas"
+        visit_listing: "Listar Visitas"
+        patient_check_in: "Dar Entrada"
         billing: "Cobrança"
+        invoices: "Faturas"
+        new_invoice: "Nova Fatura"
+        services: "Serviços"
+        new_service: "Novo Serviço"
+        profile: "Perfil"
+        settings: "Configurações"
       pagination:
         rewind:
           title: "Primeira"
@@ -146,7 +170,7 @@ pt-BR:
         select_item: "Selecione um %{item}"
     session:
       labels:
-        sign_out: "Sair"
+        logout: "Sair"
     numeral:
       format:
         decimal_mark: ','

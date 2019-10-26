@@ -1,7 +1,8 @@
 en:
   javascripts:
     visit:
-      title: "Appointment"
+      title: "Visit"
+      plu_title: "Visits"
       labels:
         checkin_time: "Check In"
         checkout_time: "Check Out"
@@ -9,15 +10,16 @@ en:
         complaint: "Reason For Visit"
         diagnosis: "Diagnosis"
         notes: "Notes"
-      titles:
         visit_information: "Visit Information"
         history: "History"
       buttons:
         add_diagnosis: "Add Diagnosis"
+        patient_check_in: "Patient Check In"
         checkin: "Check In"
         checkout: "Check Out"
     appointment:
       title: "Appointment"
+      plu_title: "Appointments"
       labels:
         patient: "Patient"
         examiner: "Examiner"
@@ -30,6 +32,7 @@ en:
         week: "Week"
         month: "Month"
       buttons:
+        new_appointment: "New Appointment"
         schedule: "Schedule"
       messages:
         no_appointments: "No appointments"
@@ -43,8 +46,7 @@ en:
         no_history_available: "No history available"
     patient:
       title: "Patient"
-      buttons:
-        view: "View"
+      plu_title: "Patients"
       labels:
         age: "Age"
         email: "Email"
@@ -58,27 +60,30 @@ en:
         profession: "Profession"
         parent: "Parent"
         observation: "Observations"
-      titles:
         delete_patient: "Delete Patient"
-        male: "Male"
-        female : "Female"
         appointments: "Appointments"
+      buttons:
+        view: "View"
+        new_patient: "New Patient"
       messages:
         remove_patient: "Are you sure you want to delete the patient?"
     service:
       title: "Service"
+      plu_title: "Services"
       labels:
         category: "Category"
         private: "Private"
         insurance: "Insurance"
         other: "Other"
         service_delete: "Delete Service"
+      buttons:
+        new_service: "New Service"
       messages:
         service_required: "Include at least one service"
         remove_service: "Are you sure you want to delete the service?"
     invoice:
       title: "Invoice"
-      list_title: "Invoices"
+      plu_title: "Invoices"
       labels:
         description: "Description"
         base_price: "Base Price"
@@ -87,6 +92,8 @@ en:
         total: "Total"
         remarks: "Remarks"
         billed_date: "Bill Date"
+      buttons:
+        new_invoice: "New Invoice"
       messages:
         no_services_added: "No services added"
     admin:
@@ -115,6 +122,9 @@ en:
       messages:
         refresh_profile: "The profile has been updated, and to load the new changes, we need to refresh this page."
         email_warn: "Once you have changed your email, do remember to login with the new email next time."
+        update_profile: "Update your profile information"
+        change_email: "Change the email used to access the application"
+        change_password: "Change the password used to access the application"
     general:
       buttons:
         new: "New"
@@ -130,7 +140,21 @@ en:
         phone: "Phone"
       navigation:
         patients: "Patients"
+        patients_listing: "Patient Listing"
+        new_patient: "New Patient"
+        scheduling: "Scheduling"
+        appointment_listing: "Appointment Listing"
+        new_appointment: "New Appointment"
+        visits: "Visits"
+        visit_listing: "Visit Listing"
+        patient_check_in: "Patient Check In"
         billing: "Billing"
+        invoices: "Invoices"
+        new_invoice: "New Invoice"
+        services: "Services"
+        new_service: "New Services"
+        profile: "Profile"
+        settings: "Settings"
       pagination:
         rewind:
           title: "First"
@@ -146,7 +170,7 @@ en:
         select_item: "Select a %{item}"
     session:
       labels:
-        sign_out: "Sign Out"
+        logout: "Logout"
     numeral:
       format:
         decimal_mark: '.'
