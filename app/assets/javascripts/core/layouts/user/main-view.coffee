@@ -10,12 +10,4 @@ export default class extends Marionette.View
     headerRegion: "#header-region"
 
   onRender: () ->
-    @_addBdyClass()
-
     @showChildView('headerRegion', new HeaderView)
-
-  _addBdyClass: () ->
-    $el = $('body')
-    $el.addClass('bdy')
-
-    return
