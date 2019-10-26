@@ -13,6 +13,7 @@ import 'flatpickr/dist/flatpickr.css';
 import 'backgrid/lib/backgrid.min.css';
 import 'izitoast/dist/css/iziToast.min.css'
 import 'line-awesome2/dist/css/line-awesome.css';
+import 'nprogress/nprogress.css'
 import '../stylesheets/less/style.less';
 
 
