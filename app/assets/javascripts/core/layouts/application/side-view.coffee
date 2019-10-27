@@ -8,8 +8,8 @@ export default class extends Marionette.View
   tagName: 'nav'
   className: 'sidebar'
 
-  ui:
-    collapseSelector: "[data-toggle='collapse-next']"
+  events:
+    'click li' : 'onListItemClick'
 
   templateContext:
     Routes: Routes
@@ -20,3 +20,19 @@ export default class extends Marionette.View
         _route = "#{pluralize.singular(name)}_index_path"
 
       Routes[_route]()
+
+  onListItemClick: (event) ->
+    event.preventDefault()
+    $el = Dom.getEl(event.currentTarget)
+
+    targetItem = $el.data('target-item')
+    if _.isUndefined(targetItem) then return
+
+    $currentEl = Dom.getEl('.group-active')
+    if !_.isEqual($el.get(0), $currentEl.get(0))
+      $currentEl.next().collapse('hide')
+
+      $currentEl.removeClass('group-active')
+      $el.addClass('group-active')
+
+    Dom.getEl("##{targetItem}").children('a').click()
