@@ -15,12 +15,13 @@ ObjChan.reply("when:fetched", (object, callback) ->
 )
 
 #Sign out
-AppChan.reply("user:signout", () ->
-  $.ajax(
+AppChan.reply("user:signout", (options) ->
+  Backbone.ajax(
     url: Routes.destroy_user_session_path(),
     contentType: 'application/json',
     type: 'DELETE',
-    dataType: 'json'
+    dataType: 'json',
+    data: JSON.stringify(options),
     statusCode:
       401: () ->
         location.assign(Routes.new_user_session_path())
