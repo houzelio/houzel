@@ -1,11 +1,27 @@
 - var xs = isBreakpoint('xs')
 
 div.navbar-header
-  a.navbar-brand
+  ul.nav.navbar-nav.navbar-right.nav-main
+    li
+      a.dropdown-toggle(href="#!" data-toggle="dropdown")
+        i.fas.fa-cog
+      ul.dropdown-menu
+        li
+          a#logout(href="#!")
+            span
+              = t('session.labels.logout')
+        li.divider
+        li
+          a(href=route('profile') data-backbone="true")
+            span
+              = t('general.navigation.profile')
+        li
+          a(href=route('settings') data-backbone="true")
+            span
+              = t('general.navigation.settings')
 
 div.nav-wrapper
   ul.nav.navbar-nav
     li
-      a(class=xs ? 'visible-xs' : 'hidden-xs' href='javascript:void(0);'
-      data-toggle-state=xs ? 'aside-toggled' : 'aside-collapsed')
+      a(class='visible-xs' href='#!' data-toggle-state='aside-toggled')
         i.fas.fa-bars
