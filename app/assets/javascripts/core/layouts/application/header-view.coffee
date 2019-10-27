@@ -1,3 +1,4 @@
+import { AppChan } from 'channels'
 import Routes from 'helpers/routes'
 import { isBreakpoint } from 'helpers/responsive'
 import template from './templates/header.pug'
@@ -7,6 +8,8 @@ export default class extends Marionette.View
 
   events:
     'click a[data-toggle-state]' : 'onAnchorToggleState'
+    'click #logout' : () ->
+      AppChan.request("user:signout")
 
   templateContext: ->
     isBreakpoint: isBreakpoint
