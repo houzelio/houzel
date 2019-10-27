@@ -5,5 +5,5 @@ export default class extends Marionette.View
   template: template
 
   events:
-    'click a[data-show="true"]' : () ->
+    'click #logout' : () ->
       AppChan.request("user:signout")
