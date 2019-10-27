@@ -4,8 +4,12 @@ import template from './templates/header.pug'
 export default class extends Marionette.View
   template: template
 
-  ui:
-    toggleSelector: "[data-toggle-state]"
+  events:
+    'click a[data-toggle-state]' : 'onAnchorToggleState'
 
   templateContext: ->
     isBreakpoint: isBreakpoint
+  onAnchorToggleState: (event) ->
+    className = Dom.getEl(event.currentTarget).data('toggleState')
+
+    if className then Dom.getEl('body').toggleClass(className)
