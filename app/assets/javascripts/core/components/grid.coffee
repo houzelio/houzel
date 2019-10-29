@@ -3,8 +3,6 @@ import Backgrid from 'backgrid'
 import { t } from 'helpers/i18n'
 import 'backgrid-paginator'
 
-Dom = Marionette.DomApi
-
 ClassOptions = [
   'windowSize'
 ]
@@ -105,7 +103,7 @@ export default Component.extend({
   _paginatorEl: (parentEl) ->
     className = _.result(@options, 'classPaginator', 'pagination-container')
     el = '<div class="' + className + '"></div>'
-    $el = $(el)
+    $el = Dom.getEl(el)
 
     parentEl.after($el)
     $el

@@ -77,7 +77,7 @@ export default class extends Marionette.View
     })
 
     @listenTo(picker, 'picker:update', ->
-      @model.set('date', $('#date-in').val())
+      @model.set('date', Dom.getEl('#date-in').val())
     )
 
     return
@@ -116,7 +116,7 @@ export default class extends Marionette.View
 
         events:
           'el:rendered' : (event) =>
-            el = $(event.currentTarget).find('input[data-input="true"]')[0]
+            el = Dom.getEl(event.currentTarget).find('input[data-input="true"]')[0]
             @_initFormatter(el)
 
           'change input[data-input="true"]' : (event) ->

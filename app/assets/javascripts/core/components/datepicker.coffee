@@ -2,8 +2,6 @@ import mom from 'moment'
 import Component from 'javascripts/api/component'
 import flatpickr from 'flatpickr'
 
-Dom = Marionette.DomApi
-
 PickerOptions = [
   'enableTime',
   'noCalendar',

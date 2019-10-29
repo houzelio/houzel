@@ -1,5 +1,5 @@
 isBreakpoint = (val) ->
-  width = $(window).width()
+  width = Dom.getEl(window).width()
   breakpoint = 'none'
 
   if width < 544

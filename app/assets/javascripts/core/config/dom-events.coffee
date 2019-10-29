@@ -1,5 +1,3 @@
-Dom = Marionette.DomApi
-
 monitorDataBackbone = () ->
   $el = Dom.getEl(document)
 

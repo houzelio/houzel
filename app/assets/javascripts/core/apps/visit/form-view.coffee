@@ -100,5 +100,5 @@ export default class extends Marionette.View
     return
 
   onAnchorPickerClick: (event) ->
-    $el = $(event.currentTarget).prev()
+    $el = Dom.getEl(event.currentTarget).prev()
     $el.val(mom().format('L HH:mm'))

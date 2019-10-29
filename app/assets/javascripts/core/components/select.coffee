@@ -1,8 +1,6 @@
 import Component from 'javascripts/api/component'
 import "chosen-js"
 
-Dom = Marionette.DomApi
-
 SelectOptions = [
   'disable_search',
   'disable_search_threshold',

@@ -78,7 +78,7 @@ export default class extends Marionette.View
     })
 
   onAnchorDataToggle: (event) ->
-    intvl = $(event.currentTarget).attr('href').replace('#', '')
+    intvl = Dom.getEl(event.currentTarget).attr('href').replace('#', '')
 
     if intvl in ['day', 'week', 'month']
       params =

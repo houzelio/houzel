@@ -46,11 +46,11 @@ export default ValidationMixin = {
     @stickit()
 
   _getParentEl: (selector, parentSel) =>
-    $el = $(selector).closest(parentSel)
+    $el = Dom.getEl(selector).closest(parentSel)
 
   _emptyDomErrors: () =>
-    $('.form-group').removeClass('has-error')
-    $('.help-block').text('')
+    Dom.getEl('.form-group').removeClass('has-error')
+    Dom.getEl('.help-block').text('')
 
     return
 }

@@ -64,7 +64,7 @@ export default class extends Marionette.View
         )
         events:
           'click a[data-show="true"]' : (event) ->
-            $el = $(event.currentTarget)
+            $el = Dom.getEl(event.currentTarget)
 
             if $el.attr("data-option") == "no-edit"
               AppChan.request("patient:show", @model.get('id'))

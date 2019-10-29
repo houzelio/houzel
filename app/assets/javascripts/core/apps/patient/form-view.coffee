@@ -62,7 +62,7 @@ export default class extends Marionette.View
     })
 
     @listenTo(picker, 'picker:update', ->
-      @model.set('birthday', $('#birth-in').val())
+      @model.set('birthday', Dom.getEl('#birth-in').val())
     )
 
     return

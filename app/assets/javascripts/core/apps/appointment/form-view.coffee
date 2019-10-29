@@ -57,7 +57,7 @@ export default class extends Marionette.View
     })
 
     @listenTo(picker, 'picker:update', ->
-      @model.set('date', $('#date-in').val())
+      @model.set('date', Dom.getEl('#date-in').val())
     )
 
     #start-time picker
@@ -69,7 +69,7 @@ export default class extends Marionette.View
     })
 
     @listenTo(picker, 'picker:update', ->
-      @model.set('start_time', $('#start-in').val())
+      @model.set('start_time', Dom.getEl('#start-in').val())
     )
 
     #end-time picker
@@ -81,7 +81,7 @@ export default class extends Marionette.View
     })
 
     @listenTo(picker, 'picker:update', ->
-      @model.set('end_time', $('#end-in').val())
+      @model.set('end_time', Dom.getEl('#end-in').val())
     )
 
     return
