@@ -40,13 +40,11 @@ Entity = Marionette.MnObject.extend({
     return
 
   create: (attrs, options) ->
-    ModelClass = @modelClass
-    model = new ModelClass(attrs, options)
+    model = @_getModel(attrs, options)
 
     if _.has(options, 'urlRoot')
       urlRoot = model.urlRoot
       model.urlRoot = _.result(options, 'urlRoot')
-
 
     if (_.result(options, 'fetch')) then model.fetch()
     if urlRoot then model.urlRoot = urlRoot
@@ -54,20 +52,26 @@ Entity = Marionette.MnObject.extend({
     model
 
   get: (id, options) ->
-    ModelClass = @modelClass
-    model = new ModelClass(id: id, _.omit(options, 'fetchOptions'))
+    model = @_getModel(id: id, _.omit(options, 'fetchOptions'))
 
     fetchOptions = @_fetchOptions(options)
     model.fetch(fetchOptions)
     model
 
   getList: (options) ->
-    CollectionClass = @collectionClass
-    collection = new CollectionClass(null, _.omit(options, 'fetchOptions'))
+    collection = @_getCollection(null, _.omit(options, 'fetchOptions'))
 
     fetchOptions = @_fetchOptions(options)
     collection.fetch(fetchOptions)
     collection
+
+  _getModel: (attrs, options) ->
+    ModelClass = @modelClass
+    new ModelClass(attrs, options)
+
+  _getCollection: (attrs, options) ->
+    CollectionClass = @collectionClass
+    new CollectionClass(attrs, options)
 
   _fetchOptions: (options) ->
     if _.has(options, 'fetchOptions')
