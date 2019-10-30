@@ -40,7 +40,7 @@ export default class extends Marionette.View
   onAttach: () ->
     @_showSelects()
     @_showPickers()
-    @_showMclHistory(@mclHistoryCollection)
+    @_showMclHistory(@getOption('mclHistoryCollection'))
 
   _showSelects: () ->
     select = new SelectCmp({

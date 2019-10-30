@@ -32,15 +32,15 @@ Controller =
     mcl_histories = MclHistory.getList({ fetchOptions: visit_id: id })
 
     ObjChan.request("when:fetched", [visit, mcl_histories], =>
-      view = @_getFormView(visit, true)
-      view.mclHistoryCollection = mcl_histories
+      options = { mclHistoryCollection: mcl_histories }
+      view = @_getFormView(visit, true, options)
       showView(view)
     )
 
     return
 
-  _getFormView: (model, deleteOption) ->
-    view = new FormView {model: model}
+  _getFormView: (model, deleteOption, options) ->
+    view = new FormView(_.extend({ model: model }, options))
 
     view.on('visit:save', @onVisitSave)
     if deleteOption
