@@ -168,7 +168,7 @@ export default Component.extend({
     @getOption('collection', 'viewOptions')
 
   _collectionEvents: () ->
-    collection = @getOption('collection', 'viewOptions')
+    collection = @getCollection()
     ['add', 'remove', 'change'].forEach (event) =>
       @listenTo(collection, event, (model) =>
         @triggerMethod('grid:' + event, model, collection)
