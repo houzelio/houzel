@@ -15,7 +15,7 @@ div.panel.panel-transparent
           - title = t('patient.labels.sex')
           label.mr-sm #{title}
           span.font-15
-            = sex == 'male' ? t('patient.titles.male') : t('patient.titles.female')
+            = sex == 'male' ? t('patient.labels.male') : t('patient.labels.female')
       div.row
         div.col-xs-10
           - title = t('patient.labels.age')
@@ -25,10 +25,10 @@ div.panel.panel-transparent
       div.row.tabbable-line.mt-xl
         ul.nav.nav-tabs
           li.active
-            - title = t('visit.titles.history')
+            - title = t('visit.labels.history')
             a(href="#history-tab" data-toggle="tab") #{title}
           li
-            - title = t('patient.titles.appointments')
+            - title = t('patient.labels.appointments')
             a(href="#appointment-tab" data-toggle="tab") #{title}
       div.tab-content.mt-lg
         div#history-tab.tab-pane.fade.in.active
