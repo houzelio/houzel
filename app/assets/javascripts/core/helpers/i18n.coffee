@@ -1,44 +1,33 @@
 import Polyglot from 'node-polyglot'
 
-Intl = () ->
-  @polyglot = {}
+Intl =
+  polyglot: {}
 
-  return
-
-_.extend(Intl.prototype, {
-  load: (options) ->
-    opts = options
-
-    locale = opts.locale || "en"
-    phrases = opts.strings.json[locale].javascripts
-
+  load: (phrases, locale) ->
     @polyglot = new Polyglot({
+      locale: locale || "en"
       phrases: phrases
-      locale: locale
     })
 
     return
 
   t: (key, options) ->
     polyglot = @polyglot
-    if _.isEmpty(polyglot) then return
+    if _.isEmpty(@polyglot) then return
 
     polyglot.t(key, options)
-})
-
-_intl = new Intl()
 
 initIntl = (options) ->
-  intl = _intl.load(options)
-  Object.freeze(intl)
+  Intl.load(options.phrases, options.locale)
+  Intl
 
 t = (key, options) ->
-  return _intl.t(key, options)
-
-# keeps a global reference, for translations on frontend
-global["t"] = t
+  return Intl.t(key, options)
 
 export {
   initIntl,
   t
 }
+
+# keeps a global reference, for translations on frontend
+global["t"] = t

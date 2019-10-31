@@ -55,7 +55,7 @@ function setupStartApp() {
     numeral.locale(locale);
 
     const app = new App({
-      strings: strings, locale: locale
+      phrases: strings.json[locale].javascripts, locale: locale
     });
 
     app.start()
