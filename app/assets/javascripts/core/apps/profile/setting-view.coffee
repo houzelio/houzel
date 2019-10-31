@@ -18,12 +18,7 @@ export default class extends Marionette.View
   templateContext: =>
     setting: () =>
       @getOption('setting')
-    route: (setting) ->
-      profilePath = Routes.profile_index_path()
-      routes = {
-        'general' : profilePath
-        'password' : "#{profilePath}/password"
-        'email' : "#{profilePath}/email"
-      }
-
-      routes[setting]
+    route: (name) ->
+      _route = Routes.profile_index_path()
+      if !(name == "general") then _route = "#{_route}/#{name}"
+      _route
