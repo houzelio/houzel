@@ -21,7 +21,7 @@ AppChan.reply("visit:new", () ->
   Controller.newVisit()
 )
 
-AppChan.reply("visit:edit", (id) ->
+AppChan.reply("visit:edit", (id, referrer) ->
   Backbone.history.navigate Routes.visit_path(id)
-  Controller.editVisit(id)
+  Controller.editVisit(id, referrer)
 )

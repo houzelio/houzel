@@ -27,12 +27,12 @@ Controller =
 
     return
 
-  editVisit: (id) ->
+  editVisit: (id, referrer) ->
     visit = Visit.get(id)
     mcl_histories = MclHistory.getList({ fetchOptions: visit_id: id })
 
     ObjChan.request("when:fetched", [visit, mcl_histories], =>
-      options = { mclHistoryCollection: mcl_histories }
+      options = { referrer: referrer, mclHistoryCollection: mcl_histories }
       view = @_getFormView(visit, true, options)
       showView(view)
     )

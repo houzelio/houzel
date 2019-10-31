@@ -30,12 +30,13 @@ export default class extends Marionette.View
   events:
     'click a[data-click]' : 'onAnchorPickerClick'
 
+  templateContext: =>
+    route: () =>
+      referrer = @getOption('referrer')
+      if referrer then referrer else Routes.visit_index_path()
+
   triggers:
     'click #save-btn': 'visit:save'
-
-  templateContext:
-    route: () ->
-      Routes.visit_index_path()
 
   onAttach: () ->
     @_showSelects()
