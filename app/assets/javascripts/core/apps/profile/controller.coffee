@@ -14,7 +14,7 @@ Controller =
     ObjChan.request("when:fetched", profile, =>
       view = new FormView { model: profile }
       @_bindSave(view, 'profile:general:save', @onProfileSave)
-      showViewIn(@_getSettingLayout('general'), 'settingRegion', view)
+      showViewIn(@_getSettingLayout('general'), view, 'settingRegion')
     )
 
     return
@@ -25,7 +25,7 @@ Controller =
     ObjChan.request("when:fetched", user, =>
       view = new PasswordView { model: user }
       @_bindSave(view, 'profile:password:save', @onPasswordSave)
-      showViewIn(@_getSettingLayout('password'), 'settingRegion', view)
+      showViewIn(@_getSettingLayout('password'), view, 'settingRegion')
     )
 
   changeEmail: () ->

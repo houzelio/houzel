@@ -6,10 +6,10 @@ defaultRegion = 'mainRegion'
 showView = (view, region) ->
   LayoutMgr.show((if region then region else defaultRegion), view)
 
-showViewIn = (lytView, lytRegion, view, region) ->
-  showView(lytView, region)
+showViewIn = (view, childView, childRegion, region) ->
+  showView(view, region)
 
-  lytView.showChildView(lytRegion, view)
+  view.showChildView(childRegion, childView)
 
 export {
   showView,

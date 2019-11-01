@@ -7,12 +7,12 @@
     "accounting": "0.4.1",
     "backbone": "ssh://git@bitbucket.org:marksbre/backbone-houzel.git",
     "backbone-validation": "0.11.5",
+    "backbone.deep-model": "2.0.2",
     "backbone.marionette": "4.0.0",
     "backbone.paginator": "2.0.8",
     "backbone.radio": "2.0.0",
     "backbone.stickit": "0.9.2",
     "backbone.syphon": "0.6.3",
-    "backbone.deep-model": "2.0.2",
     "backgrid": "0.3.8",
     "backgrid-paginator": "0.3.9",
     "bootbox": "4.4.0",
@@ -31,11 +31,11 @@
     "marionette.approuter": "1.0.1",
     "moment": "2.22.2",
     "node-polyglot": "2.2.2",
+    "nprogress": "0.2.0",
     "numeral": "2.0.6",
-    "pug": "2.0.3",
-    "underscore": "1.9.1",
     "pluralize": "8.0.0",
-    "nprogress": "0.2.0"
+    "pug": "2.0.3",
+    "underscore": "1.9.1"
   },
   "devDependencies": {
     "coffee-loader": "0.9.0",

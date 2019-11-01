@@ -5,8 +5,7 @@ LayoutMgr = {}
 
 layouts = ['application', 'user']
 
-processView = (layoutName, options) ->
-
+getLayoutView = (layoutName, options) ->
   if layoutName == "application"
     view = new AppLayout
   else if layoutName == "user"
@@ -14,9 +13,7 @@ processView = (layoutName, options) ->
   else
     throw new Error("Invalid layout.")
 
-  options.layoutName = layoutName
-  view.mergeOptions(options, ['layoutName', 'search'])
-
+  view.layoutName = layoutName
   view
 
 LayoutMgr.currentView = {}
@@ -29,9 +26,8 @@ LayoutMgr.render = (layoutName, options) ->
   currView = @currentView
 
   if _.isEmpty(currView) ||
-  currView.getOption('layoutName') != layoutName ||
-  currView.getOption('search') != options.search
-    layoutView = processView(layoutName, options)
+  currView.getOption('layoutName') != layoutName
+    layoutView = getLayoutView(layoutName, options)
     layoutView.render()
 
     @currentView = layoutView

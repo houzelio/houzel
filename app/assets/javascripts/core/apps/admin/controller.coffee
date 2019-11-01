@@ -10,7 +10,7 @@ Controller =
     ObjChan.request("when:fetched", users, =>
       view = new UserView {collection: users}
       view.on('admin:remove:user', @onAdminRemoveUser)
-      showViewIn(@_getSettingLayout(), 'settingRegion', view)
+      showViewIn(@_getSettingLayout(), view, 'settingRegion')
     )
 
     return
