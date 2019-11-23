@@ -34,7 +34,7 @@ defaultRender = () ->
 
   template = @template
   if _.isFunction(template)
-    data = template(data)
+    data = template(if columnName then {["#{columnName}"]: data} else data)
 
   $el.html(data)
   @updateStateClassesMaybe()
