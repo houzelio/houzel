@@ -53,7 +53,7 @@ Controller =
     mcl_histories = MclHistory.getList({ patient_id: id })
 
     ObjChan.request("when:fetched", [patient, mcl_histories], =>
-      patient = new Patient.create({patient: _.clone(patient.attributes)})
+      patient = Patient.create({patient: _.clone(patient.attributes)})
       view.showPatientInfo(patient, mcl_histories)
     )
 

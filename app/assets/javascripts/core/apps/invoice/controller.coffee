@@ -47,7 +47,7 @@ Controller =
   onInvoiceSelectPatient: (view, id) ->
     patient = Patient.get(id)
     ObjChan.request("when:fetched", patient, =>
-      patient = new Patient.create({patient: _.clone(patient.attributes)})
+      patient = Patient.create({patient: _.clone(patient.attributes)})
       view.showPatientInfo(patient)
     )
 
