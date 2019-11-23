@@ -12,8 +12,6 @@ export default class extends Marionette.View
   tagName: "div"
   className: "content-wrapper"
 
-  navigation: "billing"
-
   behaviors:
     Layout:
       behaviorClass: LayoutBehavior
@@ -32,7 +30,7 @@ export default class extends Marionette.View
   _buildGrid: () ->
     columns = [
       name: 'patient_name'
-      label: t('general.labels.name')      
+      label: t('general.labels.name')
       cell: 'string'
     ,
       name: 'bill_date'

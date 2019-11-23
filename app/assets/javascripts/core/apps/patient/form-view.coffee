@@ -13,8 +13,6 @@ export default class extends Marionette.View
   tagName: "div"
   className: "content-wrapper"
 
-  navigation: "patient"
-
   mixins: [ValidationMixin]
 
   behaviors:

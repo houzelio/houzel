@@ -11,8 +11,6 @@ export default class extends Marionette.View
   tagName: "div"
   className: "content-wrapper"
 
-  navigation: "schedule"
-
   behaviors:
     Layout:
       behaviorClass: LayoutBehavior

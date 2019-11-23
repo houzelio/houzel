@@ -14,8 +14,6 @@ export default class extends Marionette.View
   tagName: "div"
   className: "content-wrapper"
 
-  navigation: "service"
-
   mixins: [ValidationMixin]
 
   behaviors:
