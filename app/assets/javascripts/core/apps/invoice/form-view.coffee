@@ -125,7 +125,7 @@ export default class extends Marionette.View
             @model.set('value', event.currentTarget.value)
 
       formatter: (rawData, model) ->
-        value: formatCurr(rawData)
+        formatCurr(rawData)
     ,
       label: ''
       cell: extend:
