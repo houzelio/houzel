@@ -76,3 +76,6 @@ export default class extends Marionette.View
     )
 
     dialog.confirm(t('patient.messages.remove_patient'))
+
+  onBeforeDestroy: () ->
+    @pickers['#birth-pickr'].destroy()

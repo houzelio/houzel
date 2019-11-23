@@ -109,3 +109,8 @@ export default class extends Marionette.View
   onAnchorPickerClick: (event) ->
     id = Dom.getEl(event.currentTarget).prev().attr('id')
     @pickers["##{id}"].setValue(mom().format())
+
+  onBeforeDestroy: () ->
+    _.each(@pickers, (picker) ->
+      picker.destroy()
+    )

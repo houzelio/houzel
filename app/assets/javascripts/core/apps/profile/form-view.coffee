@@ -55,3 +55,6 @@ export default class extends Marionette.View
     @listenTo(dialog, 'dialog:action:result', => callback() )
 
     dialog.alert(t('profile.messages.refresh_profile'))
+
+  onBeforeDestroy: () ->
+    @pickers['#birth-pickr'].destroy()

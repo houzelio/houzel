@@ -89,3 +89,8 @@ export default class extends Marionette.View
     )
 
     return
+
+  onBeforeDestroy: () ->
+    _.each(@pickers, (picker) ->
+      picker.destroy()
+    )

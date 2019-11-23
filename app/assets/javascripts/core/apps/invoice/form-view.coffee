@@ -209,6 +209,9 @@ export default class extends Marionette.View
 
     @triggerMethod('invoice:save', @)
 
+  onBeforeDestroy: () ->
+    @pickers['#date-pickr'].destroy()
+
   _sumValue: (items) ->
     _.reduce(items,
       (memo, item) ->
