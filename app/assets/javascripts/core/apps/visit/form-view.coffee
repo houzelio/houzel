@@ -107,5 +107,5 @@ export default class extends Marionette.View
     return
 
   onAnchorPickerClick: (event) ->
-    $el = Dom.getEl(event.currentTarget).prev()
-    $el.val(mom().format('L HH:mm'))
+    id = Dom.getEl(event.currentTarget).prev().attr('id')
+    @pickers["##{id}"].setValue(mom().format())
