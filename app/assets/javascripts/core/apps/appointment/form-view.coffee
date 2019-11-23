@@ -36,12 +36,14 @@ export default class extends Marionette.View
     @_showPickers()
 
   _showSelects: () ->
-    new SelectCmp({
+    @selects = {}
+
+    @selects['#patient-sel'] = new SelectCmp({
       el: '#patient-sel',
       value: @model.get("patient_id")
     })
 
-    new SelectCmp({
+    @selects['#examiner-sel'] = new SelectCmp({
       el: '#examiner-sel'
       value: @model.get("examiner_id")
     })
@@ -49,38 +51,40 @@ export default class extends Marionette.View
     return
 
   _showPickers: () ->
+    @pickers = {}
+
     #date picker
-    picker = new PickerCmp({
+    @pickers['#date-pickr'] = new PickerCmp({
       el: '#date-pickr',
       minDate: 'today',
       wrap: true
     })
 
-    @listenTo(picker, 'picker:update', ->
+    @listenTo(@pickers['#date-pickr'], 'picker:update', ->
       @model.set('date', Dom.getEl('#date-in').val())
     )
 
     #start-time picker
-    picker = new PickerCmp({
+    @pickers['#start-pickr'] = new PickerCmp({
       el: '#start-pickr',
       enableTime: true,
       noCalendar: true,
       wrap: true
     })
 
-    @listenTo(picker, 'picker:update', ->
+    @listenTo(@pickers['#start-pickr'], 'picker:update', ->
       @model.set('start_time', Dom.getEl('#start-in').val())
     )
 
     #end-time picker
-    picker = new PickerCmp({
+    @pickers['#end-pickr'] = new PickerCmp({
       el: '#end-pickr',
       enableTime: true,
       noCalendar: true,
       wrap: true
     })
 
-    @listenTo(picker, 'picker:update', ->
+    @listenTo(@pickers['#end-pickr'], 'picker:update', ->
       @model.set('end_time', Dom.getEl('#end-in').val())
     )
 

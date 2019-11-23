@@ -38,14 +38,16 @@ export default class extends Marionette.View
     @_showPickers()
 
   _showSelects: () ->
-    new SelectCmp({
+    @selects = {}
+
+    @selects['#sex-sel'] = new SelectCmp({
       el: '#sex-sel',
       disable_search: true,
       allow_single_deselect: true,
       value: @model.get("sex")
     })
 
-    new SelectCmp({
+    @selects['#blood-sel'] = new SelectCmp({
       el: '#blood-sel',
       disable_search: true,
       allow_single_deselect: true,
@@ -55,14 +57,16 @@ export default class extends Marionette.View
     return
 
   _showPickers: () ->
+    @pickers = {}
+
     #birthday picker
-    picker = new PickerCmp({
+    @pickers['#birth-pickr'] = new PickerCmp({
       el: '#birth-pickr',
       wrap: true
     })
 
-    @listenTo(picker, 'picker:update', ->
-      @model.set('birthday', Dom.getEl('#birth-in').val())
+    @listenTo(@pickers['#birth-pickr'], 'picker:update', ->
+      @model.set('birthday', @pickers['#birth-pickr'].getValue())
     )
 
     return

@@ -21,7 +21,9 @@ export default class extends Marionette.View
     @_showPickers()
 
   _showSelects: () ->
-    new SelectCmp({
+    @selects = {}
+
+    @selects['#language-sel'] = new SelectCmp({
       el: '#language-sel',
       disable_search: true,
       value: gon.locale
@@ -30,13 +32,15 @@ export default class extends Marionette.View
     return
 
   _showPickers: () ->
+    @pickers = {}
+
     #birthday picker
-    picker = new PickerCmp({
+    @pickers['#birth-pickr'] = new PickerCmp({
       el: '#birth-pickr',
       wrap: true
     })
 
-    @listenTo(picker, 'picker:update', ->
+    @listenTo(@pickers['#birth-pickr'], 'picker:update', ->
       @model.set('birthday', Dom.getEl('#birth-in').val())
     )
 

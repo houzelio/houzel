@@ -43,7 +43,9 @@ export default class extends Marionette.View
     @_showSelects()
 
   _showSelects: () ->
-    new SelectCmp({
+    @selects = {}
+
+    @selects['#category-sel'] = new SelectCmp({
       el: '#category-sel',
       value: @model.get("category")
     })

@@ -44,35 +44,41 @@ export default class extends Marionette.View
     @_showMclHistory(@getOption('mclHistoryCollection'))
 
   _showSelects: () ->
-    select = new SelectCmp({
+    @selects = {}
+
+    @selects['#patient-sel'] = new SelectCmp({
       el: '#patient-sel'
     })
 
-    @listenTo(select, 'select:change', (event, value) ->
+    @listenTo(@selects['#patient-sel'], 'select:change', (event, value) ->
       @triggerMethod('visit:select:patient', @, value)
     )
 
     return
 
   _showPickers: () ->
+    @pickers = {}
+
     #checkin picker
-    picker = new PickerCmp({
-      el: '#checkin-pickr',
+    @pickers['#checkin-pickr'] = new PickerCmp({
+      el: '#checkin-pickr'
       enableTime: true
     })
 
-    @listenTo(picker, 'picker:update', ->
-      @model.set('start_date', picker.getValue())
+    @listenTo(@pickers['#checkin-pickr'], 'picker:update', ->
+      @model.set('start_date', @pickers['#checkin-pickr'].getValue())
     )
 
+    if !@model.get('start_date') then @pickers['#checkin-pickr'].setValue(mom().format())
+
     #checkin picker
-    picker = new PickerCmp({
-      el: '#checkout-pickr',
+    @pickers['#checkout-pickr'] = new PickerCmp({
+      el: '#checkout-pickr'
       enableTime: true
     })
 
-    @listenTo(picker, 'picker:update', ->
-      @model.set('end_date', picker.getValue())
+    @listenTo(@pickers['#checkout-pickr'], 'picker:update', ->
+      @model.set('end_date', @pickers['#checkout-pickr'].getValue())
     )
 
     return

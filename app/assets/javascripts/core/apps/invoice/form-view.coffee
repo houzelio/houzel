@@ -53,31 +53,33 @@ export default class extends Marionette.View
     @grid.showView()
 
   _showSelects: () ->
-    select = new SelectCmp({
+    @selects = {}
+
+    @selects['#patient-sel'] = new SelectCmp({
       el: '#patient-sel'
     })
 
-    @listenTo(select, 'select:change', (event, value) ->
+    @listenTo(@selects['#patient-sel'], 'select:change', (event, value) ->
       @triggerMethod('invoice:select:patient', @, value)
     )
 
-    select = new SelectCmp({
+    @selects['#service-sel'] = new SelectCmp({
       el: '#service-sel'
     })
-
-    @serviceSelect = select
 
     return
 
   _showPickers: () ->
+    @pickers = {}
+
     #date picker
-    picker = new PickerCmp({
-      el: '#date-pickr',
+    @pickers['#date-pickr'] = new PickerCmp({
+      el: '#date-pickr'
       wrap: true
     })
 
-    @listenTo(picker, 'picker:update', ->
-      @model.set('date', Dom.getEl('#date-in').val())
+    @listenTo(@pickers['#date-pickr'], 'picker:update', ->
+      @model.set('date', @pickers['#date-pickr'].getValue())
     )
 
     return
@@ -174,12 +176,12 @@ export default class extends Marionette.View
     @ui.total.text(formatCurr(sum))
 
   onAddService: () ->
-    select = @serviceSelect
+    select = @selects['#service-sel']
     services = @model.get("services")
 
-    value = select.getValue()
+    id = select.getValue()
     obj = _.find(services, (service) =>
-      String(service.id) == value
+      String(service.id) == id
     )
 
     if !obj then return
