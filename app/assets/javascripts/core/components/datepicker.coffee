@@ -77,6 +77,9 @@ export default Component.extend({
     onValueUpdate: () ->
       triggerMethod('picker:update', arguments)
 
+  setValue: (value) ->
+    @currentPicker.setDate(value)
+
   getValue: () ->
     Dom.getEl(@el).val()
 
