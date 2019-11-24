@@ -89,4 +89,7 @@ export default Component.extend({
 
     $el.val()
 
+  onBeforeDestroy: () ->
+    @currentPicker.destroy()
+
 })
