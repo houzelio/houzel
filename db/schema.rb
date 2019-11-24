@@ -118,6 +118,8 @@ Sequel.migration do
       column :location, "character varying(127)"
       column :phone, "character varying(63)"
       foreign_key :person_id, :person, :key=>[:id], :on_delete=>:cascade
+      column :created_at, "timestamp without time zone", :null=>false
+      column :updated_at, "timestamp without time zone", :null=>false
     end
     
     create_table(:role) do
@@ -132,20 +134,24 @@ Sequel.migration do
       primary_key :id
       column :status, "character varying(63)"
       foreign_key :patient_id, :patient, :key=>[:id]
-      foreign_key :specialist_id, :person, :key=>[:id]
+      foreign_key :examiner_id, :person, :key=>[:id]
       column :start_date, "timestamp without time zone"
       column :end_date, "timestamp without time zone"
+      column :created_at, "timestamp without time zone", :null=>false
+      column :updated_at, "timestamp without time zone", :null=>false
       
+      index [:examiner_id], :name=>:index_visit_on_examiner_id
       index [:patient_id], :name=>:index_visit_on_patient_id
-      index [:specialist_id], :name=>:index_visit_on_specialist_id
     end
     
     create_table(:appointment) do
       primary_key :id
       column :description, "character varying(255)"
-      foreign_key :visit_id, :visit, :key=>[:id]
+      foreign_key :visit_id, :visit, :key=>[:id], :on_delete=>:cascade
       column :start_date, "timestamp without time zone", :null=>false
       column :end_date, "timestamp without time zone", :null=>false
+      column :created_at, "timestamp without time zone", :null=>false
+      column :updated_at, "timestamp without time zone", :null=>false
       
       index [:visit_id], :name=>:index_calendar_on_visit_id
     end
@@ -168,6 +174,8 @@ Sequel.migration do
       column :diagnosis, "character varying(510)"
       column :notes, "text"
       foreign_key :visit_id, :visit, :key=>[:id], :on_delete=>:cascade
+      column :created_at, "timestamp without time zone", :null=>false
+      column :updated_at, "timestamp without time zone", :null=>false
       
       index [:visit_id], :name=>:index_medical_history_on_visit_id
     end
