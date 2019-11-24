@@ -16,6 +16,5 @@
 # end
 
 ActiveSupport::Inflector.inflections do |inflect|
-    inflect.clear
-    inflect.singular(/$/i, '')
+    inflect.clear :plurals
 end
