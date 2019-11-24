@@ -6,6 +6,11 @@ class Invoice < Sequel::Model
   many_to_one :patient
   one_to_many :invoice_service
 
+  def validate
+    super
+    validates_presence :patient_id
+  end
+
   def add_invoice_services(items_hash)
     invoice_services = Array.new
     pks = Array.new

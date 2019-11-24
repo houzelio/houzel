@@ -5,6 +5,7 @@ class Profile < Sequel::Model
 
   def validate
     super
+    validates_presence :name
     validates_format  /\A[^;]+\z/, [:name], :allow_blank => true
   end
 end

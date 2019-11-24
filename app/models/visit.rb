@@ -10,4 +10,10 @@ class Visit < Sequel::Model
 
   nested_association :appointment
   nested_association :medical_history
+
+  def validate
+    super
+    validates_presence :patient_id
+    validates_presence :examiner_id
+  end
 end
