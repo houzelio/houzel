@@ -33,6 +33,7 @@ pt-BR:
         month: "Mês"
       buttons:
         new_appointment: "Nova Consulta"
+        schedule: "Agendar"
       messages:
         no_appointments: "Sem consultas"
     mcl-history:

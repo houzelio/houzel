@@ -63,7 +63,7 @@ en:
       permission_denied: "Permission denied"
   sequel:
     messages:
-      presence: "Required"
+      presence: "This field is required"
       includes: "Not in range or set: %{set}"
       integer: "Not a valid number"
       numeric: "Not a valid number"
