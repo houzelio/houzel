@@ -46,8 +46,7 @@ class ServiceController < ApplicationController
 
   def service_params
     params.require(:service).permit(:name, :category).tap do |p|
-      m = Money.new(params[:value].to_s.gsub(/\D+/, ""))
-      p[:value] = m.format(symbol: nil, thousands_separator: "", decimal_mark: ".")
+      p[:value] = Houzel::Money.simple_value(params[:value])
     end
   end
 

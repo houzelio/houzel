@@ -15,15 +15,8 @@ class Invoice < Sequel::Model
     invoice_services = Array.new
     pks = Array.new
 
-    format_value = -> (value) {
-      value = (value.is_a? Numeric) ? "%.2f" % value : value
-
-      m = Money.new(value.gsub(/\D+/, ""))
-      m.format(symbol: nil, thousands_separator: "", decimal_mark: ".")
-    }
-
     items_hash.each { |p|
-      p[:value] = format_value.call(p[:value])
+      p[:value] = Houzel::Money.simple_value(p[:value])
 
       if new?
         is = InvoiceService.new(p.permit(:name, :value, :reference_id))
