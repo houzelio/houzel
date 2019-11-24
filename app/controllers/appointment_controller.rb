@@ -76,8 +76,8 @@ class AppointmentController < ApplicationController
 
   def appointment_params
     params.require(:appointment).permit(:description).tap do |p|
-      p[:start_date] = DateTime.parse([params[:date], params[:start_time]].join(' '))
-      p[:end_date] = DateTime.parse([params[:date], params[:end_time]].join(' '))
+      p[:start_date] = merge_into_datetime(params[:date], params[:start_time])
+      p[:end_date] = merge_into_datetime(params[:date], params[:end_time])
     end
   end
 
@@ -91,5 +91,11 @@ class AppointmentController < ApplicationController
 
   def visit_fields
     [:patient_id, :examiner_id]
+  end
+
+  def merge_into_datetime(date, time)
+    if date.present? && time.present?
+      DateTime.parse([date, time].join(' '))
+    end
   end
 end
