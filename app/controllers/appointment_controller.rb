@@ -6,6 +6,7 @@ class AppointmentController < ApplicationController
     per_page = (params[:per_page] || 10).to_i
 
     appointments = Appointment.select_all(:appointment).select_append(:name).association_join(visit: :patient)
+    appointments = appointments.where(status: 'scheduled')
     if params_filter(:name)
       appointments = appointments.where(Sequel.ilike(:name, "%#{params_filter(:name)}%"))
     end
@@ -43,7 +44,8 @@ class AppointmentController < ApplicationController
   end
 
   def show
-    appointment = Appointment.first(id: params[:id])
+    appointment = Appointment.select_all(:appointment).association_join(:visit).where(status: 'scheduled')
+    appointment = appointment.first(Sequel[:appointment][:id] => params[:id])
     raise Sequel::NoExistingObject unless appointment.present?
 
     @appointment =  AppointmentDecorator.new(appointment)
