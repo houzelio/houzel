@@ -19,7 +19,7 @@ postgres: &postgres
   host: localhost
   port: 5432
   username: postgres
-  password: 
+  password:
   encoding: utf-8
 
 common: &common
@@ -29,7 +29,7 @@ development:
   database: hzl_development
 production:
   <<: *common
-  database: hzl_production 
+  database: hzl_production
 test:
   <<: *common
   database: "hzl_test"

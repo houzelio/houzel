@@ -5,4 +5,3 @@ require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 
 # Load configuration early
 require_relative 'load_config'
-

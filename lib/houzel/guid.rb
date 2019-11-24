@@ -2,7 +2,7 @@ module Houzel::Guid
 
   def self.included(model)
     model.class_eval do
-      def before_create 
+      def before_create
         set_guid
         super
       end
