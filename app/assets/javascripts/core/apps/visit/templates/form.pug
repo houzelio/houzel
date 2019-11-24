@@ -26,7 +26,6 @@ div.panel.panel-transparent
       div.row.check-pickr
         div.form-group.col-sm-6.required
           - title = t('visit.labels.checkin_time')
-          - start_date = start_date ? start_date : mom().format('L HH:mm')
           label.control-label(for="start_date") #{title}
           div.input-group
             input#checkin-pickr.flatpickr.flatpickr-input.form-control.font-15(name="start_date" value=start_date data-input)
