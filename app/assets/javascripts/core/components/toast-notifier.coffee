@@ -71,7 +71,7 @@ export default Component.extend({
     onClosed: () ->
       triggerMethod('notifier:closed', arguments)
 
-  onNotifierClosed: () =>
+  onNotifierClosed: () ->
     toast.destroy()
 
 })
