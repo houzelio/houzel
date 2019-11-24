@@ -204,7 +204,7 @@ Sequel.migration do
     end
 
     alter_table :appointment do
-      add_foreign_key [:visit_id], :visit, :null=>false
+      add_foreign_key [:visit_id], :visit, :on_delete=>:cascade, :null=>false
     end
 
     alter_table :visit do
