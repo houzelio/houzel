@@ -33,7 +33,7 @@ export default Component.extend({
     callback = (result) =>
       @triggerMethod("dialog:action:result", result)
 
-    dialogOptions = _.extend(
+    dialogOptions = _.extend({},
       _.defaults(_.result(@, 'dialogOptions'), options),
       {
         message: message,
