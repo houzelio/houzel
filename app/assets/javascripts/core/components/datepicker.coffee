@@ -83,6 +83,10 @@ export default Component.extend({
     @currentPicker.setDate(value)
 
   getValue: () ->
-    Dom.getEl(@el).val()
+    $el = Dom.getEl(@el)
+    if $el.hasClass('flatpickr-wrapper')
+      $el = $el.children('input')
+
+    $el.val()
 
 })
