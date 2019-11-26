@@ -32,13 +32,11 @@ export default class extends Marionette.View
 
   _buildGrid: () ->
     columns = [
-      name: 'start_date'
+      name: 'date'
       label: t('appointment.labels.date_of_appointment')
       cell: 'string'
-      formatter: (rawData, model) ->
-        mom(rawData).format('L LT')
     ,
-      name: 'examiner'
+      name: 'examiner_name'
       label: t('appointment.labels.examiner')
       cell: 'string'
     ,
