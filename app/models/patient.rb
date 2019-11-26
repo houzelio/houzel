@@ -10,4 +10,8 @@ class Patient < Sequel::Model
     super
     validates_presence :name
   end
+
+  def scheduled_appointments
+    appointments_dataset.where(status: "scheduled").all
+  end
 end
