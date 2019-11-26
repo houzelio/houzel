@@ -34,7 +34,7 @@ Controller =
     ObjChan.request("when:fetched", user, =>
       view = new EmailView { model: user }
       @_bindSave(view, 'profile:email:save', @onEmailSave)
-      showViewIn(@_getSettingLayout('email'), 'settingRegion', view)
+      showViewIn(@_getSettingLayout('email'), view, 'settingRegion')
     )
 
   _getSettingLayout: (setting) ->
