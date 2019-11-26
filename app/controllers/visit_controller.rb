@@ -48,7 +48,7 @@ class VisitController < ApplicationController
     visit.set_medical_history_fields(mcl_history_params, mcl_history_fields)
     checked_out = visit_params[:end_date].present? && !visit.end_date
 
-    if visit.update_fields(visit_params, visit_fields)
+    if visit.update_fields(visit_params, visit_fields.without(:patient_id))
       respond_with_message(I18n.t(checked_out ? 'visit.messages.checked_out' : 'visit.messages.updated'), "success", :ok)
     else
       respond_with visit
