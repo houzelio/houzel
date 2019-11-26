@@ -4,7 +4,7 @@ class Invoice < Sequel::Model
   plugin :delay_add_association
 
   many_to_one :patient
-  one_to_many :invoice_service
+  one_to_many :invoice_services, class: :InvoiceService
 
   def validate
     super
