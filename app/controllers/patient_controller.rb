@@ -18,7 +18,7 @@ class PatientController < ApplicationController
     patient = Patient.new
     patient.set_fields(patient_params, patient_fields)
 
-    if patient.save
+    if patient.save()
       respond_with_message(I18n.t('patient.messages.saved', name: patient.name), "success", :ok)
     else
       respond_with patient
@@ -29,7 +29,7 @@ class PatientController < ApplicationController
     patient = Patient.first(id: params[:id])
     raise Sequel::NoExistingObject unless patient.present?
 
-    @patient = PatientDecorator.new(patient, context: {relation: params[:relation]})
+    @patient = PatientDecorator.new(patient, context: {scope: params[:scope]})
   end
 
   def update

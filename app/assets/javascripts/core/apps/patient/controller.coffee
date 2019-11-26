@@ -28,7 +28,7 @@ Controller =
     return
 
   showPatient: (id) ->
-    patient = Patient.get(id, {relation: 'appointment'})
+    patient = Patient.get(id, fetchOptions: {scope: 'extended'})
     mcl_histories = MclHistory.getList({ patient_id: id })
 
     ObjChan.request("when:fetched", [patient, mcl_histories], =>
