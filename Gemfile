@@ -72,6 +72,9 @@ group :development, :test do
   # Fixtures
   gem 'fixture_dependencies', '1.10.0'
 
+  # assigns..., assert_template
+  gem 'rails-controller-testing', '1.0.1'
+
   # Shell
   gem 'pry-rails'
   gem 'pry-byebug'
