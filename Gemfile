@@ -75,6 +75,9 @@ group :development, :test do
   # assigns..., assert_template
   gem 'rails-controller-testing', '1.0.1'
 
+  # API testing
+  gem 'airborne', '0.3.4'
+
   # Shell
   gem 'pry-rails'
   gem 'pry-byebug'
