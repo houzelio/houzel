@@ -69,6 +69,9 @@ group :development, :test do
   # Random data
   gem 'ffaker', '2.9.0'
 
+  # Fixtures
+  gem 'fixture_dependencies', '1.10.0'
+
   # Shell
   gem 'pry-rails'
   gem 'pry-byebug'
