@@ -54,7 +54,10 @@ GEM
     concurrent-ruby (1.1.5)
     configurate (0.3.1)
     crass (1.0.5)
-    database_cleaner (1.7.0)
+    database_cleaner (1.8.4)
+    database_cleaner-sequel (1.8.0)
+      database_cleaner (~> 1.8.0)
+      sequel
     devise (4.5.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -228,7 +231,7 @@ PLATFORMS
 
 DEPENDENCIES
   configurate (= 0.3.1)
-  database_cleaner (= 1.7.0)
+  database_cleaner-sequel (= 1.8.0)
   devise (= 4.5.0)
   draper (= 3.1.0)
   factory_bot_rails (= 5.0.2)

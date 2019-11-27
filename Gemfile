@@ -59,7 +59,7 @@ end
 
 group :test do
   # RSpec (unit tests, ...)
-  gem 'database_cleaner', '1.7.0'
+  gem 'database_cleaner-sequel', '1.8.0'
   gem 'factory_bot_rails', '5.0.2'
 end
 
