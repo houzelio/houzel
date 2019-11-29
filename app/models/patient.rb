@@ -1,6 +1,7 @@
 class Patient < Sequel::Model
   plugin :timestamps, force: true, update_on_create: true
   plugin :many_through_many
+  plugin :soft_destroy
 
   one_to_many :visits
   one_to_many :invoices
