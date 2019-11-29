@@ -17,6 +17,8 @@ pt-BR:
         patient_check_in: "Dar Entrada"
         checkin: "Entrar"
         checkout: "Sair"
+      messages:
+        remove_visit: "Tem certeza que deseja remover a visita?"
     appointment:
       title: "Consulta"
       plu_title: "Consultas"
@@ -36,6 +38,7 @@ pt-BR:
         schedule: "Agendar"
       messages:
         no_appointments: "Sem consultas"
+        remove_appointment: "Tem certeza que deseja remover a consulta?"
     mcl-history:
       labels:
         complaint: "Motivo da Visita"
@@ -97,6 +100,7 @@ pt-BR:
         new_invoice: "Nova Fatura"
       messages:
         no_services_added: "Nenhum serviço adicionado"
+        remove_invoice: "Tem certeza que deseja remover a fatura?"
     admin:
       labels:
         general: "Geral"

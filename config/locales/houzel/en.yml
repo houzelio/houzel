@@ -4,13 +4,16 @@ en:
       checked_out: "The patient has been checked out"
       saved: "The visit record has been saved"
       updated: "The visit record has been updated"
+      deleted: "The visit record were deleted"
   appointment:
     messages:
       scheduled: "The appointment for %{name} has been scheduled"
+      deleted: "The appointment were deleted"
   patient:
     messages:
       saved: "The patient %{name} has been saved"
       updated: "The patient %{name} has been updated"
+      deleted: "The patient were deleted"
   service:
     messages:
       saved: "The service has been saved"
@@ -20,6 +23,7 @@ en:
     messages:
       saved: "The invoice has been saved"
       updated: "The invoice has been updated"
+      deleted: "The invoice were deleted"
   user:
     labels:
       name: "Name"

@@ -4,13 +4,16 @@ pt-BR:
       checked_out: "O paciente foi liberado"
       saved: "O registro de visita foi salvo"
       updated: "O registro de visita foi atualizado"
+      deleted: "O registro de visita foi removido"
   appointment:
     messages:
       scheduled: "A consulta para %{name} foi agendada"
+      deleted: "A consulta foi removida"
   patient:
     messages:
       saved: "O paciente %{name} foi salvo"
       updated: "O paciente %{name} foi atualizado"
+      deleted: "O patiente foi removido"
   service:
     messages:
       saved: "O serviço foi salvo"
@@ -20,6 +23,7 @@ pt-BR:
     messages:
       saved: "A fatura foi salva"
       updated: "A fatura foi atualizada"
+      deleted: "A fatura foi removida"
   user:
     labels:
       name: "Nome"

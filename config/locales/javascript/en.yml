@@ -17,6 +17,8 @@ en:
         patient_check_in: "Patient Check In"
         checkin: "Check In"
         checkout: "Check Out"
+      messages:
+        remove_visit: "Are you sure you want to delete the visit?"
     appointment:
       title: "Appointment"
       plu_title: "Appointments"
@@ -36,6 +38,7 @@ en:
         schedule: "Schedule"
       messages:
         no_appointments: "No appointments"
+        remove_appointment: "Are you sure you want to delete the appointment?"
     mcl-history:
       labels:
         complaint: "Reason For Visit"
@@ -96,6 +99,7 @@ en:
         new_invoice: "New Invoice"
       messages:
         no_services_added: "No services added"
+        remove_invoice: "Are you sure you want to delete the invoice?"
     admin:
       labels:
         general: "General"
