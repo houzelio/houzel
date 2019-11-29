@@ -91,7 +91,7 @@ Sequel.migration do
       column :blood_type,  String,   :size=>32
 
       column :observation, String
-      column :removed_at,  DateTime
+      column :deleted_at,  DateTime
       column :created_at,  DateTime, :null=>false
       column :updated_at,  DateTime, :null=>false
     end
