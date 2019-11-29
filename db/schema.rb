@@ -30,7 +30,7 @@ Sequel.migration do
       column :parent_name, "character varying(255)"
       column :blood_type, "character varying(32)"
       column :observation, "text"
-      column :removed_at, "timestamp without time zone"
+      column :deleted_at, "timestamp without time zone"
       column :created_at, "timestamp without time zone", :null=>false
       column :updated_at, "timestamp without time zone", :null=>false
     end
