@@ -35,14 +35,14 @@ class Invoice < Sequel::Model
       end
     }
 
-    excl_expr = InvoiceService.exclude(id: pks).where(invoice: self)
-    destroy = excl_expr.select(1).group(:invoice_id).first
+    is_dataset = InvoiceService.exclude(id: pks).where(invoice: self)
+    destroy = is_dataset.select(1).group(:invoice_id).first().present?
 
     if invoice_services.present? || destroy
       modified!
 
       after_save_hook{
-        excl_expr.destroy
+        is_dataset.destroy
 
         invoice_services.each { |is|
           is.save_changes()
