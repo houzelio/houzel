@@ -63,7 +63,7 @@ export default class extends Marionette.View
         )
         events:
           'click a[data-check="true"]' : () ->
-            AppChan.request("visit:edit", @model.get('id'), Routes.appointment_index_path())
+            AppChan.request("visit:edit", @model.get('visit_id'), Routes.appointment_index_path())
 
           'click a[data-show="true"]' : () ->
             AppChan.request("appointment:edit", @model.get('id'))
