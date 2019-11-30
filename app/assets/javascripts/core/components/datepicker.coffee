@@ -63,7 +63,8 @@ export default Component.extend({
     picker = flatpickr(@el, pickerOptions)
     @currentPicker = picker
 
-    if @getOption('value') then @setValue(value)
+    value = @getOption('value')
+    if value then @setValue(value)
 
     return
 
