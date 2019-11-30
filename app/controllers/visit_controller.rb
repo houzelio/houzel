@@ -58,7 +58,7 @@ class VisitController < ApplicationController
   private
 
   def visit_params
-    params.require(:visit).permit(:patient_id, :start_date, :end_date).tap do |p|
+    params.require(:visit).permit(:patient_id, :examiner_id, :start_date, :end_date).tap do |p|
       p[:status] = "checked"
       p[:examiner_id] = p[:examiner_id] || current_user.person_id
     end
