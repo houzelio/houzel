@@ -41,7 +41,7 @@ div.panel.panel-transparent
               each service in services
                 option(value=service.id) #{service.name}
             span.input-group-btn
-              button#btn-service.btn.btn-info.group-btn-sel(type="button" onclick="this.blur();")
+              button#service-btn.btn.btn-info.group-btn-sel(type="button" onclick="this.blur();")
                 i.fas.fa-plus.fa-fw
       div.panel-total.mt-lg
         include ../../../partials/grid-region

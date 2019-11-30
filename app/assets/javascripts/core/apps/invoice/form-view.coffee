@@ -32,7 +32,7 @@ export default class extends Marionette.View
     '#patient-sel' : 'patient_id'
 
   events:
-    'click #btn-service' : 'onAddService'
+    'click #service-btn' : 'onAddService'
     'click #save-btn' : 'onSaveClick'
 
   templateContext: =>
