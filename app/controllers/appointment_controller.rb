@@ -29,11 +29,12 @@ class AppointmentController < ApplicationController
   end
 
   def create
+    appointment = Appointment.new
+    appointment.set_fields(appointment_params, appointment_fields)
+
     visit = Visit.new(status: "scheduled")
     visit.set_fields(visit_params, visit_fields)
 
-    appointment = Appointment.new
-    appointment.set_fields(appointment_params, appointment_fields)
     visit.appointment = appointment
 
     if visit.save()
