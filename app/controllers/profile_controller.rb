@@ -8,7 +8,7 @@ class ProfileController < ApplicationController
   end
 
   def update
-    changed_language = current_user.update_fields({ language: params[:locale] }, [:language])
+    changed_language = current_user.update_fields({ language: params[:locale] }, [:language]).present?
 
     profile = Profile[params[:id]]
     if profile.update_fields(profile_params, profile_fields) || changed_language
