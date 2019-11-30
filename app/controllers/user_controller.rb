@@ -1,4 +1,6 @@
 class UserController < ApplicationController
+  before_action :authenticate_user!
+
   respond_to :json
 
   def update
@@ -13,7 +15,7 @@ class UserController < ApplicationController
 
   def destroy
     if !params.dig(:user,:current_password) && current_user.admin?
-      user = User.first(id: params[:id])
+      user = User[params[:id]]
       user.close_account!
 
       respond_with_message(I18n.t('user.messages.access_closed'), "success", :ok)

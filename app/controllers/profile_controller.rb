@@ -10,7 +10,7 @@ class ProfileController < ApplicationController
   def update
     changed_language = current_user.update_fields({ language: params[:locale] }, [:language])
 
-    profile = Profile.first(id: params[:id])
+    profile = Profile[params[:id]]
     if profile.update_fields(profile_params, profile_fields) || changed_language
       render json: { path: profile_index_path }, :status => :ok
     else

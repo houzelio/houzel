@@ -44,9 +44,8 @@ class AppointmentController < ApplicationController
   end
 
   def show
-    appointment = Appointment.select_all(:appointment).association_join(:visit).where(status: 'scheduled')
-    appointment = appointment.first(Sequel[:appointment][:id] => params[:id])
-    raise Sequel::NoExistingObject unless appointment.present?
+    appointment = Appointment[params[:id]]
+    raise Sequel::NoExistingObject unless appointment.present? && appointment.scheduled?
 
     @appointment =  AppointmentDecorator.new(appointment)
 
@@ -55,7 +54,7 @@ class AppointmentController < ApplicationController
   end
 
   def update
-    appointment = Appointment.first(id: params[:id])
+    appointment = Appointment[params[:id]]
     raise Sequel::NoExistingObject unless appointment.present?
 
     visit = appointment.visit

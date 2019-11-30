@@ -35,14 +35,14 @@ class VisitController < ApplicationController
   end
 
   def show
-    visit = Visit.first(id: params[:id])
+    visit = Visit[params[:id]]
     raise Sequel::NoExistingObject unless visit.present?
 
     @visit =  VisitDecorator.new(visit)
   end
 
   def update
-    visit = Visit.first(id: params[:id])
+    visit = Visit[params[:id]]
     raise Sequel::NoExistingObject unless visit.present?
 
     visit.set_medical_history_fields(mcl_history_params, mcl_history_fields)

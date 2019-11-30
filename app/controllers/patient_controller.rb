@@ -26,14 +26,14 @@ class PatientController < ApplicationController
   end
 
   def show
-    patient = Patient.first(id: params[:id])
+    patient = Patient[params[:id]]
     raise Sequel::NoExistingObject unless patient.present?
 
     @patient = PatientDecorator.new(patient, context: {scope: params[:scope]})
   end
 
   def update
-    patient = Patient.first(id: params[:id])
+    patient = Patient[params[:id]]
     raise Sequel::NoExistingObject unless patient.present?
 
     if patient.update_fields(patient_params, patient_fields)

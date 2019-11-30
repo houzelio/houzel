@@ -27,12 +27,12 @@ class ServiceController < ApplicationController
   end
 
   def show
-    @service = Service.first(id: params[:id])
+    @service = Service[params[:id]]
     raise Sequel::NoExistingObject unless @service.present?
   end
 
   def update
-    service = Service.first(id: params[:id])
+    service = Service[params[:id]]
     raise Sequel::NoExistingObject unless service.present?
 
     if service.update_fields(service_params, service_fields)

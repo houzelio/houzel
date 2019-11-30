@@ -7,7 +7,7 @@ class MedicalHistoryController < ApplicationController
 
     mcl_histories = MedicalHistory.association_join(:visit)
     if params[:visit_id]
-      patient_id = Visit.first(id: params[:visit_id])[:patient_id]
+      patient_id = Visit[params[:visit_id]][:patient_id]
     else
       patient_id = params[:patient_id]
     end
