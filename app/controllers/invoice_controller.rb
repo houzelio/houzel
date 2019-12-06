@@ -53,6 +53,15 @@ class InvoiceController < ApplicationController
     end
   end
 
+  def destroy
+    invoice = Invoice[params[:id]]
+    raise Sequel::NoExistingObject unless invoice.present?
+
+    if invoice.destroy()
+      respond_with_message(I18n.t('invoice.messages.deleted'), "success", :ok)
+    end
+  end
+
   private
 
   def services_select

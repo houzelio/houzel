@@ -55,6 +55,15 @@ class VisitController < ApplicationController
     end
   end
 
+  def destroy
+    visit = Visit[params[:id]]
+    raise Sequel::NoExistingObject unless visit.present?
+
+    if visit.destroy()
+      respond_with_message(I18n.t('visit.messages.deleted'), "success", :ok)
+    end
+  end
+
   private
 
   def visit_params

@@ -68,6 +68,17 @@ class AppointmentController < ApplicationController
     end
   end
 
+  def destroy
+    appointment = Appointment[params[:id]]
+    raise Sequel::NoExistingObject unless appointment.present? && appointment.scheduled?
+
+    visit = appointment.visit
+
+    if visit.destroy()
+      respond_with_message(I18n.t('appointment.messages.deleted'), "success", :ok)
+    end
+  end
+
   private
 
   def patients_select

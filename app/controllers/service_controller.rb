@@ -42,6 +42,15 @@ class ServiceController < ApplicationController
     end
   end
 
+  def destroy
+    service = Service[params[:id]]
+    raise Sequel::NoExistingObject unless service.present?
+
+    if service.destroy()
+      respond_with_message(I18n.t('service.messages.deleted'), "success", :ok)
+    end
+  end
+
   private
 
   def service_params

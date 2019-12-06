@@ -43,6 +43,15 @@ class PatientController < ApplicationController
     end
   end
 
+  def destroy
+    patient = Patient[params[:id]]
+    raise Sequel::NoExistingObject unless patient.present?
+
+    if patient.soft_destroy()
+      respond_with_message(I18n.t('patient.messages.deleted'), "success", :ok)
+    end
+  end
+
   private
 
   def patient_params
