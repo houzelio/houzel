@@ -63,13 +63,12 @@ export default class extends Marionette.View
     @pickers['#checkin-pickr'] = new PickerCmp({
       el: '#checkin-pickr'
       enableTime: true
+      value: @model.get('start_date') || mom().format('L HH:mm')
     })
 
     @listenTo(@pickers['#checkin-pickr'], 'picker:update', ->
       @model.set('start_date', @pickers['#checkin-pickr'].getValue())
     )
-
-    if !@model.get('start_date') then @pickers['#checkin-pickr'].setValue(mom().format())
 
     #checkin picker
     @pickers['#checkout-pickr'] = new PickerCmp({
@@ -108,7 +107,7 @@ export default class extends Marionette.View
 
   onAnchorPickerClick: (event) ->
     id = Dom.getEl(event.currentTarget).prev().attr('id')
-    @pickers["##{id}"].setValue(mom().format())
+    @pickers["##{id}"].setValue(mom().format('L HH:mm'))
 
   onBeforeDestroy: () ->
     _.each(@pickers, (picker) ->
