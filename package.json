@@ -5,7 +5,7 @@
     "@fortawesome/free-solid-svg-icons": "5.11.0",
     "@rails/webpacker": "4.0.7",
     "accounting": "0.4.1",
-    "backbone": "ssh://git@bitbucket.org:marksbre/backbone-houzel.git",
+    "backbone": "1.4.0",
     "backbone-validation": "0.11.5",
     "backbone.deep-model": "2.0.2",
     "backbone.marionette": "4.0.0",
@@ -35,7 +35,7 @@
     "numeral": "2.0.6",
     "pluralize": "8.0.0",
     "pug": "2.0.3",
-    "underscore": "1.9.1"
+    "underscore": "1.9.1",
   },
   "devDependencies": {
     "@metahub/karma-jasmine-jquery": "3.0.0",
@@ -63,6 +63,6 @@
     "url-loader": "1.1.1"
   },
   "resolutions": {
-    "**/**/backbone": "ssh://git@bitbucket.org:marksbre/backbone-houzel.git"
+    "**/**/backbone": "1.4.0"
   }
 }
