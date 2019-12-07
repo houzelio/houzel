@@ -7,6 +7,7 @@ import SelectCmp from 'components/select'
 import PickerCmp from 'components/datepicker'
 import ValidationMixin from 'mixins/validation'
 import LayoutBehavior from 'behaviors/layout'
+import DeleteBehavior from 'behaviors/delete'
 import template from './templates/form.pug'
 import patientRegion from './templates/regions/patient.pug'
 
@@ -21,6 +22,10 @@ export default class extends Marionette.View
     Layout:
       behaviorClass: LayoutBehavior
       view: 'application'
+    Delete:
+      behaviorClass: DeleteBehavior
+      triggerEvent: 'invoice:confirm:delete'
+      message: -> t('invoice.messages.remove_invoice')
 
   ui:
     total : '#total-td'

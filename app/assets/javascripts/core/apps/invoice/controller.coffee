@@ -63,4 +63,11 @@ Controller =
         view.showRespErrors(jqXHR)
     })
 
+  onInvoiceConfirmDelete: (view) ->
+    model = view.model
+    model.destroy({
+      success: () ->
+        AppChan.request("invoice:list")
+    })
+
 export default Controller

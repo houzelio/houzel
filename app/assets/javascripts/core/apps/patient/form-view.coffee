@@ -6,6 +6,7 @@ import PickerCmp from 'components/datepicker'
 import DialogCmp from 'components/box-dialog'
 import ValidationMixin from 'mixins/validation'
 import LayoutBehavior from 'behaviors/layout'
+import DeleteBehavior from 'behaviors/delete'
 import template from './templates/form.pug'
 
 export default class extends Marionette.View
@@ -19,13 +20,16 @@ export default class extends Marionette.View
     Layout:
       behaviorClass: LayoutBehavior
       view: 'application'
+    Delete:
+      behaviorClass: DeleteBehavior
+      triggerEvent: 'patient:confirm:delete'
+      message: -> t('patient.messages.remove_patient')
 
   bindings:
     '#name-in' : 'name'
 
   triggers:
     'click #save-btn': 'patient:save'
-    'click #delete-btn' : 'patient:delete'
 
   templateContext:
     route: () ->
@@ -68,14 +72,6 @@ export default class extends Marionette.View
     )
 
     return
-
-  onServiceDelete: () ->
-    dialog = new DialogCmp(title: t('patient.labels.delete_patient'))
-    @listenTo(dialog, 'dialog:action:result', () =>
-      @triggerMethod('patient:confirm:delete', @)
-    )
-
-    dialog.confirm(t('patient.messages.remove_patient'))
 
   onBeforeDestroy: () ->
     @pickers['#birth-pickr'].destroy()

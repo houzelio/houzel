@@ -73,4 +73,11 @@ Controller =
 
     return
 
+  onAppointmentConfirmDelete: (view) ->
+    model = view.model
+    model.destroy({
+      success: () ->
+        AppChan.request("appointment:list")
+    })
+
 export default Controller

@@ -3,6 +3,7 @@ import SelectCmp from 'components/select'
 import PickerCmp from 'components/datepicker'
 import ValidationMixin from 'mixins/validation'
 import LayoutBehavior from 'behaviors/layout'
+import DeleteBehavior from 'behaviors/delete'
 import template from './templates/form.pug'
 
 export default class extends Marionette.View
@@ -16,6 +17,10 @@ export default class extends Marionette.View
     Layout:
       behaviorClass: LayoutBehavior
       view: 'application'
+    Delete:
+      behaviorClass: DeleteBehavior
+      triggerEvent: 'appointment:confirm:delete'
+      message: -> t('appointment.messages.remove_appointment')
 
   bindings:
     '#patient-sel' : 'patient_id'

@@ -71,8 +71,9 @@ Controller =
 
   onVisitConfirmDelete: (view) ->
     model = view.model
-    model.destroy()
-
-    AppChan.request("patient:outpatient")
+    model.destroy({
+      success: () ->
+        AppChan.request("visit:list")
+    })
 
 export default Controller

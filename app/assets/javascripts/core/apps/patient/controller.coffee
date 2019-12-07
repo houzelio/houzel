@@ -72,8 +72,9 @@ Controller =
 
   onPatientConfirmDelete: (view) ->
     model = view.model
-    model.destroy()
-
-    AppChan.request("patient:list")
+    model.destroy({
+      success: () ->
+        AppChan.request("patient:list")
+    })
 
 export default Controller

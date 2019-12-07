@@ -5,6 +5,7 @@ import PickerCmp from 'components/datepicker'
 import MclHistoryCmp from 'components/medical-history'
 import ValidationMixin from 'mixins/validation'
 import LayoutBehavior from 'behaviors/layout'
+import DeleteBehavior from 'behaviors/delete'
 import template from './templates/form.pug'
 import patientRegion from './templates/regions/patient.pug'
 
@@ -19,6 +20,10 @@ export default class extends Marionette.View
     Layout:
       behaviorClass: LayoutBehavior
       view: 'application'
+    Delete:
+      behaviorClass: DeleteBehavior
+      triggerEvent: 'visit:confirm:delete'
+      message: -> t('visit.messages.remove_visit')
 
   regions:
     patientRegion : '#patient-region'
