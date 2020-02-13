@@ -1,0 +1,15 @@
+configuration: ##Section
+#  host:
+  server: ##Section
+#    environment: "production"
+#    listen: "tcp://0.0.0.0:3000"
+#    pid: "tmp/web.pid"
+#    puma_workers: 0
+#    puma_thread: 5
+#    std_log:
+  environment: ##Section
+#    timezone: "UTC"
+
+development:
+production:
+test:
