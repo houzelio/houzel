@@ -1,7 +1,7 @@
 Houzel::Application.routes.draw do
   root to: redirect('/patient')
 
-  if Sequel::Model.db.table_exists?(:user)
+  if DatabaseTester.has_connection?
     devise_for :user, controllers: { registrations: "registration", sessions: "session" },
       skip: [:registration, :session]
   end
