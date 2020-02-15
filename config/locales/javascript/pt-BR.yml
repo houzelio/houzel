@@ -102,6 +102,7 @@ pt-BR:
         no_services_added: "Nenhum serviço adicionado"
         remove_invoice: "Tem certeza que deseja remover a fatura?"
     admin:
+      settings_title: "Configurações"
       labels:
         general: "Geral"
         user_access: "Usuários e direitos de acesso"

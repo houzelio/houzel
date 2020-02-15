@@ -101,6 +101,7 @@ en:
         no_services_added: "No services added"
         remove_invoice: "Are you sure you want to delete the invoice?"
     admin:
+      settings_title: "Settings"
       labels:
         general: "General"
         user_access: "Users and rigth access"
