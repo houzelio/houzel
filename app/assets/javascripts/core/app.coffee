@@ -1,6 +1,6 @@
 import { initIntl} from './helpers/i18n'
-import { initConfig } from './config/index'
 import { initApps } from './apps/index'
+import './config/environment'
 
 App = class extends Marionette.Application
   initialize: (options) ->
@@ -12,7 +12,5 @@ App = class extends Marionette.Application
   onStart: (app, options) ->
     Backbone.history.start
       pushState: true
-
-initConfig()
 
 export default App
