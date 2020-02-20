@@ -5,7 +5,7 @@ class PatientController < ApplicationController
     page = pagination_value_for(:page)
     per_page = pagination_value_for(:per_page)
 
-    patients = Patient.where(removed_at: nil)
+    patients = Patient.where(deleted_at: nil)
     if params_filter(:name)
       patients = patients.where(Sequel.ilike(:name, "%#{params_filter(:name)}%"))
     end
