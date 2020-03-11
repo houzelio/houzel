@@ -8,13 +8,13 @@ defaults:
   host:
   server:
     environment: "development"
+    listen: "tcp://0.0.0.0:3000"
+    pid: "tmp/web.pid"
+    puma_workers: 0
+    puma_thread: 5
+    std_log:
   environment:
-    url: "http://localhost:3000/"
-    certificate_authorities:
-    require_ssl: true
-    single_process_mode: false
-
-
+    timezone: "UTC"
 
 development:
 production:
