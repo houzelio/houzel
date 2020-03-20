@@ -15,7 +15,7 @@ class InvoiceController < ApplicationController
   end
 
   def new
-    @patients = Patient.select(:id, :name).order(:name)
+    @patients = Patient.select(:id, :name).where(deleted_at: nil).order(:name)
     @services = services_select
   end
 

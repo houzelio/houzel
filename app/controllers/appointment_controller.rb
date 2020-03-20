@@ -82,7 +82,7 @@ class AppointmentController < ApplicationController
   private
 
   def patients_select
-    Patient.select(:id, :name).order(:name)
+    Patient.select(:id, :name).where(deleted_at: nil).order(:name)
   end
 
   def appointment_params
