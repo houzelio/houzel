@@ -1,5 +1,8 @@
 class ServiceController < ApplicationController
   include ActionView::Helpers::NumberHelper
+
+  before_action :authenticate_user!
+
   respond_to :json
 
   def index
