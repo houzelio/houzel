@@ -17,4 +17,8 @@ class Role < Sequel::Model
   def self.has_owner?
     first(name: "owner").present?
   end
+
+  def self.is_owner?(person)
+    first(person: person).present?
+  end
 end
