@@ -7,6 +7,9 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
+/* Images */
+import '../images/logo-300.png'
+
 /* Stylesheet */
 import 'chosen-js/chosen.min.css';
 import 'flatpickr/dist/flatpickr.css';
@@ -15,7 +18,6 @@ import 'izitoast/dist/css/iziToast.min.css'
 import 'line-awesome2/dist/css/line-awesome.css';
 import 'nprogress/nprogress.css'
 import '../stylesheets/less/style.less';
-
 
 /* Bootstrap */
 import 'bootstrap';

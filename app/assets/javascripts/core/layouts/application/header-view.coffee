@@ -1,6 +1,7 @@
 import { AppChan } from 'channels'
 import Routes from 'helpers/routes'
 import { isBreakpoint } from 'helpers/responsive'
+import logo from 'images/logo-porcelain.svg'
 import template from './templates/header.pug'
 
 export default class extends Marionette.View
@@ -12,6 +13,7 @@ export default class extends Marionette.View
       AppChan.request("user:signout")
 
   templateContext: ->
+    logo: logo
     isBreakpoint: isBreakpoint
     route: (name) ->
       switch name
