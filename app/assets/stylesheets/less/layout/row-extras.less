@@ -1,9 +1,3 @@
-//
-// Utilities to manage bootstrap rows and cols
-// with more flexibility
-// Use in conjunction with .row
-// ---------------------------------------------
-
 // Display a row using table layout
 // allows to have vertically aligned elements
 
@@ -14,11 +8,16 @@
   width: 100%;
   margin: 0;
 
+  @media @desktop {
+    > .col-lg-3 {
+      width: 28%;
+    }
+  }
+
   > [class*="col-"] {
     display: table-cell;
     float: none;
     table-layout: fixed;
-    vertical-align: middle;
   }
 }
 

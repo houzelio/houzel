@@ -33,21 +33,8 @@
 }
 
 //
-// nav navbar
+// nav navbar brand
 // --------------------------------------------------
-.navbar-top {
-  .brand-logo {
-    padding: 12px 0 12px 25px !important;
-
-    > img {
-      opacity: 0.9;
-    }
-  }
-  .brand-logo-collapsed {
-    padding: 8px 15px !important;
-  }
-}
-
 .navbar-header {
   .nav-wrapper();
 
@@ -95,6 +82,18 @@
 
       > a {
         color: @sidebar-item-color;
+      }
+    }
+  }
+
+  .navbar-brand {
+    width: auto;
+    padding: 16px 0 0 15px;
+
+    .brand-logo {
+      padding: 0;
+      > img {
+        width: 8rem;
       }
     }
   }
@@ -350,15 +349,13 @@
 }
 
 //
-// Others
+// others
 // --------------------------------------------------
 .backgrid-container a > button {
   &.btn-sm {
     min-width: 60px;
   }
 }
-
-
 
 .collapsing {
   transition: height 0.15s;

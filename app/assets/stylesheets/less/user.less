@@ -10,6 +10,9 @@
 font-family: "Lato", sans-serif;
 color: #555459;
 
+//
+// wrapper
+// --------------------------------------------------
 &.wrapper {
 
   > section {
@@ -20,18 +23,13 @@ color: #555459;
   }
 }
 
-.navbar-nav > li > a {padding-top: 18px !important; padding-bottom: 16px !important;}
-.navbar {min-height: @c-navbar-heigth !important}
-
-.navbar-nav > li > a {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
 .content-wrapper {
   padding-top: 40px;
 }
 
+//
+// panel
+// --------------------------------------------------
 .panel {
   min-height: 25rem;
 
@@ -57,6 +55,9 @@ color: #555459;
   }
 }
 
+//
+// table
+// --------------------------------------------------
 .table {
   > thead > tr > th {
     color: @black-light;
@@ -73,32 +74,19 @@ color: #555459;
 
 }
 
-.align-center {
-  &:extend(.text-center);
-
-  font-size: @c-font-base;
-  padding-top: 20px;
-
-}
-
 //
-// navbar-header-c
-//
-.navbar-header-c {
-  position: relative;
-  z-index: 11;
-
-  opacity: 0.90;
-
-  .brand-logo {
-    padding: 4px 0 4px 15px;
-  }
-}
-
-//
-// nav-main
+// nav navbar brand
 // --------------------------------------------------
+.navbar {min-height: @c-navbar-heigth !important}
+
+.navbar-nav > li > a {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
 .nav-wrapper {
+  padding: 5px 15px;
+
   .navbar-nav .open {
     .dropdown-menu {
       li > a:hover {
@@ -140,9 +128,20 @@ color: #555459;
   }
 }
 
+.navbar-brand {
+  opacity: 0.9;
+  padding: 18px 15px 0 15px;
+
+  .brand-logo {
+    > img {
+      width: 8rem;
+    }
+  }
+}
+
 //
 // tab-content tab-underline
-//
+// --------------------------------------------------
 .tab-content {
   padding: 10px 20px 0px;
   .nav-pills + & {
@@ -198,8 +197,19 @@ color: #555459;
 }
 
 //
-// textarea
+// utils
+// --------------------------------------------------
+.align-center {
+  &:extend(.text-center);
+
+  font-size: @c-font-base;
+  padding-top: 20px;
+
+}
+
 //
+// others
+// --------------------------------------------------
 textarea {
   max-height: 7rem;
 }
