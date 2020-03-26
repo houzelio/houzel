@@ -14,13 +14,13 @@ class UserController < ApplicationController
   end
 
   def destroy
-    if !params.dig(:user,:current_password) && current_user.admin?
-      user = User[params[:id]]
+    user = User[params[:id]]
+    if current_user.admin? && !Role.is_owner?(user.person)
       user.close_account!
 
       respond_with_message(I18n.t('user.messages.access_closed'), "success", :ok)
     else
-      if !params.dig(:user,:current_password) && !current_user.admin?
+      if !current_user.admin?
         respond_with_message(I18n.t('general.messages.permission_denied'), "error", 401)
       end
     end
