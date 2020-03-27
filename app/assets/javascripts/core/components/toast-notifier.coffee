@@ -44,7 +44,7 @@ export default Component.extend({
       throw new Error("A valid notifier is required.")
 
     events = _.result(@, '_notifierEvents')
-    notifierOptions = _.extend(
+    notifierOptions = _.extend({},
         _.defaults(_.result(@, 'notifierOptions'), options),
         message: message,
         events
