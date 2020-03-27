@@ -227,7 +227,7 @@ GEM
       devise
       orm_adapter-sequel
       sequel (>= 3.11.0)
-    sequel-rails (1.0.0)
+    sequel-rails (1.1.0)
       actionpack (>= 4.0.0)
       activemodel (>= 4.0.0)
       railties (>= 4.0.0)
@@ -294,7 +294,7 @@ DEPENDENCIES
   secure_headers (= 6.1.0)
   sequel (= 5.12.0)
   sequel-devise (= 0.0.13)
-  sequel-rails (= 1.0.0)
+  sequel-rails (= 1.1.0)
   sequel-soft-destroy (= 0.0.2)
   uuid (= 2.3.7)
   webpacker (= 4.0.2)
