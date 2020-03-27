@@ -14,6 +14,7 @@ PickerOptions = [
   'defaultDate',
   'defaultHour',
   'defaultMinute',
+  "disableMobile",
   'inline',
   'enable',
   'disable',
@@ -56,8 +57,8 @@ export default Component.extend({
 
   _initPicker: () ->
     events = _.result(@, '_pickerEvents')
-    pickerOptions =  _.extend(
-      _.result(@, 'pickerOptions', {}),
+    pickerOptions =  _.extend({},
+      _.defaults(_.result(@, 'pickerOptions', {}), disableMobile: 'true'),
       events)
 
     picker = flatpickr(@el, pickerOptions)
