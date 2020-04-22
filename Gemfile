@@ -38,7 +38,7 @@ gem 'jbuilder', '2.7.0'
 gem 'uuid', '2.3.7'
 
 # Defines all Rails named routes as javascript helpers
-gem 'js-routes', '1.3.2'
+gem 'webpacker-routes', '0.1.3'
 
 # Headers
 gem 'secure_headers', '6.1.0'
