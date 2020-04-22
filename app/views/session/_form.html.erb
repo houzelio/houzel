@@ -1,4 +1,4 @@
-<%= form_for(resource, as: resource_name, url: session_path(resource_name, :token => params[:token]), :html => { class: "mb-lg mt-lg" }) do |f| %>
+<%= form_with(model: resource, html: {class: 'mb-lg mt-lg'}, scope: resource_name, url: session_path(resource_name, token: params[:token])) do |f| %>
   <%= show_messages %>
 
   <div class="form-group has-feedback">
