@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '5.2.3'
 
 #Webpack rails
-gem 'webpacker', '4.0.2'
+gem 'webpacker', '5.1.1'
 
 # Database
 gem 'pg', '0.19.0'
