@@ -1,7 +1,7 @@
 import { AppChan } from 'channels'
+import { new_service_path } from 'routes'
 import { t } from 'helpers/i18n'
 import { formatCurr } from 'helpers/numeral'
-import Routes from 'helpers/routes'
 import numeral from 'numeral'
 import GridCmp from 'components/grid'
 import LayoutBehavior from 'behaviors/layout'
@@ -19,7 +19,7 @@ export default class extends Marionette.View
 
   templateContext:
     route: () ->
-      Routes.new_service_path()
+      new_service_path()
 
   initialize: (options) ->
     @_buildGrid()

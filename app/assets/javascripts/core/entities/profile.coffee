@@ -1,9 +1,9 @@
-import Routes from 'helpers/routes'
+import { profile_index_path } from 'routes'
 import { t } from 'helpers/i18n'
 import Entity from './entity'
 
 Profile = Entity.extend({
-  urlRoot: -> Routes.profile_index_path()
+  urlRoot: -> profile_index_path()
 
   validation:
     name:

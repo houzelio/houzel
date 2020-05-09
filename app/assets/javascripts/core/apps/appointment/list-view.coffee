@@ -1,7 +1,7 @@
 import { AppChan } from 'channels'
+import { new_appointment_path, appointment_index_path } from 'routes'
 import { t } from 'helpers/i18n'
 import mom from 'moment'
-import Routes from 'helpers/routes'
 import GridCmp from 'components/grid'
 import LayoutBehavior from 'behaviors/layout'
 import template from './templates/list.pug'
@@ -21,7 +21,7 @@ export default class extends Marionette.View
 
   templateContext:
     route: () ->
-      Routes.new_appointment_path()
+      new_appointment_path()
 
   initialize: (options) ->
     @_buildGrid()
@@ -63,7 +63,7 @@ export default class extends Marionette.View
         )
         events:
           'click a[data-check="true"]' : () ->
-            AppChan.request("visit:edit", @model.get('visit_id'), Routes.appointment_index_path())
+            AppChan.request("visit:edit", @model.get('visit_id'), appointment_index_path())
 
           'click a[data-show="true"]' : () ->
             AppChan.request("appointment:edit", @model.get('id'))

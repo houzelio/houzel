@@ -1,4 +1,4 @@
-import Routes from 'helpers/routes'
+import { profile_index_path } from 'routes'
 import LayoutBehavior from 'behaviors/layout'
 import template from './templates/setting.pug'
 
@@ -19,6 +19,6 @@ export default class extends Marionette.View
     setting: () =>
       @getOption('setting')
     route: (name) ->
-      _route = Routes.profile_index_path()
+      _route = profile_index_path()
       if !(name == "general") then _route = "#{_route}/#{name}"
       _route

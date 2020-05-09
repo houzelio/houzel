@@ -1,8 +1,8 @@
 import { AppChan } from 'channels'
+import { new_invoice_path } from 'routes'
 import { t } from 'helpers/i18n'
 import { formatCurr } from 'helpers/numeral'
 import mom from 'moment'
-import Routes from 'helpers/routes'
 import GridCmp from 'components/grid'
 import LayoutBehavior from 'behaviors/layout'
 import template from './templates/list.pug'
@@ -19,7 +19,7 @@ export default class extends Marionette.View
 
   templateContext:
     route: () ->
-      Routes.new_invoice_path()
+      new_invoice_path()
 
   initialize: (options) ->
     @_buildGrid()

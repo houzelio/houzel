@@ -1,5 +1,5 @@
+import { patient_index_path } from 'routes'
 import { t } from 'helpers/i18n'
-import Routes from 'helpers/routes'
 import Cleave from 'cleave.js'
 import SelectCmp from 'components/select'
 import PickerCmp from 'components/datepicker'
@@ -33,7 +33,7 @@ export default class extends Marionette.View
 
   templateContext:
     route: () ->
-      Routes.patient_index_path()
+      patient_index_path()
 
   onAttach: () ->
     @_showSelects()

@@ -1,6 +1,6 @@
+import { service_index_path } from 'routes'
 import { t } from 'helpers/i18n'
 import { formatCurr } from 'helpers/numeral'
-import Routes from 'helpers/routes'
 import Cleave from 'cleave.js'
 import SelectCmp from 'components/select'
 import PickerCmp from 'components/datepicker'
@@ -38,7 +38,7 @@ export default class extends Marionette.View
 
   templateContext:
     route: () ->
-      Routes.service_index_path()
+      service_index_path()
 
   onAttach: () ->
     @_initFormatters()

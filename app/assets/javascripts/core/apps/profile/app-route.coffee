@@ -1,5 +1,9 @@
 import { AppChan } from 'channels'
-import Routes from 'helpers/routes'
+
+import {
+  profile_index_path
+} from 'routes'
+
 import AppRouter from 'marionette.approuter'
 import Controller from './controller'
 
@@ -12,6 +16,6 @@ export default class extends AppRouter
     "user/profile/email" : "changeEmail"
 
 AppChan.reply("profile:edit", () ->
-  Backbone.history.navigate Routes.profile_index_path()
+  Backbone.history.navigate(profile_index_path())
   Controller.editProfile()
 )

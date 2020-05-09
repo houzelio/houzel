@@ -1,6 +1,6 @@
+import { invoice_index_path } from 'routes'
 import { t } from 'helpers/i18n'
 import { formatCurr, add } from 'helpers/numeral'
-import Routes from 'helpers/routes'
 import Cleave from 'cleave.js'
 import GridCmp from 'components/grid'
 import SelectCmp from 'components/select'
@@ -44,7 +44,7 @@ export default class extends Marionette.View
     total: () =>
       formatCurr(@model.get('total'))
     route: () ->
-      Routes.invoice_index_path()
+      invoice_index_path()
 
   initialize: (options) ->
     @_buildGrid()

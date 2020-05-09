@@ -1,4 +1,3 @@
-import Routes from 'helpers/routes'
 import LayoutBehavior from 'behaviors/layout'
 import template from './templates/setting.pug'
 

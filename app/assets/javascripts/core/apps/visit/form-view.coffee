@@ -1,5 +1,5 @@
+import { visit_index_path } from 'routes'
 import mom from 'moment'
-import Routes from 'helpers/routes'
 import SelectCmp from 'components/select'
 import PickerCmp from 'components/datepicker'
 import MclHistoryCmp from 'components/medical-history'
@@ -41,7 +41,7 @@ export default class extends Marionette.View
   templateContext: =>
     route: () =>
       referrer = @getOption('referrer')
-      if referrer then referrer else Routes.visit_index_path()
+      if referrer then referrer else visit_index_path()
 
   onAttach: () ->
     @_showSelects()

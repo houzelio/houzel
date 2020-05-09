@@ -1,6 +1,6 @@
 import { AppChan } from 'channels'
+import { new_visit_path } from 'routes'
 import { t } from 'helpers/i18n'
-import Routes from 'helpers/routes'
 import GridCmp from 'components/grid'
 import LayoutBehavior from 'behaviors/layout'
 import template from './templates/list.pug'
@@ -17,7 +17,7 @@ export default class extends Marionette.View
 
   templateContext:
     route: () ->
-      Routes.new_visit_path()
+      new_visit_path()
 
   initialize: (options) ->
     @_buildGrid()

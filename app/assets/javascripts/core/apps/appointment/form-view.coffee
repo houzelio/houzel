@@ -1,4 +1,4 @@
-import Routes from 'helpers/routes'
+import { appointment_index_path } from 'routes'
 import SelectCmp from 'components/select'
 import PickerCmp from 'components/datepicker'
 import ValidationMixin from 'mixins/validation'
@@ -34,7 +34,7 @@ export default class extends Marionette.View
 
   templateContext:
     route: () ->
-      Routes.appointment_index_path()
+      appointment_index_path()
 
   onAttach: () ->
     @_showSelects()

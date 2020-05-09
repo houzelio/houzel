@@ -1,7 +1,7 @@
 import { AppChan } from 'channels'
+import { new_patient_path } from 'routes'
 import { t } from 'helpers/i18n'
 import mom from 'moment'
-import Routes from 'helpers/routes'
 import GridCmp from 'components/grid'
 import LayoutBehavior from 'behaviors/layout'
 import template from './templates/list.pug'
@@ -18,7 +18,7 @@ export default class extends Marionette.View
 
   templateContext:
     route: () ->
-      Routes.new_patient_path()
+      new_patient_path()
 
   initialize: (options) ->
     @_buildGrid()

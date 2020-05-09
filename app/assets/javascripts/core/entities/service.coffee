@@ -1,9 +1,9 @@
-import Routes from 'helpers/routes'
+import { service_index_path } from 'routes'
 import { t } from 'helpers/i18n'
 import Entity from './entity'
 
 Service = Entity.extend({
-  urlRoot: -> Routes.service_index_path()
+  urlRoot: -> service_index_path()
 
   validation:
     name:

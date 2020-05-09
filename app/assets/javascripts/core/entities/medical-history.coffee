@@ -1,8 +1,8 @@
-import Routes from 'helpers/routes'
+import { medical_history_index_path } from 'routes'
 import Entity from './entity'
 
 MclHistory = Entity.extend({
-  urlRoot: -> Routes.medical_history_index_path()
+  urlRoot: -> medical_history_index_path()
 })
 
 export default new MclHistory

@@ -1,5 +1,11 @@
 import { AppChan } from 'channels'
-import Routes from 'helpers/routes'
+
+import {
+  visit_index_path,
+  new_visit_path,
+  visit_path
+} from 'routes'
+
 import AppRouter from 'marionette.approuter'
 import Controller from './controller'
 
@@ -12,16 +18,16 @@ export default class extends AppRouter
     "visit/:id" : "editVisit"
 
 AppChan.reply("visit:list", () ->
-  Backbone.history.navigate  Routes.visit_index_path()
+  Backbone.history.navigate(visit_index_path())
   Controller.listVisits()
 )
 
 AppChan.reply("visit:new", () ->
-  Backbone.history.navigate Routes.new_visit_path()
+  Backbone.history.navigate(new_visit_path())
   Controller.newVisit()
 )
 
 AppChan.reply("visit:edit", (id, referrer) ->
-  Backbone.history.navigate Routes.visit_path(id)
+  Backbone.history.navigate(visit_path(id))
   Controller.editVisit(id, referrer)
 )

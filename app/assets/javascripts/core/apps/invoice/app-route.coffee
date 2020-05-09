@@ -1,5 +1,11 @@
 import { AppChan } from 'channels'
-import Routes from 'helpers/routes'
+
+import {
+  invoice_index_path,
+  new_invoice_path,
+  invoice_path
+} from 'routes'
+
 import AppRouter from 'marionette.approuter'
 import Controller from './controller'
 
@@ -12,16 +18,16 @@ export default class extends AppRouter
     "invoice/:id" : "editInvoice"
 
 AppChan.reply("invoice:list", () ->
-  Backbone.history.navigate  Routes.invoice_index_path()
+  Backbone.history.navigate(invoice_index_path())
   Controller.listInvoices()
 )
 
 AppChan.reply("invoice:new", () ->
-  Backbone.history.navigate  Routes.new_invoice_path()
+  Backbone.history.navigate(new_invoice_path())
   Controller.newInvoice()
 )
 
 AppChan.reply("invoice:edit", (id) ->
-  Backbone.history.navigate  Routes.invoice_path(id)
+  Backbone.history.navigate(invoice_path(id))
   Controller.editInvoice(id)
 )

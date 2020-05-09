@@ -1,5 +1,11 @@
 import { AppChan } from 'channels'
-import Routes from 'helpers/routes'
+
+import {
+  new_appointment_path,
+  appointment_index_path,
+  appointment_path
+} from 'routes'
+
 import AppRouter from 'marionette.approuter'
 import Controller from './controller'
 
@@ -12,16 +18,16 @@ export default class extends AppRouter
     "appointment/:id" : "editAppointment"
 
 AppChan.reply("appointment:list", () ->
-  Backbone.history.navigate  Routes.appointment_index_path()
+  Backbone.history.navigate(appointment_index_path())
   Controller.listAppointments()
 )
 
 AppChan.reply("appointment:new", () ->
-  Backbone.history.navigate Routes.new_appointment_path()
+  Backbone.history.navigate(new_appointment_path())
   Controller.newAppointment()
 )
 
 AppChan.reply("appointment:edit", (id) ->
-  Backbone.history.navigate Routes.appointment_path(id)
+  Backbone.history.navigate(appointment_path(id))
   Controller.editAppointment(id)
 )

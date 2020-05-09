@@ -1,10 +1,10 @@
-import Routes from 'helpers/routes'
+import { users_role_path } from 'routes'
 import Entity from './entity'
 
 Admin = Entity.extend({
 
   getUsersRole: (options) ->
-    @collectionClass.prototype.url = Routes.users_role_path()
+    @collectionClass.prototype.url = users_role_path()
     users = @getList(options)
 
     @collectionClass.prototype.url = null

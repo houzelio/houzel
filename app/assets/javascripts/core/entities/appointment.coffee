@@ -1,9 +1,9 @@
-import Routes from '../helpers/routes'
+import { new_appointment_path, appointment_index_path } from 'routes'
 import { t } from 'helpers/i18n'
 import Entity from './entity'
 
 Appointment = Entity.extend({
-  urlRoot: -> Routes.appointment_index_path()
+  urlRoot: -> appointment_index_path()
 
   validation:
     patient_id:
@@ -24,7 +24,7 @@ Appointment = Entity.extend({
 
   create: (attrs, options) ->
     options = _.extend({}, options, {
-      urlRoot: Routes.new_appointment_path(), fetch: true
+      urlRoot: new_appointment_path(), fetch: true
     })
 
     Entity.prototype.create.call(@, attrs, options)

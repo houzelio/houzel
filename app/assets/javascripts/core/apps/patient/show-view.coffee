@@ -1,6 +1,6 @@
+import { patient_index_path } from 'routes'
 import { t } from 'helpers/i18n'
 import mom from 'moment'
-import Routes from 'helpers/routes'
 import GridCmp from 'components/grid'
 import MclHistoryCmp from 'components/medical-history'
 import LayoutBehavior from 'behaviors/layout'
@@ -21,7 +21,7 @@ export default class extends Marionette.View
 
   templateContext:
     route: () ->
-      Routes.patient_index_path()
+      patient_index_path()
 
   initialize: (options) ->
     @_buildGrid()

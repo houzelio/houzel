@@ -1,5 +1,5 @@
 import { AppChan } from 'channels'
-import Routes from 'helpers/routes'
+import { profile_index_path, users_role_path } from 'routes'
 import { isBreakpoint } from 'helpers/responsive'
 import logo from 'images/logo-porcelain.svg'
 import template from './templates/header.pug'
@@ -16,9 +16,11 @@ export default class extends Marionette.View
     logo: logo
     isBreakpoint: isBreakpoint
     route: (name) ->
-      switch name
-        when 'profile' then Routes.profile_index_path()
-        when 'settings' then Routes.users_role_path()
+      path = switch name
+        when 'profile' then profile_index_path()
+        when 'settings' then users_role_path()
+
+      path
 
   onAnchorToggleState: (event) ->
     className = Dom.getEl(event.currentTarget).data('toggleState')
