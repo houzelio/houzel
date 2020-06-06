@@ -36,6 +36,9 @@ yarn.lock
 log/
 yarn*.log
 
+# Sensitive data
+secret_token.rb
+
 /public/packs
 /public/packs-test
 /node_modules
