@@ -6,4 +6,8 @@ module DatabaseTester
   rescue Sequel::Error
     nil
   end
+
+  def tbl_exists?(name)
+    db.present? && db.table_exists?(name)
+  end
 end
