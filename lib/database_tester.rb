@@ -1,7 +1,9 @@
 module DatabaseTester
-  def self.has_connection?
-    Sequel::Model.db.present?
+  extend self
+
+  def db
+    Sequel::Model.db
   rescue Sequel::Error
-    false
+    nil
   end
 end
