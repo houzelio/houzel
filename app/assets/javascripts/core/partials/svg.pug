@@ -1,0 +1,10 @@
+-
+  function getViewBox(icon) {
+    viewBox = "0 0 ".concat(icon.width, " ").concat(icon.height)
+    return viewBox
+  }
+
+mixin svgIcon(icon, classes)
+  - classes = classes ? "svg-inline--hz ".concat(classes) : "svg-inline--hz"
+  svg(class=classes data-icon=icon.name xmlns="http://www.w3.org/2000/svg" viewBox=getViewBox(icon))
+    path(fill="currentColor" d=icon.svgPathData)
