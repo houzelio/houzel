@@ -1,5 +1,5 @@
-import { initIntl} from './helpers/i18n'
-import { initApps } from './apps/index'
+import { initIntl } from './helpers/i18n'
+import { initApps } from './apps'
 import './config/environment'
 
 App = class extends Marionette.Application
