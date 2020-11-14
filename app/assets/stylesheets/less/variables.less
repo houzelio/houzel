@@ -5,21 +5,21 @@
 @black: #333333;
 @black-light: #555555;
 
-// Redefined Gray colors for theme
+//== Redefined Gray colors for theme
 @gray-darker:            #232735;
 @gray-dark:              #3a3f51;
 @gray:                   #dde6e9;
 @gray-light:             #e4eaec;
 @gray-lighter:           #edf1f2;
 
-
 @brand-primary:          #1c75bf;
 @brand-success:          #27c24c;
 @brand-info:             #23b7e5;
-@brand-warning:          #ff902b;
+@brand-warning:          #fff3cd;
 @brand-danger:           #f05050;
 
-// New brand colors
+
+//== New brand colors
 @brand-inverse:          #131e26;
 @brand-green:            #14ddb3;
 @brand-pink:             #f532e5;
@@ -27,18 +27,36 @@
 @brand-dark:             #3a3f51;
 
 
-// Body colors
+//== Body colors
 @body-bg:               #fff;
 @text-color:            #515253;
 
-// Link colors
+
+//== Link colors
 @link-color:            @brand-primary;
 @link-hover-color:      darken(@link-color, 15%);
 @link-color-active:     #434E64;
 
 
-//== Typography
+//== Form states and alerts
+@state-success-text:             darken(@brand-success,10%);
+@state-success-bg:               #dff0d8;
+@state-success-border:           darken(spin(@state-success-bg, -10), 5%);
 
+@state-info-text:                @brand-info;
+@state-info-bg:                  #d9edf7;
+@state-info-border:              darken(spin(@state-info-bg, -10), 7%);
+
+@state-warning-text:             lighten(@brand-warning, 10%);
+@state-warning-bg:               #fcf8e3;
+@state-warning-border:           darken(spin(@state-warning-bg, -10), 5%);
+
+@state-danger-text:              lighten(@brand-danger,10%);
+@state-danger-bg:                #f2dede;
+@state-danger-border:            darken(spin(@state-danger-bg, -10), 5%);
+
+
+//== Typography
 @font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -65,8 +83,8 @@
 @headings-line-height:    1.1;
 @headings-color:          inherit;
 
-//== Components
 
+//== Components
 @padding-base-vertical:     7px;
 @padding-base-horizontal:   18px;
 
@@ -131,7 +149,7 @@
 @btn-info-bg:                    @brand-info;
 @btn-info-border:                darken(@btn-info-bg, 5%);
 
-@btn-warning-color:              #fff;
+@btn-warning-color:              #333;
 @btn-warning-bg:                 @brand-warning;
 @btn-warning-border:             darken(@btn-warning-bg, 5%);
 
@@ -349,24 +367,6 @@
 @pager-disabled-color:                 @pagination-disabled-color;
 
 
-//== Form states and alerts
-@state-success-text:             darken(@brand-success,10%);
-@state-success-bg:               #dff0d8;
-@state-success-border:           darken(spin(@state-success-bg, -10), 5%);
-
-@state-info-text:                @brand-info;
-@state-info-bg:                  #d9edf7;
-@state-info-border:              darken(spin(@state-info-bg, -10), 7%);
-
-@state-warning-text:             lighten(@brand-warning, 10%);
-@state-warning-bg:               #fcf8e3;
-@state-warning-border:           darken(spin(@state-warning-bg, -10), 5%);
-
-@state-danger-text:              lighten(@brand-danger,10%);
-@state-danger-bg:                #f2dede;
-@state-danger-border:            darken(spin(@state-danger-bg, -10), 5%);
-
-
 //== Tooltips
 @tooltip-max-width:           200px;
 @tooltip-color:               #fff;
@@ -444,8 +444,8 @@
 @alert-info-border:           rgba(0,0,0,.1);
 
 @alert-warning-bg:            @brand-warning;
-@alert-warning-text:          #fff;
-@alert-warning-border:        rgba(0,0,0,.1);
+@alert-warning-text:          #333;
+@alert-warning-border:        rgba(176,136,0,0.2);
 
 @alert-danger-bg:             @brand-danger;
 @alert-danger-text:           #fff;
@@ -513,7 +513,7 @@
 @panel-info-border:           @panel-global-border;
 @panel-info-heading-bg:       @brand-info;
 
-@panel-warning-text:          #fff;
+@panel-warning-text:          #333;
 @panel-warning-border:        @panel-global-border;
 @panel-warning-heading-bg:    @brand-warning;
 
