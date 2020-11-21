@@ -1,4 +1,6 @@
+import { hzTimesSolid } from 'houzel-icons/svg-icons'
 import { t } from 'helpers/i18n'
+import getTemplate from 'common/templates'
 import GridCmp from 'components/grid'
 import DialogCmp from 'components/box-dialog'
 import template from './templates/user.pug'
@@ -40,18 +42,16 @@ export default class extends Marionette.View
       cell: extend:
         template: _.template(
          """<% if (role_name != "owner" && user.admin) { %>
-             <div class="pull-right">
-               <a class=href="javascript:void(0);" data-remove="true">
-                 <button type="button" class="btn btn-default btn-sm">
-                   <i class="fas fa-times mr-sm"></i> <%= t('admin.buttons.access_revoke') %>
-                 </button>
-               </a>
-             </div>
+             #{ getTemplate('gridActionButtons',
+               buttons: [
+                 title: -> t('admin.buttons.access_revoke')
+                 icon: hzTimesSolid
+               ]
+             )() }
             <% } %>"""
         )
-
         events:
-          'click a[data-remove="true"]' : () ->
+          'click a[data-click="button_0"]' : () ->
             dialog = new DialogCmp
             @listenTo(dialog, 'dialog:action:result', (ok) =>
               if ok then triggerMethod('admin:remove:user', @model, @model.collection)

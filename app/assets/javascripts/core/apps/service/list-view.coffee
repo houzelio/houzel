@@ -2,6 +2,7 @@ import { AppChan } from 'channels'
 import { new_service_path } from 'routes'
 import { t } from 'helpers/i18n'
 import { formatCurr } from 'helpers/numeral'
+import getTemplate from 'common/templates'
 import numeral from 'numeral'
 import GridCmp from 'components/grid'
 import LayoutBehavior from 'behaviors/layout'
@@ -63,17 +64,13 @@ export default class extends Marionette.View
     ,
       label: ''
       cell: extend:
-        template: _.template(
-         """<div class="pull-right">
-              <a href="javascript:void(0);" data-show="true">
-                <button type="button" class="btn btn-default btn-sm">
-                  <%= t('general.buttons.edit') %>
-                </button>
-              </a>
-            </div"""
+        template: getTemplate('gridActionButtons',
+          buttons: [
+            title: -> t('general.buttons.edit')
+          ]
         )
         events:
-          'click a[data-show="true"]' : () ->
+          'click a[data-click="button_0"]' : () ->
             AppChan.request("service:edit", @model.get('id'))
     ]
 

@@ -1,5 +1,8 @@
-import { patient_index_path } from 'routes'
+import { AppChan } from 'channels'
+import { patient_index_path, patient_path } from 'routes'
+import { hzSignInAltSolid } from 'houzel-icons/svg-icons'
 import { t } from 'helpers/i18n'
+import getTemplate from 'common/templates'
 import mom from 'moment'
 import GridCmp from 'components/grid'
 import MclHistoryCmp from 'components/medical-history'
@@ -31,6 +34,8 @@ export default class extends Marionette.View
     @grid.showView()
 
   _buildGrid: () ->
+    patient_id = @model.get('id')
+
     columns = [
       name: 'date'
       label: t('appointment.labels.date_of_appointment')
@@ -42,15 +47,15 @@ export default class extends Marionette.View
     ,
       label: ''
       cell: extend:
-        template: _.template(
-         """<div class="pull-right">
-              <a class=href="javascript:void(0);" data-check="true">
-                <button type="button" class="btn btn-default btn-sm">
-                  <i class=" la la-sign-in mr-sm"></i> <%= t('visit.buttons.checkin') %>
-                </button>
-              </a>
-            </div"""
+        template: getTemplate('gridActionButtons',
+          buttons: [
+            title: -> t('visit.buttons.checkin')
+            icon: hzSignInAltSolid
+          ]
         )
+        events:
+          'click a[data-click="button_0"]' : () ->
+            AppChan.request("visit:edit", @model.get('visit_id'), patient_path(patient_id))
     ]
 
     @grid = new GridCmp({
