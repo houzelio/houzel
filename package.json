@@ -1,8 +1,5 @@
 {
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "1.2.22",
-    "@fortawesome/free-regular-svg-icons": "5.11.0",
-    "@fortawesome/free-solid-svg-icons": "5.11.0",
     "@rails/webpacker": "5.1.1",
     "accounting": "0.4.1",
     "backbone": "1.4.0",
@@ -34,7 +31,6 @@
     "js-logger": "1.4.0",
     "js-yaml": "3.12.1",
     "less": "3.9.0",
-    "line-awesome2": "^0.9.0",
     "less-loader": "4.1.0",
     "marionette.approuter": "1.0.2",
     "mini-css-extract-plugin": "0.5.0",

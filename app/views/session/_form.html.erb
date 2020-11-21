@@ -3,12 +3,10 @@
 
   <div class="form-group has-feedback">
     <%= f.email_field :email, placeholder: I18n.t("user.messages.placeholder_email"), class: "form-control", value: @recipient_email, readonly: @recipient_email %>
-    <i class="fa fa-envelope form-control-feedback text-muted"></i>
   </div>
 
   <div class="form-group has-feedback">
     <%= f.password_field :password, autocomplete: "off", placeholder: I18n.t("user.messages.placeholder_password"), class: "form-control" %>
-    <i class="fa fa-lock form-control-feedback text-muted"></i>
   </div>
 
   <% if devise_mapping.rememberable? -%>
