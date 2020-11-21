@@ -1,3 +1,4 @@
+import { hzCalendarDaySolid } from 'houzel-icons/svg-icons'
 import DialogCmp from 'components/box-dialog'
 import SelectCmp from 'components/select'
 import PickerCmp from 'components/datepicker'
@@ -15,6 +16,10 @@ export default class extends Marionette.View
 
   triggers:
     'click #save-btn': 'profile:general:save'
+
+  templateContext: =>
+    icons:
+      calendar_day: hzCalendarDaySolid
 
   onAttach: () ->
     @_showSelects()

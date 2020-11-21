@@ -1,4 +1,5 @@
 include ../../../partials/content-header
+include ../../../partials/svg
 +header(t('visit.title'), t('general.buttons.back'), route())
 
 - var title
@@ -30,7 +31,7 @@ div.panel.panel-transparent
           div.input-group
             input#checkin-pickr.flatpickr.flatpickr-input.form-control.font-15(name="start_date" value=start_date data-input)
             a.input-group-addon.cursor-pointer(data-click)
-              i.la.la-lg.la-sign-in
+              +svgIcon(icons.checkin, 'hz-fw-135')
           span.help-block
         div.form-group.col-sm-6
           - title = t('visit.labels.checkout_time')
@@ -38,7 +39,7 @@ div.panel.panel-transparent
           div.input-group
             input#checkout-pickr.flatpickr.flatpickr-input.form-control.font-15(name="end_date" value=end_date data-input)
             a.input-group-addon.cursor-pointer(data-click)
-              i.la.la-lg.la-sign-out 
+              +svgIcon(icons.checkout, 'hz-fw-135')
       div.row.tabbable-line.mt-xl
         ul.nav.nav-tabs
           li.active

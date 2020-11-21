@@ -1,3 +1,5 @@
+include ../../../partials/svg
+
 div.nav-wrapper
   div.navbar-brand
     div.brand-logo
@@ -9,7 +11,7 @@ div.nav-wrapper
         span #{gon.user.name}
     li
       a.dropdown-toggle(href="#!" data-toggle="dropdown")
-        i.fas.fa-ellipsis-h.fa-fw
+        +svgIcon(icons.ellipsis, 'hz-fw-145')
       ul.dropdown-menu
         li
           a(href="/patient" data-backbone="true")

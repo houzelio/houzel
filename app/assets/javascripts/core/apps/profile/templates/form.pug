@@ -1,3 +1,5 @@
+include ../../../partials/svg
+
 - var languages = { 'locales': [{'code': 'en'}, {'code': 'pt-BR'}] }
 - var title
 
@@ -14,7 +16,7 @@ form(role="form")
       div#birth-pickr.flatpickr-wrapper.input-group        
         input#birth-in.form-control(name="birthday" value=birthday data-input)
         a.input-group-addon(data-toggle)
-          i.far.fa-calendar
+          +svgIcon(icons.calendar_day, 'hz-fw-135')
     div.form-group.col-sm-6.col-md-offset-1
       - title = t('general.labels.phone')
       label.control-label(for="phone") #{title}

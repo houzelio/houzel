@@ -1,6 +1,7 @@
 import { AppChan } from 'channels'
 import { profile_index_path, users_role_path } from 'routes'
 import { isBreakpoint } from 'helpers/responsive'
+import { hzBarsSolid, hzCogSolid } from 'houzel-icons/svg-icons'
 import logo from 'images/logo-porcelain.svg'
 import template from './templates/header.pug'
 
@@ -14,7 +15,9 @@ export default class extends Marionette.View
 
   templateContext: ->
     logo: logo
-    isBreakpoint: isBreakpoint
+    icons:
+      bars: hzBarsSolid
+      cog: hzCogSolid
     route: (name) ->
       path = switch name
         when 'profile' then profile_index_path()

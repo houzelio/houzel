@@ -1,4 +1,5 @@
 - var xs = isBreakpoint('xs')
+include ../../../partials/svg
 
 div.navbar-header
   div.navbar-brand
@@ -8,7 +9,7 @@ div.navbar-header
   ul.nav.navbar-nav.navbar-right.nav-main
     li
       a.dropdown-toggle(href="#!" data-toggle="dropdown")
-        i.fas.fa-cog
+        +svgIcon(icons.cog, 'hz-align-top hz-fw-135')
       ul.dropdown-menu
         li
           a#logout(href="#!")
@@ -28,4 +29,4 @@ div.nav-wrapper
   ul.nav.navbar-nav
     li
       a(class='visible-xs' href='#!' data-toggle-state='aside-toggled')
-        i.fas.fa-bars
+        +svgIcon(icons.bars, 'hz-align-top hz-fw-135')

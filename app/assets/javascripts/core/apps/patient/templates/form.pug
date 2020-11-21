@@ -1,4 +1,5 @@
 include ../../../partials/content-header
+include ../../../partials/svg
 +header(t('patient.title'), t('general.buttons.back'), route())
 
 - var title
@@ -18,7 +19,7 @@ div.panel.panel-transparent
           div#birth-pickr.flatpickr-wrapper.input-group
             input#birth-in.form-control(name="birthday" value=birthday data-input)
             a.input-group-addon(data-toggle)
-              i.far.fa-calendar
+              +svgIcon(icons.calendar_day, 'hz-fw-135')
         div.form-group.col-sm-6.col-sm-offset-1
             - title = t('patient.labels.sex')
             label.control-label(for="sex") #{title}

@@ -1,6 +1,7 @@
 import { invoice_index_path } from 'routes'
 import { t } from 'helpers/i18n'
 import { formatCurr, add } from 'helpers/numeral'
+import { hzCalendarDaySolid, hzPlusSolid } from 'houzel-icons/svg-icons'
 import Cleave from 'cleave.js'
 import GridCmp from 'components/grid'
 import SelectCmp from 'components/select'
@@ -41,6 +42,9 @@ export default class extends Marionette.View
     'click #save-btn' : 'onSaveClick'
 
   templateContext: =>
+    icons:
+      calendar_day: hzCalendarDaySolid
+      plus: hzPlusSolid
     total: () =>
       formatCurr(@model.get('total'))
     route: () ->

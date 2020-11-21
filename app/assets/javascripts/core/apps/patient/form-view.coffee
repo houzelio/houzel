@@ -1,5 +1,6 @@
 import { patient_index_path } from 'routes'
 import { t } from 'helpers/i18n'
+import { hzCalendarDaySolid } from 'houzel-icons/svg-icons'
 import Cleave from 'cleave.js'
 import SelectCmp from 'components/select'
 import PickerCmp from 'components/datepicker'
@@ -32,6 +33,8 @@ export default class extends Marionette.View
     'click #save-btn': 'patient:save'
 
   templateContext:
+    icons:
+      calendar_day: hzCalendarDaySolid
     route: () ->
       patient_index_path()
 

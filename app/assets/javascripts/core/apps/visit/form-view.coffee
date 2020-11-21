@@ -1,4 +1,5 @@
 import { visit_index_path } from 'routes'
+import { hzSignInAltSolid, hzSignOutAltSolid } from 'houzel-icons/svg-icons'
 import mom from 'moment'
 import SelectCmp from 'components/select'
 import PickerCmp from 'components/datepicker'
@@ -39,6 +40,9 @@ export default class extends Marionette.View
     'click #save-btn': 'visit:save'
 
   templateContext: =>
+    icons:
+      checkin: hzSignInAltSolid
+      checkout: hzSignOutAltSolid
     route: () =>
       referrer = @getOption('referrer')
       if referrer then referrer else visit_index_path()

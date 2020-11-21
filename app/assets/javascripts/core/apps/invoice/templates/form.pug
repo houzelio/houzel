@@ -1,4 +1,5 @@
 include ../../../partials/content-header
+include ../../../partials/svg
 +header(t('invoice.title'), t('general.buttons.back'), route())
 
 - var title
@@ -26,14 +27,14 @@ div.panel.panel-transparent
           div#date-pickr.flatpickr-wrapper.input-group
             input#date-in.form-control(name="bill_date" value=bill_date data-input)
             a.input-group-addon(data-toggle)
-              i.far.fa-calendar
+              +svgIcon(icons.calendar_day, 'hz-fw-135')
         div.form-group.col-sm-6.col-sm-offset-1
           - title = t('invoice.labels.remarks')
           label.control-label(for="remarks") #{title}
           input#remarks-in.form-control(type="text" name="remarks" value=remarks)                 
       div.row.panel-srvc
         div.form-group.col-md-5.col-sm-7
-          - title = t('service.title')          
+          - title = t('service.title')
           label.control-label(for="service_id") #{title}
           div.input-group
             select#service-sel.chosen-select(data-placeholder=" ")
@@ -42,10 +43,10 @@ div.panel.panel-transparent
                 option(value=service.id) #{service.name}
             span.input-group-btn
               button#service-btn.btn.btn-info.group-btn-sel(type="button" onclick="this.blur();")
-                i.fas.fa-plus.fa-fw
+                +svgIcon(icons.plus, 'hz-fw-145')
       div.panel-total.mt-lg
         include ../../../partials/grid-region
-        - title = t('invoice.labels.total')        
+        - title = t('invoice.labels.total')
         div.table-responsive
           table.table.table-hover.table-total
             tbody

@@ -1,4 +1,5 @@
 import { appointment_index_path } from 'routes'
+import { hzCalendarDaySolid, hzClockSolid } from 'houzel-icons/svg-icons'
 import SelectCmp from 'components/select'
 import PickerCmp from 'components/datepicker'
 import ValidationMixin from 'mixins/validation'
@@ -33,6 +34,9 @@ export default class extends Marionette.View
     'click #schedule-btn': 'appointment:schedule'
 
   templateContext:
+    icons:
+      calendar_day: hzCalendarDaySolid
+      clock: hzClockSolid
     route: () ->
       appointment_index_path()
 

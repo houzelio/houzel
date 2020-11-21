@@ -11,6 +11,15 @@ import {
   service_index_path
 } from 'routes'
 
+import {
+  hzBookMedicalSolid,
+  hzCalendarAlt
+  hzChevronRightSolid,
+  hzMoneyCheckSolid,
+  hzPlusSolid,
+  hzUsersSolid
+} from 'houzel-icons/svg-icons'
+
 import pluralize from 'pluralize'
 import template from './templates/side.pug'
 
@@ -24,6 +33,13 @@ export default class extends Marionette.View
     'click li' : 'onListItemClick'
 
   templateContext:
+    icons:
+      book_medical: hzBookMedicalSolid
+      calendar: hzCalendarAlt
+      chevron_ritght: hzChevronRightSolid
+      money: hzMoneyCheckSolid
+      plus: hzPlusSolid
+      users: hzUsersSolid
     route: (name) ->
       path = switch name
         when "new_patient" then new_patient_path()

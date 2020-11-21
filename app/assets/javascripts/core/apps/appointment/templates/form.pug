@@ -1,4 +1,5 @@
 include ../../../partials/content-header
+include ../../../partials/svg
 +header(t('appointment.title'), t('general.buttons.back'), route())
 
 - var title
@@ -30,7 +31,7 @@ div.panel.panel-transparent
           div#date-pickr.flatpickr-wrapper.input-group
             input#date-in.form-control(name="date" value=date data-input)
             a.input-group-addon(data-toggle)
-              i.far.fa-calendar
+              +svgIcon(icons.calendar_day, 'hz-fw-135')
           span.help-block
       div.row
         div.form-group.col-sm-5.required
@@ -39,6 +40,7 @@ div.panel.panel-transparent
           div#start-pickr.flatpickr-wrapper.input-group
             input#start-in.form-control(name="start_time" value=start_time data-input)
             a.input-group-addon(data-toggle)
+              +svgIcon(icons.clock, 'hz-fw-135')
               i.far.fa-clock
           span.help-block
         div.form-group.col-sm-5.required
@@ -47,7 +49,7 @@ div.panel.panel-transparent
           div#end-pickr.flatpickr-wrapper.input-group
             input#end-in.form-control(name="end_time" value=end_time data-input)
             a.input-group-addon(data-toggle)
-              i.far.fa-clock
+              +svgIcon(icons.clock, 'hz-fw-135')
           span.help-block
       div.form-group
         - title = t('appointment.labels.description')
