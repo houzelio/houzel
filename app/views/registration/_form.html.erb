@@ -2,18 +2,18 @@
   <%= show_messages %>
 
   <%= fields_for @profile do |p| %>
-    <div class="form-group has-feedback">
+    <div class="form-group">
       <%= p.label I18n.t("user.labels.name"), class: "text-muted" %>
       <%= p.text_field :name, placeholder: I18n.t("user.messages.placeholder_name"), class: "form-control", type: "" %>
     </div>
   <% end %>
 
-  <div class="form-group has-feedback">
+  <div class="form-group">
     <%= f.label I18n.t("user.labels.email"), class: "text-muted" %>
     <%= f.email_field :email, placeholder: I18n.t("user.messages.placeholder_email"), class: "form-control", type: "", value: @user.email || @recipient_email, readonly: @recipient_email %>
   </div>
 
-  <div class="form-group has-feedback">
+  <div class="form-group">
     <%= f.label I18n.t("user.labels.password"), class: "text-muted" %>
     <%= f.password_field :password, placeholder: I18n.t("user.messages.placeholder_password"), class: "form-control" %>
   </div>
