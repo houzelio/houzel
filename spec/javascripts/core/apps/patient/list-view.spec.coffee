@@ -64,12 +64,12 @@ describe("Patient List View", () ->
         @myRegion.show(@myView)
 
       it("navigates to patient info", () ->
-        @myView.$el.find('a[data-option="no-edit"]').click()
+        @myView.$el.find('a[data-click="button_0"]').click()
         expect(@spy.patient_show).toHaveBeenCalled()
       )
 
       it("navigates to patient form", () ->
-        @myView.$el.find('a[data-show="true"]').not('[data-option="no-edit"]').click()
+        @myView.$el.find('a[data-click="button_1"]').click()
         expect(@spy.patient_edit).toHaveBeenCalled()
       )
     )

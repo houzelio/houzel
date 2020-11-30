@@ -97,12 +97,12 @@ describe("Appointment List View", () ->
         @myRegion.show(@myView)
 
       it("navigates to visit form", () ->
-        @myView.$el.find('a[data-check="true"]').click()
+        @myView.$el.find('a[data-click="button_0"]').click()
         expect(@spy.visit_edit).toHaveBeenCalled()
       )
 
       it("navigates to appointment form", () ->
-        @myView.$el.find('a[data-show="true"]').click()
+        @myView.$el.find('a[data-click="button_1"]').click()
         expect(@spy.appointment_edit).toHaveBeenCalled()
       )
     )

@@ -63,7 +63,7 @@ describe("Visit List View", () ->
         @myRegion.show(@myView)
 
       it("navigates to visit form", () ->
-        @myView.$el.find('a[data-show="true"]').click()
+        @myView.$el.find('a[data-click="button_0"]').click()
         expect(@spy.visit_edit).toHaveBeenCalled()
       )
     )

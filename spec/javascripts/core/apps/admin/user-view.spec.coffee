@@ -1,5 +1,4 @@
 import UserView from 'javascripts/core/apps/admin/user-view'
-import LayoutMgr from 'javascripts/core/helpers/layout-manager'
 import { AppChan } from 'javascripts/core/channels'
 
 describe("Admin User View", () ->
@@ -40,7 +39,7 @@ describe("Admin User View", () ->
       expect(@myView.grid.showView).toHaveBeenCalled()
     )
 
-    it("should show the elements when it exists on DOM", () ->      
+    it("should show the elements when it exists on DOM", () ->
       expect(@myView.$el.find('.table td').closest('tr').length).toBe(1)
     )
   )
@@ -57,7 +56,7 @@ describe("Admin User View", () ->
       @myRegion.show(@myView)
 
     it("allows to remove an user", () ->
-      expect(@myView.$el.find('a[data-remove="true"]').length).toBe(1)
+      expect(@myView.$el.find('a[data-click="button_0"]').length).toBe(1)
     )
 
     describe("after showing the warn dialog", () ->
@@ -67,7 +66,7 @@ describe("Admin User View", () ->
 
         @myObject.listenTo(@myView, 'admin:remove:user', @spy)
 
-        @myView.$el.find('a[data-remove="true"]').click()
+        @myView.$el.find('a[data-click="button_0"]').click()
 
       it("triggers the Remove User event whether it's agreed ", () ->
         $('button[data-bb-handler="confirm"]').click()
@@ -83,7 +82,7 @@ describe("Admin User View", () ->
 
   describe("when the user ain't an admin", () ->
     it("allows not to remove an user", () ->
-      expect(@myView.$el.find('a[data-remove="true"]').length).toBe(0)
+      expect(@myView.$el.find('a[data-click="button_0"]').length).toBe(0)
     )
   )
 )
