@@ -26,12 +26,12 @@ div.panel.panel-transparent
         ul.nav.nav-tabs
           li.active
             - title = t('visit.labels.history')
-            a(href="#history-tab" data-toggle="tab") #{title}
+            a(href="#history" data-toggle="tab") #{title}
           li
             - title = t('patient.labels.appointments')
-            a(href="#appointment-tab" data-toggle="tab") #{title}
+            a(href="#appointment" data-toggle="tab") #{title}
       div.tab-content.mt-lg
-        div#history-tab.tab-pane.fade.in.active
+        div#history.tab-pane.fade.in.active
           div#mcl-history-region
-        div#appointment-tab.tab-pane.fade
+        div#appointment.tab-pane.fade
           div#appointment-grid
