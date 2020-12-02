@@ -16,12 +16,6 @@
     </div>
   <% end -%>
 
-  <div class="clearfix">
-    <div class="pull-right pb">
-      <%= link_to I18n.t("user.messages.forgot_password"), new_password_path(:user), class: "text-muted"  %>
-    </div>
-  </div>
-
   <div class="actions">
     <%= f.submit I18n.t("user.labels.signin"), class: "btn btn-block btn-primary" %>
   </div>
