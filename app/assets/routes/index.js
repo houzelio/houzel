@@ -22,9 +22,6 @@ export const edit_patient_path = (...args) => pathFor(edit_patient_spec, ...args
 export const edit_service_spec = ["/service/:id/edit(.:format)", ["id","format"], { ...default_url_options, ...{} }, parent_spec]
 export const edit_service_url = (...args) => urlFor(edit_service_spec, ...args)
 export const edit_service_path = (...args) => pathFor(edit_service_spec, ...args)
-export const edit_user_password_spec = ["/user/password/edit(.:format)", ["format"], { ...default_url_options, ...{} }, parent_spec]
-export const edit_user_password_url = (...args) => urlFor(edit_user_password_spec, ...args)
-export const edit_user_password_path = (...args) => pathFor(edit_user_password_spec, ...args)
 export const edit_visit_spec = ["/visit/:id/edit(.:format)", ["id","format"], { ...default_url_options, ...{} }, parent_spec]
 export const edit_visit_url = (...args) => urlFor(edit_visit_spec, ...args)
 export const edit_visit_path = (...args) => pathFor(edit_visit_spec, ...args)
@@ -52,9 +49,6 @@ export const new_patient_path = (...args) => pathFor(new_patient_spec, ...args)
 export const new_service_spec = ["/service/new(.:format)", ["format"], { ...default_url_options, ...{} }, parent_spec]
 export const new_service_url = (...args) => urlFor(new_service_spec, ...args)
 export const new_service_path = (...args) => pathFor(new_service_spec, ...args)
-export const new_user_password_spec = ["/user/password/new(.:format)", ["format"], { ...default_url_options, ...{} }, parent_spec]
-export const new_user_password_url = (...args) => urlFor(new_user_password_spec, ...args)
-export const new_user_password_path = (...args) => pathFor(new_user_password_spec, ...args)
 export const new_user_registration_spec = ["/signup(.:format)", ["format"], { ...default_url_options, ...{} }, parent_spec]
 export const new_user_registration_url = (...args) => urlFor(new_user_registration_spec, ...args)
 export const new_user_registration_path = (...args) => pathFor(new_user_registration_spec, ...args)
@@ -91,9 +85,6 @@ export const service_index_path = (...args) => pathFor(service_index_spec, ...ar
 export const user_spec = ["/user/:id(.:format)", ["id","format"], { ...default_url_options, ...{} }, parent_spec]
 export const user_url = (...args) => urlFor(user_spec, ...args)
 export const user_path = (...args) => pathFor(user_spec, ...args)
-export const user_password_spec = ["/user/password(.:format)", ["format"], { ...default_url_options, ...{} }, parent_spec]
-export const user_password_url = (...args) => urlFor(user_password_spec, ...args)
-export const user_password_path = (...args) => pathFor(user_password_spec, ...args)
 export const user_registration_spec = ["/signup(.:format)", ["format"], { ...default_url_options, ...{} }, parent_spec]
 export const user_registration_url = (...args) => urlFor(user_registration_spec, ...args)
 export const user_registration_path = (...args) => pathFor(user_registration_spec, ...args)
