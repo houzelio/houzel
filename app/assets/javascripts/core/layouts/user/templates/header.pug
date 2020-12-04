@@ -7,16 +7,15 @@ div.nav-wrapper
 
   ul.nav.navbar-nav.navbar-right.nav-main
     li
-      a(href="/user/profile" data-backbone="true")
-        span #{gon.user.name}
+      span.user #{gon.user.name}
     li
       a.dropdown-toggle(href="#!" data-toggle="dropdown")
         +svgIcon(icons.ellipsis, 'hz-fw-145')
       ul.dropdown-menu
         li
           a(href="/patient" data-backbone="true")
-            span.ml-sm
+            span
               = "Houzel App"
           a#logout(href="#!")
-            span.ml-sm
+            span
               = t('session.labels.logout')
