@@ -11,11 +11,11 @@
 import '../images/logo-300.png'
 
 /* Stylesheet */
-import 'chosen-js/chosen.min.css';
+import 'chosen-js/chosen.css';
 import 'flatpickr/dist/flatpickr.css';
-import 'backgrid/lib/backgrid.min.css';
-import 'izitoast/dist/css/iziToast.min.css'
-import 'nprogress/nprogress.css'
+import 'backgrid/lib/backgrid.css';
+import 'izitoast/dist/css/iziToast.css';
+import 'nprogress/nprogress.css';
 import '../stylesheets/less/style.less';
 
 /* Bootstrap */
