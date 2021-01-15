@@ -31,6 +31,10 @@ module Houzel
     # Custom directories with classes and modules you want to be autoloadable.
     config.autoload_once_paths += %W{#{config.root}/lib}
 
+    # Configure if Sequel should try to 'test' the database connection in order
+    # to fail early
+    config.sequel.test_connect = false
+
     config.sequel.after_connect = proc do
       Sequel.extension :symbol_aref_refinement
 
