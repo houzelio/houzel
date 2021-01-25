@@ -1,0 +1,58 @@
+// Bootstrap
+@import '~bootstrap/less/bootstrap.less';
+
+// Custom variables
+@import (reference) "variables";
+
+// Global definition of media queries
+@import "layout/media-queries";
+
+// Bootstrap reset
+@import "layout/bootstrap-reset";
+
+// Typography
+@import "layout/typo";
+
+// Layout
+@import "layout/layout";
+@import "layout/top-navbar";
+@import "layout/nav";
+@import "layout/sidebar";
+
+// Components
+@import "layout/button-extra";
+
+// Tables
+@import "layout/datatable";
+@import "layout/table-extras";
+@import "layout/row-extras";
+
+// Datetime Picker
+@import "layout/datetime-picker";
+
+// Plugins
+@import "layout/plugins";
+
+// Utilities
+@import "layout/utils";
+
+// Print CSS
+@import "layout/print";
+
+@import "authentication";
+
+@import "common";
+
+//
+// namespaces
+// --------------------------------------------------
+
+// namespace: lyt-app >
+#lyt-app {
+  @import "app";
+}
+
+// namespace: lyt-app >
+#lyt-user {
+  @import "user";
+}

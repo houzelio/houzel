@@ -1,0 +1,32 @@
+- function isActive(tab) { return tab == setting()}
+
+div.row
+  div.col-lg-8.col-lg-offset-2
+    div.panel.panel-default
+      div.text-center.pb
+        div.panel-heading
+          span= t('profile.title')
+        case setting()
+          when "general"
+            p= t('profile.messages.update_profile')
+          when "email"
+            p= t('profile.messages.change_email')
+          when "password"
+            p= t('profile.messages.change_password')
+      div.panel-body
+        div.row
+          div.col-md-8.col-md-offset-2
+            ul.nav.nav-tabs.tab-underline
+              li(class=isActive('general') ? "active" : "")
+                a(href=route('general') data-backbone="true")                
+                  = t('profile.labels.general')
+              li(class=isActive('email') ? "active" : "")
+                a(href=route('email') data-backbone="true")
+                  = t('profile.labels.email')
+              li(class=isActive('password') ? "active" : "")
+                a(href=route('password') data-backbone="true")                
+                  = t('profile.labels.password')
+        div.row
+          div.col-md-7.col-md-offset-2
+            div.tab-content
+              section#setting-region

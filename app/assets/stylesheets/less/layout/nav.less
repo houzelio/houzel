@@ -1,0 +1,50 @@
+@nav-bg:          #155A93;
+@nav-item:        #777575;
+@nav-active-item: #656565;
+
+.tabbable-line {
+  > .nav-tabs {
+    border: none;
+    margin-bottom: 10px;
+
+    &:after {
+      border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+      bottom: 2px;
+      width: 100%;
+      position: relative;
+      z-index: 120;
+    }
+
+    > li {
+      margin-bottom: 0px;
+
+      &:after {
+        display: block;
+        background-color: @nav-bg;
+        width: 100%;
+        content: '';
+        z-index: 125;
+      }
+
+      &:hover:after, &.active:after {
+        height: 2px;
+      }
+
+      &, &.active {
+        a {
+          font-weight: bold;
+          background-color: transparent;
+          border-color: transparent;
+        }
+      }
+
+      &.active > a {
+        color: @nav-active-item;
+      }
+
+      a {
+        color: @nav-item;
+      }
+    }
+  }
+}

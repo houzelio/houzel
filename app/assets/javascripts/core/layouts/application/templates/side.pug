@@ -1,0 +1,78 @@
+include ../../../partials/svg
+
+div.pt-lg
+  ul.nav
+    li(data-target-item="11")
+      a(data-toggle="collapse" data-target="#patients-ul")
+        +svgIcon(icons.users, 'hz-fw-145')
+        span.item-text
+          = t('general.navigation.patients')
+    ul#patients-ul.nav.submenu.collapse
+      li#11
+        a(href=route('patients') data-backbone="true")
+          +svgIcon(icons.chevron_ritght, 'hz-fw-125')
+          span.item-text
+            = t('general.navigation.patients_listing')
+      li#12
+        a(href=route('new_patient') data-backbone="true")
+          +svgIcon(icons.plus, 'hz-fw-125')
+          span.item-text
+            = t('general.navigation.new_patient')
+    li(data-target-item="21")
+      a(data-toggle="collapse" data-target="#scheduling-ul")
+        +svgIcon(icons.calendar, 'hz-fw-145')
+        span.item-text
+          = t('general.navigation.scheduling')
+    ul#scheduling-ul.nav.submenu.collapse
+      li#21
+        a(href=route('appointments') data-backbone="true")
+          +svgIcon(icons.chevron_ritght, 'hz-fw-125')
+          span.item-text
+            = t('general.navigation.appointment_listing')
+      li#22
+        a(href=route('new_appointment') data-backbone="true")
+          +svgIcon(icons.plus, 'hz-fw-125')
+          span.item-text
+            = t('general.navigation.new_appointment')
+    li(data-target-item="31")
+      a(data-toggle="collapse" data-target="#visits-ul")
+        +svgIcon(icons.book_medical, 'hz-fw-145')
+        span.item-text
+          = t('general.navigation.visits')
+    ul#visits-ul.nav.submenu.collapse
+      li#31
+        a(href=route('visits') data-backbone="true")
+          +svgIcon(icons.chevron_ritght, 'hz-fw-125')
+          span.item-text
+            = t('general.navigation.visit_listing')
+      li#32
+        a(href=route('new_visit') data-backbone="true")
+          +svgIcon(icons.plus, 'hz-fw-125')
+          span.item-text
+            = t('general.navigation.patient_check_in')
+    li(data-target-item="41")
+      a(data-toggle="collapse" data-target="#billing-ul")
+        +svgIcon(icons.money, 'hz-align-mid hz-fw-145')
+        span.item-text
+          = t('general.navigation.billing')
+    ul#billing-ul.nav.submenu.collapse
+      li#41
+        a(href=route('invoices') data-backbone="true")
+          +svgIcon(icons.chevron_ritght, 'hz-fw-125')
+          span.item-text
+            = t('general.navigation.invoices')
+      li#42
+        a(href=route('new_invoice') data-backbone="true")
+          +svgIcon(icons.plus, 'hz-fw-125')
+          span.item-text
+            = t('general.navigation.new_invoice')
+      li#43
+        a(href=route('services') data-backbone="true")
+          +svgIcon(icons.chevron_ritght, 'hz-fw-125')
+          span.item-text
+            = t('general.navigation.services')
+      li#44
+        a(href=route('new_service') data-backbone="true")
+          +svgIcon(icons.plus, 'hz-fw-125')
+          span.item-text
+            = t('general.navigation.new_service')

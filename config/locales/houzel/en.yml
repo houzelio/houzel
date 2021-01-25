@@ -1,0 +1,91 @@
+en:
+  visit:
+    messages:
+      checked_out: "The patient has been checked out"
+      saved: "The visit record has been saved"
+      updated: "The visit record has been updated"
+      deleted: "The visit record were deleted"
+  appointment:
+    messages:
+      scheduled: "The appointment for %{name} has been scheduled"
+      deleted: "The appointment were deleted"
+  patient:
+    messages:
+      saved: "The patient %{name} has been saved"
+      updated: "The patient %{name} has been updated"
+      deleted: "The patient were deleted"
+  service:
+    messages:
+      saved: "The service has been saved"
+      updated: "The service has been updated"
+      deleted: "The service were deleted"
+  invoice:
+    messages:
+      saved: "The invoice has been saved"
+      updated: "The invoice has been updated"
+      deleted: "The invoice were deleted"
+  user:
+    labels:
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      new_password: "New password"
+      password_confirmation: "Confirm new password"
+      register: "Register"
+      signin: "Sign In"
+      send: "Send"
+    messages:
+      signup_title: "SIGN UP"
+      signin_title: "SIGN IN TO CONTINUE"
+      confirmation_title: "RESEND CONFIRMATION EMAIL"
+      forgot_pwd_title: "FORGOT MY PASSWORD"
+      placeholder_name: "Enter your name"
+      placeholder_email: "Enter your email"
+      placeholder_password: "Enter your password"
+      placeholder_new_password: "Enter your new password"
+      link_create: "Sign up now"
+      forgot_password: "Forgot your password?"
+      confirmation_warning: "Fill with your mail to receive instructions on how to confirm your email."
+      forgot_pwd_warning: "Fill with your mail to receive instructions on how to reset your password."
+      required_email: "Email is required"
+      taken_email: "Email has already been taken"
+      email_format: "Email in invalid format"
+      required_password: "Password is required"
+      password_confirmation: "Password do not match"
+      password_format: "Password is too short"
+      password_changed: "Password changed. You can now log in with your new password."
+      password_not_changed: "Password change failed"
+      settings_updated: "Settings updated"
+      access_closed: "Access revoked"
+  profile:
+    messages:
+      required_name: "Name is required"
+      updated: "Your profile has been updated"
+  general:
+    messages:
+      not_found: "Not found"
+      permission_denied: "Permission denied"
+  sequel:
+    messages:
+      presence: "This field is required"
+      includes: "Not in range or set: %{set}"
+      integer: "Not a valid number"
+      numeric: "Not a valid number"
+      not_null: "Required"
+      unique: "Already taken"
+      max_length: "Must be less than %{max}"
+      min_length: "Must be more than %{max}"
+      format: "%{with} is invalid"
+  time:
+    formats:
+      date: "%Y/%m/%d"
+      datetime: "%Y/%m/%d %H:%M"
+  number:
+    currency:
+      format:
+        delimiter: ","
+        separator: "."
+  number:
+    format:
+      delimiter: ","
+      separator: "."

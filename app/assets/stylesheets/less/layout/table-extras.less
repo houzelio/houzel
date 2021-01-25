@@ -1,0 +1,20 @@
+//
+// Add support to components inside tables
+//
+
+.table {
+  > thead > tr > th {
+    padding: 14px 8px;
+    color: #888;
+  }
+  > tbody > tr > td {
+    vertical-align: middle;
+    > .media {
+      img {
+        width: 36px;
+        height: 36px;
+        margin: 0 auto;
+      }
+    }
+  }
+}

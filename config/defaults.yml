@@ -1,0 +1,21 @@
+#######################################################################
+############### DO NOT TOUCH ANYTHING BELOW THIS ######################
+#######################################################################
+
+defaults:
+  version:
+    number: "1.0.0-beta" # Do not touch unless doing a release, do not backport the version number that's in master
+  host:
+  server:
+    environment: "development"
+    listen: "tcp://0.0.0.0:3000"
+    pid: "tmp/web.pid"
+    puma_workers: 0
+    puma_thread: 5
+    std_log:
+  environment:
+    timezone: "UTC"
+
+development:
+production:
+test:

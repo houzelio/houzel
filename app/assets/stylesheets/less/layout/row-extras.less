@@ -1,0 +1,30 @@
+// Display a row using table layout
+// allows to have vertically aligned elements
+
+.row-table {
+  display: table;
+  table-layout: fixed;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+
+  @media @desktop {
+    > .col-lg-3 {
+      width: 28%;
+    }
+  }
+
+  > [class*="col-"] {
+    display: table-cell;
+    float: none;
+    table-layout: fixed;
+  }
+}
+
+// Remove padding and collapse columns
+.row-flush {
+  > [class*="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

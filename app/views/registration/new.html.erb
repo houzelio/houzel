@@ -1,0 +1,17 @@
+<div class="row row-table page-wrapper">
+  <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12">
+    <div class="panel panel-dark panel-flat">
+      <div class="panel-heading text-center">
+        <div class="brand-logo pt">
+          <%= image_tag(asset_pack_path('images/logo-300.png'), class: "block-center") %>
+        </div>
+        <p class="mt">
+          <strong><%= I18n.t("user.messages.signup_title") %></strong>
+        </p>
+      </div>
+      <div class="panel-body">
+        <%= render partial: "form" %>
+      </div>
+    </div>
+  </div>
+</div>

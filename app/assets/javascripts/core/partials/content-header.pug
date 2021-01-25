@@ -1,0 +1,11 @@
+mixin header(title, label, route)
+  div.content-header
+    div.content-title
+      h1
+        =title
+    if label
+      div.content-btn
+        a(href=route data-backbone="true")
+          button.btn.btn-primary.btn-sm(type="button")
+            =label
+      

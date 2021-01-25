@@ -1,0 +1,91 @@
+include ../../../partials/content-header
+include ../../../partials/svg
++header(t('patient.title'), t('general.buttons.back'), route())
+
+- var title
+
+div.panel.panel-transparent
+  div.panel-body
+    form.col-lg-6.col-lg-offset-2(role="form")
+      div.form-group.required
+        - title = t('general.labels.name')
+        label.control-label(for="name") #{title}
+        input#name-in.form-control(type="text" name="name" value=name maxlength="255")
+        span.help-block
+      div.row
+        div.form-group.col-sm-5
+          - title = t('general.labels.birthday')
+          label.control-label(for="birthday") #{title}
+          div#birth-pickr.flatpickr-wrapper.input-group
+            input#birth-in.form-control(name="birthday" value=birthday data-input)
+            a.input-group-addon(data-toggle)
+              +svgIcon(icons.calendar_day, 'hz-fw-135')
+        div.form-group.col-sm-6.col-sm-offset-1
+            - title = t('patient.labels.sex')
+            label.control-label(for="sex") #{title}
+            select#sex-sel.chosen-select(name="sex" data-placeholder=" ")
+              option(value)
+              option(value="male")
+                = t('patient.labels.male')
+              option(value="female")
+                = t('patient.labels.female')
+      div.row
+        div.form-group.col-sm-6
+          - title = t('general.labels.phone')
+          label.control-label(for="phone") #{title}
+          input#phone-in.form-control(type="text" name="phone" value=phone maxlength="63")
+        div.form-group.col-sm-6
+          - title = t('patient.labels.email')
+          label.control-label(for="email") #{title}
+          input#email-in.form-control(type="text" name="email" value=email maxlength="127")
+          span.help-block
+      div.row
+        div.form-group.col-sm-6
+          - title = t('patient.labels.site')
+          label.control-label(for="site") #{title}
+          input#site-in.form-control(type="text" name="site" value=site maxlength="255")
+        div.form-group.col-sm-6
+          - title = t('patient.labels.zip_code')
+          label.control-label(for="zip_code") #{title}
+          input#zipcode-in.form-control(type="text" name="zip_code" value=zip_code maxlength="63")
+          span.help-block
+      div.form-group
+        - title = t('patient.labels.address')
+        label.control-label(for="address") #{title}
+        input#address-in.form-control(type="text" name="address" value=address maxlength="255")
+        span.help-block
+      div.row
+        div.form-group.col-sm-5
+          - title = t('patient.labels.blood_type')
+          label.control-label(for="blood_type") #{title}
+          select#blood-sel.chosen-select(name="blood_type" data-placeholder=" ")
+            option(value)
+            option(value="A+") A+
+            option(value="A+") A-
+            option(value="AB+") AB+
+            option(value="AB-") AB-
+            option(value="B+") B+
+            option(value="B-") B-
+            option(value="O+") O+
+            option(value="O-") O-
+      div.row
+        div.form-group.col-sm-6
+          - title = t('patient.labels.profession')
+          label.control-label(for="profession") #{title}
+          input#profession-in.form-control(type="text" name="profession" value=profession maxlength="127")
+          span.help-block
+        div.form-group.col-sm-6
+          - title = t('patient.labels.parent')
+          label.control-label(for="parent_name") #{title}
+          input#parent-in.form-control(type="text" name="parent_name" value=parent_name maxlength="255")
+      div.form-group
+        - title = t('patient.labels.observation')
+        label.control-label(for="observation") #{title}
+        input#observation-in.form-control(type="text" name="observation" value=observation)
+      div.form-group
+        button#save-btn.btn.btn-primary
+          = t('general.buttons.save')
+        if ( id )
+          button#delete-btn.btn.btn-default.ml-sm
+            = t('general.buttons.delete')      
+        

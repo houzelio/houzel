@@ -1,0 +1,31 @@
+include ../../../partials/svg
+
+div.navbar-header
+  div.navbar-brand
+    div.brand-logo
+      img.img-responsive(src=logo)
+
+  ul.nav.navbar-nav.navbar-right.nav-main
+    li
+      a.dropdown-toggle(href="#!" data-toggle="dropdown")
+        +svgIcon(icons.cog, 'hz-align-top hz-fw-135')
+      ul.dropdown-menu
+        li
+          a#logout(href="#!")
+            span
+              = t('session.labels.logout')
+        li.divider
+        li
+          a(href=route('profile') data-backbone="true")
+            span
+              = t('general.navigation.profile')
+        li
+          a(href=route('settings') data-backbone="true")
+            span
+              = t('general.navigation.settings')
+
+div.nav-wrapper
+  ul.nav.navbar-nav
+    li
+      a(class='visible-xs' href='#!' data-toggle-state='aside-toggled')
+        +svgIcon(icons.bars, 'hz-align-top hz-fw-135')

@@ -1,10 +1,9 @@
 require File.expand_path('../boot', __FILE__)
 
 # Pick the frameworks you want:
-# require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
-require "sprockets/railtie"
+#require "sprockets/railtie"
 require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -24,5 +23,25 @@ module Houzel
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    # Settings in config/environments/* take precedence over those specified here.
+    # Application configuration should go into files in config/initializers
+    # -- all .rb files in that directory are automatically loaded.
+
+    # Custom directories with classes and modules you want to be autoloadable.
+    config.autoload_once_paths += %W{#{config.root}/lib}
+
+    # Configure if Sequel should try to 'test' the database connection in order
+    # to fail early
+    config.sequel.test_connect = false
+
+    config.sequel.after_connect = proc do
+      Sequel.extension :symbol_aref_refinement
+
+      Sequel::Model.db.extension :pagination
+      Sequel::Model.db.extension :named_timezones
+
+      Sequel::Model.plugin :validation_helpers
+    end
   end
 end

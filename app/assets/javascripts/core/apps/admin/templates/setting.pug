@@ -1,0 +1,16 @@
+include ../../../partials/content-header
++header(t('admin.settings_title'), null, null)
+
+div.panel.panel-transparent.aup-panel
+  aside.aup-nav-panel    
+    nav.sidebar.aup-sidebar
+      div.aup-navgroup-inner
+        div.aup-nav-heading
+          strong
+            = t("admin.labels.general")
+        ul.nav.aup-nav
+          li
+            a.active(href="/admin/users" data-backbone="true")
+              = t('admin.labels.user_access')
+  div.panel-body.aup-panel-body
+    section#setting-region

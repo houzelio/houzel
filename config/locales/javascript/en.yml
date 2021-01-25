@@ -1,0 +1,186 @@
+en:
+  javascripts:
+    visit:
+      title: "Visit"
+      plu_title: "Visits"
+      labels:
+        checkin_time: "Check In"
+        checkout_time: "Check Out"
+        admission_date: "Admission Date"
+        complaint: "Reason For Visit"
+        diagnosis: "Diagnosis"
+        notes: "Notes"
+        visit_information: "Visit Information"
+        history: "History"
+      buttons:
+        add_diagnosis: "Add Diagnosis"
+        patient_check_in: "Patient Check In"
+        checkin: "Check In"
+        checkout: "Check Out"
+      messages:
+        remove_visit: "Are you sure you want to delete the visit?"
+    appointment:
+      title: "Appointment"
+      plu_title: "Appointments"
+      labels:
+        patient: "Patient"
+        examiner: "Examiner"
+        date_of_appointment: "Date of Appointment"
+        begin_time: "Begin"
+        finish_time: "Finish"
+        description: "Description"
+        all: "All"
+        day: "Day"
+        week: "Week"
+        month: "Month"
+      buttons:
+        new_appointment: "New Appointment"
+        schedule: "Schedule"
+      messages:
+        no_appointments: "No appointments"
+        remove_appointment: "Are you sure you want to delete the appointment?"
+    mcl-history:
+      labels:
+        complaint: "Reason For Visit"
+        diagnosis: "Diagnosis"
+        notes: "Notes"
+      messages:
+        empty_notes: "No notes added"
+        no_history_available: "No history available"
+    patient:
+      title: "Patient"
+      plu_title: "Patients"
+      labels:
+        age: "Age"
+        email: "Email"
+        sex: "Sex"
+        male: "Male"
+        female: "Female"
+        site: "Location/City"
+        zip_code: "Zip code"
+        address: "Address"
+        blood_type: "Blood type"
+        profession: "Profession"
+        parent: "Parent"
+        observation: "Observations"
+        delete_patient: "Delete Patient"
+        appointments: "Appointments"
+      buttons:
+        view: "View"
+        new_patient: "New Patient"
+      messages:
+        remove_patient: "Are you sure you want to delete the patient?"
+    service:
+      title: "Service"
+      plu_title: "Services"
+      labels:
+        category: "Category"
+        private: "Private"
+        insurance: "Insurance"
+        other: "Other"
+        service_delete: "Delete Service"
+      buttons:
+        new_service: "New Service"
+      messages:
+        service_required: "Include at least one service"
+        remove_service: "Are you sure you want to delete the service?"
+    invoice:
+      title: "Invoice"
+      plu_title: "Invoices"
+      labels:
+        description: "Description"
+        base_price: "Base Price"
+        charge: "Charge"
+        final_charge: "Final Charge"
+        total: "Total"
+        remarks: "Remarks"
+        billed_date: "Bill Date"
+      buttons:
+        new_invoice: "New Invoice"
+      messages:
+        no_services_added: "No services added"
+        remove_invoice: "Are you sure you want to delete the invoice?"
+    admin:
+      settings_title: "Settings"
+      labels:
+        general: "General"
+        user_access: "Users and rigth access"
+      buttons:
+        access_revoke: "Revoke"
+      messages:
+        revoke_access: "Are you sure you want to revoke the access to %{name}"
+    profile:
+      title: "Profile"
+      labels:
+        profile_details: "Profile Details"
+        change_email: "Change Email"
+        change_password: "Change Password"
+        general: "General"
+        email: "Email"
+        new_email: " New Email"
+        current_password: "Current Password"
+        new_password: "New Password"
+        password: "Password"
+        password_confirmation: "Confirm New Password"
+        location: "Location"
+        language: "Language"
+      messages:
+        refresh_profile: "The profile has been updated, and to load the new changes, we need to refresh this page."
+        email_warn: "Once you have changed your email, do remember to login with the new email next time."
+        update_profile: "Update your profile information"
+        change_email: "Change the email used to access the application"
+        change_password: "Change the password used to access the application"
+    general:
+      buttons:
+        new: "New"
+        back: "Back"
+        save: "Save"
+        delete: "Delete"
+        view: "View"
+        edit: "Edit"
+      labels:
+        name: "Name"
+        value: "Value"
+        birthday: "Day of Birth"
+        phone: "Phone"
+      navigation:
+        patients: "Patients"
+        patients_listing: "Patient Listing"
+        new_patient: "New Patient"
+        scheduling: "Scheduling"
+        appointment_listing: "Appointment Listing"
+        new_appointment: "New Appointment"
+        visits: "Visits"
+        visit_listing: "Visit Listing"
+        patient_check_in: "Patient Check In"
+        billing: "Billing"
+        invoices: "Invoices"
+        new_invoice: "New Invoice"
+        services: "Services"
+        new_service: "New Services"
+        profile: "Profile"
+        settings: "Settings"
+      pagination:
+        rewind:
+          title: "First"
+        back:
+          title: "Previous"
+        forward:
+          title: "Next"
+        fastForward:
+          title: "Last"
+      messages:
+        empty_set: "No information added"
+        required_field: "This field is required"
+        select_item: "Select a %{item}"
+    session:
+      labels:
+        logout: "Logout"
+    numeral:
+      format:
+        decimal_mark: '.'
+        delimiter: ','
+    language:
+      locales:
+        en: "English"
+        pt-BR: "Portuguese"

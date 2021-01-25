@@ -1,0 +1,12 @@
+div.row
+  div.form-group.col-sm-10
+    - title = t('visit.labels.diagnosis')
+    label.control-label(for="diagnosis") #{title}
+    input#diagnosis-in.form-control(type="text" name="diagnosis" value=history.diagnosis)
+    span.help-block          
+div.row
+  div.form-group.col-sm-10
+    - title = t('visit.labels.notes')              
+    label.control-label(for="notes") #{title}              
+    textarea#notes-in.form-control(name="notes")
+      =history.notes

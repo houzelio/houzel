@@ -1,0 +1,21 @@
+include ../../../partials/svg
+
+div.nav-wrapper
+  div.navbar-brand
+    div.brand-logo
+      img.img-responsive(src=logo)
+
+  ul.nav.navbar-nav.navbar-right.nav-main
+    li
+      span.user #{gon.user.name}
+    li
+      a.dropdown-toggle(href="#!" data-toggle="dropdown")
+        +svgIcon(icons.ellipsis, 'hz-fw-145')
+      ul.dropdown-menu
+        li
+          a(href="/patient" data-backbone="true")
+            span
+              = "Houzel App"
+          a#logout(href="#!")
+            span
+              = t('session.labels.logout')

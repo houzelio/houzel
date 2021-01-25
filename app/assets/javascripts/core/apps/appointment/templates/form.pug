@@ -1,0 +1,64 @@
+include ../../../partials/content-header
+include ../../../partials/svg
++header(t('appointment.title'), t('general.buttons.back'), route())
+
+- var title
+
+div.panel.panel-transparent
+  div.panel-body
+    form.col-lg-6.col-lg-offset-2(role="form")
+      div.row
+        div.form-group.col-sm-6.required
+          - title = t('appointment.labels.patient')
+          label.control-label(for="patient_id") #{title}
+          select#patient-sel.chosen-select(data-placeholder=title)
+            option(value)
+            each patient in patients
+              option(value=patient.id) #{patient.name}
+          span.help-block
+        div.form-group.col-sm-6.required
+          - title = t('appointment.labels.examiner')
+          label.control-label(for="examiner_id") #{title}
+          select#examiner-sel.chosen-select(data-placeholder=title)
+            option(value)
+            each examiner in examiners
+              option(value=examiner.id) #{examiner.name}
+          span.help-block
+      div.row
+        div.form-group.col-sm-5.required
+          - title = t('appointment.labels.date_of_appointment')
+          label.control-label(for="date") #{title}
+          div#date-pickr.flatpickr-wrapper.input-group
+            input#date-in.form-control(name="date" value=date data-input)
+            a.input-group-addon(data-toggle)
+              +svgIcon(icons.calendar_day, 'hz-fw-135')
+          span.help-block
+      div.row
+        div.form-group.col-sm-5.required
+          - title = t('appointment.labels.begin_time')
+          label.control-label(for="start_time") #{title}
+          div#start-pickr.flatpickr-wrapper.input-group
+            input#start-in.form-control(name="start_time" value=start_time data-input)
+            a.input-group-addon(data-toggle)
+              +svgIcon(icons.clock, 'hz-fw-135')
+              i.far.fa-clock
+          span.help-block
+        div.form-group.col-sm-5.required
+          - title = t('appointment.labels.finish_time')
+          label.control-label(for="end_time") #{title}
+          div#end-pickr.flatpickr-wrapper.input-group
+            input#end-in.form-control(name="end_time" value=end_time data-input)
+            a.input-group-addon(data-toggle)
+              +svgIcon(icons.clock, 'hz-fw-135')
+          span.help-block
+      div.form-group
+        - title = t('appointment.labels.description')
+        label.control-label(for="description") #{title}
+        textarea.form-control(name="description")
+          =description
+      div.form-group
+        button#schedule-btn.btn.btn-primary
+          = t('appointment.buttons.schedule')
+        if ( id )
+          button#delete-btn.btn.btn-default.ml-sm
+            = t('general.buttons.delete')

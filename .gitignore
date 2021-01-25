@@ -7,10 +7,41 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
-
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Configuration files
+config/database.yml
+config/houzel.yml
+
+# Ignore temporary files of every sort
+*~
+*.swpinux
+*.out
+*.swp
+
+# .DS_Store
+public/assets
+vendor/assets/components
+/public/packs
+/public/packs-test
+node_modules
+
+# Only apps should have lockfiles
+package-lock.json
+yarn.lock
+
+# Generated files
+log/
+yarn*.log
+
+# Sensitive data
+secret_token.rb
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
