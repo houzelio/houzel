@@ -1,11 +1,12 @@
 import Polyglot from 'node-polyglot'
 
 Intl =
+  load: (options) ->
+    opts = options
 
-  load: (phrases, locale) ->
     @polyglot = new Polyglot({
-      locale: locale || "en"
-      phrases: phrases
+      locale: opts.locale || "en"
+      phrases: opts.phrases || {}
     })
 
     return
@@ -15,17 +16,12 @@ Intl =
 
     @polyglot.t(key, options)
 
-initIntl = (options) ->
-  Intl.load(options.phrases, options.locale)
-  Intl
-
 t = (key, options) ->
   if _.every(arguments, _.isUndefined) then return Intl
 
   Intl.parse(key, options)
 
 export {
-  initIntl,
   t
 }
 

@@ -1,10 +1,10 @@
-import { initIntl } from './helpers/i18n'
+import { t } from './helpers/i18n'
 import { initApps } from './apps'
 import './config/environment'
 
 App = class extends Marionette.Application
   initialize: (options) ->
-    initIntl(options)
+    t().load(options)
     initApps()
 
     return

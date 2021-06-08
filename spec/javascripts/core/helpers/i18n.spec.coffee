@@ -1,10 +1,10 @@
 import defaultLocale from "../../../../config/locales/javascript/en.yml"
-import { initIntl, t } from 'javascripts/core/helpers/i18n'
+import { t } from 'javascripts/core/helpers/i18n'
 
 describe("i18n", () ->
   beforeAll ->
-    @defaultLocale = defaultLocale.json['en'].javascripts
-    @locale = {
+    @defaultPhrases = defaultLocale.json['en'].javascripts
+    @phrases = {
       message: "Hi"
       interpolation: "%{message}"
       namespace:
@@ -14,22 +14,28 @@ describe("i18n", () ->
     }
 
   afterEach ->
-    initIntl(phrases: @defaultLocale)
+    t().load(phrases: @defaultPhrases)
 
-  describe("::initIntl", () ->
-    it("overrides existing locale", () ->
-      pastLocale = name: "Luna"
-      lastLocale = name: "Luccas"
-      intl = initIntl(phrases: pastLocale)
-      expect(intl.polyglot.phrases.name).toBe("Luna")
-      intl = initIntl(phrases: lastLocale)
-      expect(intl.polyglot.phrases.name).toBe("Luccas")
+  describe("::Intl::load", () ->
+    it("overrides existing phrases", () ->
+      pastPhrases = name: "Luna"
+      lastPhrases = name: "Luccas"
+      intl = t().load(phrases: pastPhrases)
+      expect(t().polyglot.phrases.name).toBe("Luna")
+      intl = t().load(phrases: lastPhrases)
+      expect(t().polyglot.phrases.name).toBe("Luccas")
     )
   )
 
   describe("::t", () ->
     beforeEach ->
-      initIntl(phrases: @locale, "en")
+      t().load({phrases: @phrases, "en"})
+
+    it("returns a Intl object as parameters are undefined", () ->
+      intl = t()
+      expect(intl).toEqual(jasmine.any(Object))
+      expect(intl).not.toEqual(null)
+    )
 
     it("returns the specified translation", () ->
       translation = t("message");

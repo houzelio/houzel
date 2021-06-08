@@ -1,5 +1,5 @@
 import defaultLocale from "../../config/locales/javascript/en.yml"
-import { initIntl } from 'javascripts/core/helpers/i18n'
+import { t } from 'javascripts/core/helpers/i18n'
 
 import 'bootstrap'
 
@@ -14,8 +14,8 @@ window.gon = {
   locale: "en"
 }
 
-locale = defaultLocale.json['en'].javascripts
-initIntl(phrases: locale)
+phrases = defaultLocale.json['en'].javascripts
+t().load(phrases: phrases)
 
 requireAll = (requireContext) ->
   requireContext.keys().forEach(requireContext)
