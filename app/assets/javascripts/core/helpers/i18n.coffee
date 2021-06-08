@@ -20,6 +20,8 @@ initIntl = (options) ->
   Intl
 
 t = (key, options) ->
+  if _.every(arguments, _.isUndefined) then return Intl
+
   Intl.parse(key, options)
 
 export {
