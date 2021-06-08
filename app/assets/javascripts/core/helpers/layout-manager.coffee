@@ -16,32 +16,31 @@ getLayoutView = (layoutName, options) ->
   view.layoutName = layoutName
   view
 
-LayoutMgr.currentView = {}
+LayoutMgr =
+  render: (layoutName, options) ->
 
-LayoutMgr.render = (layoutName, options) ->
+    if !layoutName || !(_.contains(layouts, layoutName))
+      throw new Error('You must provide a valid name for the layout.')
 
-  if !layoutName || !(_.contains(layouts, layoutName))
-    throw new Error('You must provide a valid name for the layout.')
+    currView = @currentView
 
-  currView = @currentView
+    if _.isUndefined(currView) ||
+    currView.getOption('layoutName') != layoutName
+      layoutView = getLayoutView(layoutName, options)
+      layoutView.render()
 
-  if _.isEmpty(currView) ||
-  currView.getOption('layoutName') != layoutName
-    layoutView = getLayoutView(layoutName, options)
-    layoutView.render()
+      @currentView = layoutView
 
-    @currentView = layoutView
+    @
 
-  return
+  show: (regionName, view) ->
+    currView = @currentView
 
-LayoutMgr.show = (regionName, view) ->
-  currView = @currentView
+    if !currView
+      throw new Error('You must render a layout before.')
 
-  if !currView
-    throw new Error('You must render a layout before.')
+    currView.showChildView(regionName, view)
 
-  currView.showChildView(regionName, view)
+    view
 
-  view
 
-export default LayoutMgr
