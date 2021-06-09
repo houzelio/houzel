@@ -1,46 +1,77 @@
-import LayoutMgr from 'javascripts/core/helpers/layout-manager'
+import { renderLayout, showView, showViewIn } from 'javascripts/core/helpers/layout-manager'
 
 describe("Layout Manager", () ->
   MyView = Marionette.View.extend({
+    regions:
+      subRegion: '.sub-region'
+
     template: () ->
-      __html__['my-view.html']
+      """#{__html__['my-view.html']} <div class="sub-region">"""
+  })
+
+  MyOtherView = Marionette.View.extend({
+    template: () ->
+      __html__['my-other-view.html']
   })
 
   beforeEach ->
-    LayoutMgr.render('application')
+    @layout = renderLayout('application')
 
-  describe("::render", () ->
+  describe("::renderLayout", () ->
+    it("returns a Layout object", () ->
+      expect(@layout).toEqual(jasmine.any(Object))
+      expect(@layout).not.toEqual(null)
+    )
+
     it("sets a layout view", () ->
-      expect(LayoutMgr.currentView.cid).not.toBeUndefined()
+      expect(@layout.currentView.cid).not.toBeUndefined()
     )
 
     it("should not render a new layout if the layout defined is already rendered", () ->
-      oldLayout = LayoutMgr.currentView
-      LayoutMgr.render('application')
-      newLayout = LayoutMgr.currentView
-      expect(oldLayout.cid).toBe(newLayout.cid)
+      oldLayoutView = @layout.currentView
+      layout = renderLayout('application')
+      newLayoutView = layout.currentView
+      expect(oldLayoutView.cid).toBe(newLayoutView.cid)
     )
 
     it("should render a new layout if they differ", () ->
-      oldLayout = LayoutMgr.currentView
-      LayoutMgr.render('user')
-      newLayout = LayoutMgr.currentView
-      expect(oldLayout.cid).not.toBe(newLayout.cid)
+      oldLayoutView = @layout.currentView
+      layout = renderLayout('user')
+      newLayoutView = layout.currentView
+      expect(oldLayoutView.cid).not.toBe(newLayoutView.cid)
     )
 
     it("throws an exception if a layout is invalid", () ->
       expect(() ->
-        LayoutMgr.render()
+        renderLayout()
       ).toThrowError("You must provide a valid name for the layout.")
     )
   )
 
-  describe("::show", () ->
+  describe("::showView", () ->
+    beforeEach ->
+      @myView = new MyView
+
     it("shows a view in a region of the layout", () ->
+      showView(@myView, 'mainRegion')
+      myShownView = @layout.currentView.getChildView('mainRegion')
+      expect(@myView.cid).toBe(myShownView.cid)
+    )
+
+    it("assumes 'mainRegion' as the one if a region is not defined", () ->
+      showView(@myView)
+      myShownView = @layout.currentView.getChildView('mainRegion')
+      expect(@myView.cid).toBe(myShownView.cid)
+    )
+  )
+
+  describe("::showViewIn", () ->
+    it("shows a childView in a region of view", () ->
       myView = new MyView
-      LayoutMgr.show('mainRegion', myView)
-      myChildView = LayoutMgr.currentView.getChildView('mainRegion')
-      expect(myView.cid).toBe(myChildView.cid)
+      myOtherView = new MyOtherView
+      showViewIn(myView, myOtherView, 'subRegion')
+      myShownView = myView.getChildView('subRegion')
+      expect(myOtherView.cid).toBe(myShownView.cid)
     )
   )
 )

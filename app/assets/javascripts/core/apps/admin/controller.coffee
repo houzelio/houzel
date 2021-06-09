@@ -1,5 +1,5 @@
 import { ObjChan } from 'channels'
-import { showViewIn } from 'helpers/layout-region'
+import { showViewIn } from 'helpers/layout-manager'
 import { Admin, User } from 'entities/index'
 import SettingLayout from './setting-view'
 import UserView from './user-view'

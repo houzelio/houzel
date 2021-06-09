@@ -1,5 +1,5 @@
 import { AppChan, ObjChan } from 'channels'
-import { showView } from 'helpers/layout-region'
+import { showView } from 'helpers/layout-manager'
 import { formatCurr } from 'helpers/numeral'
 import { Service }  from 'entities/index'
 import Syphon from 'backbone.syphon'

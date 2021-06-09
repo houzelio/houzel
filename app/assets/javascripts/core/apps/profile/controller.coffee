@@ -1,5 +1,5 @@
 import { AppChan, ObjChan } from 'channels'
-import { showViewIn } from 'helpers/layout-region'
+import { showViewIn } from 'helpers/layout-manager'
 import { Profile, User } from 'entities/index'
 import Syphon from 'backbone.syphon'
 import SettingLayout from './setting-view'

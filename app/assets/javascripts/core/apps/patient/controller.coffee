@@ -1,5 +1,5 @@
 import { AppChan, ObjChan } from 'channels'
-import { showView } from 'helpers/layout-region'
+import { showView } from 'helpers/layout-manager'
 import { Patient, MclHistory } from 'entities/index'
 import Syphon from 'backbone.syphon'
 import ListView from './list-view'

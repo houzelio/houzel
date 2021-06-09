@@ -1,9 +1,9 @@
 import AppLayout from 'layouts/application/main-view'
 import UserLayout from 'layouts/user/main-view'
 
-LayoutMgr = {}
-
 layouts = ['application', 'user']
+
+defaultRegion = 'mainRegion'
 
 getLayoutView = (layoutName, options) ->
   if layoutName == "application"
@@ -43,4 +43,20 @@ LayoutMgr =
 
     view
 
+renderLayout = (layoutName, options) ->
+  LayoutMgr.render(layoutName, options)
 
+# Shows the view on the default region
+showView = (view, region) ->
+  LayoutMgr.show((if region then region else defaultRegion), view)
+
+showViewIn = (view, childView, childRegion, region) ->
+  showView(view, region)
+
+  view.showChildView(childRegion, childView)
+
+export {
+  renderLayout,
+  showView,
+  showViewIn
+}
